@@ -5,11 +5,12 @@
 
 """Scrape libtorrent.org docs and blog into local markdown files."""
 
+import hashlib
 import re
 import shutil
 import time
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -18,6 +19,7 @@ from markdownify import markdownify as md
 SCRIPT_DIR = Path(__file__).parent
 DOCS_DIR = SCRIPT_DIR / "docs"
 BLOG_DIR = SCRIPT_DIR / "blog"
+IMAGES_DIR = SCRIPT_DIR / "images"
 BASE_URL = "https://libtorrent.org/"
 BLOG_URL = "https://blog.libtorrent.org/"
 
@@ -51,6 +53,9 @@ DOC_PAGES = [
     "utp.html",
 ]
 
+# Track downloaded images to avoid re-downloading within a run
+_downloaded_images: dict[str, str] = {}
+
 
 def fetch(url: str) -> str:
     """Fetch a URL with retry and politeness delay."""
@@ -66,6 +71,83 @@ def fetch(url: str) -> str:
                 return ""
             time.sleep(1)
     return ""
+
+
+def fetch_binary(url: str) -> bytes | None:
+    """Fetch binary content (images) with retry."""
+    for attempt in range(3):
+        try:
+            resp = SESSION.get(url, timeout=30)
+            resp.raise_for_status()
+            time.sleep(0.3)
+            return resp.content
+        except requests.RequestException as e:
+            if attempt == 2:
+                print(f"  SKIP image {url}: {e}")
+                return None
+            time.sleep(1)
+    return None
+
+
+def download_image(url: str) -> str | None:
+    """Download an image and return its local path relative to repo root."""
+    if url in _downloaded_images:
+        return _downloaded_images[url]
+
+    # Derive a stable filename from the URL
+    parsed = urlparse(url)
+    ext = Path(parsed.path).suffix or ".png"
+    # Use URL path to create a readable filename, with hash suffix for uniqueness
+    path_parts = [p for p in parsed.path.strip("/").split("/") if p]
+    if path_parts:
+        name = path_parts[-1]
+        # Strip extension, clean up
+        name = Path(name).stem
+    else:
+        name = "image"
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
+    filename = f"{name}-{url_hash}{ext}"
+
+    data = fetch_binary(url)
+    if not data:
+        return None
+
+    outpath = IMAGES_DIR / filename
+    outpath.write_bytes(data)
+    local_path = f"images/{filename}"
+    _downloaded_images[url] = local_path
+    return local_path
+
+
+def localize_images(content: str, from_dir: str) -> str:
+    """Find image URLs in markdown, download them, rewrite to local paths."""
+
+    def replace_image(m: re.Match) -> str:
+        alt = m.group(1)
+        url = m.group(2)
+        # Skip non-http images (already local)
+        if not url.startswith("http"):
+            return m.group(0)
+        local_path = download_image(url)
+        if local_path:
+            # Compute relative path from the markdown file's directory
+            rel = f"../{local_path}" if from_dir else local_path
+            return f"![{alt}]({rel})"
+        return m.group(0)
+
+    # Match ![alt](url) and ![alt](url "title") patterns
+    content = re.sub(
+        r"!\[([^\]]*)\]\((https?://[^\s)]+)(?:\s+\"[^\"]*\")?\)",
+        replace_image,
+        content,
+    )
+    # Unwrap linked images: [![alt](local-img)](remote-url) → ![alt](local-img)
+    content = re.sub(
+        r"\[!\[([^\]]*)\]\(([^)]+)\)\]\(https?://[^)]+\)",
+        r"![\1](\2)",
+        content,
+    )
+    return content
 
 
 def discover_reference_pages() -> list[str]:
@@ -157,6 +239,7 @@ def scrape_doc(page: str) -> tuple[str, str] | None:
     # Convert to markdown
     content = md(str(main), heading_style="ATX", code_language="cpp")
     content = rewrite_links(content)
+    content = localize_images(content, "docs")
 
     # Clean up excessive blank lines
     content = re.sub(r"\n{3,}", "\n\n", content).strip()
@@ -218,6 +301,7 @@ def scrape_blog_post(url: str) -> tuple[str, str, str] | None:
 
     # Convert to markdown
     content = md(str(post), heading_style="ATX")
+    content = localize_images(content, "blog")
     content = re.sub(r"\n{3,}", "\n\n", content).strip()
 
     return title, date, frontmatter(title=title, date=date, source=url) + content + "\n"
@@ -232,6 +316,34 @@ def slug_from_blog_url(url: str) -> str:
     return re.sub(r"[^\w-]", "-", url.split("//")[1]).strip("-")
 
 
+def build_index(
+    directory: Path,
+    title: str,
+    index_path: Path,
+) -> None:
+    """Build an index.md listing all markdown files in a directory."""
+    entries = []
+    for f in sorted(directory.glob("*.md")):
+        if f.name == "index.md":
+            continue
+        # Read frontmatter to get title and date
+        text = f.read_text()
+        fm_title = ""
+        fm_date = ""
+        fm_match = re.search(r'^title:\s*"(.+?)"', text, re.MULTILINE)
+        if fm_match:
+            fm_title = fm_match.group(1)
+        date_match = re.search(r'^date:\s*"(.+?)"', text, re.MULTILINE)
+        if date_match:
+            fm_date = date_match.group(1)
+        display = fm_title or f.stem
+        prefix = f"({fm_date}) " if fm_date else ""
+        entries.append(f"- [{prefix}{display}]({f.name})")
+
+    content = f"# {title}\n\n" + "\n".join(entries) + "\n"
+    index_path.write_text(content)
+
+
 def main():
     # Phase 1: Discover all URLs
     print("Discovering documentation pages...")
@@ -244,7 +356,7 @@ def main():
     print(f"  Found {len(blog_posts)} blog posts")
 
     # Phase 2: Clean output directories
-    for d in [DOCS_DIR, BLOG_DIR]:
+    for d in [DOCS_DIR, BLOG_DIR, IMAGES_DIR]:
         if d.exists():
             shutil.rmtree(d)
         d.mkdir(parents=True)
@@ -275,7 +387,16 @@ def main():
             blog_count += 1
             print(f"  {slug}.md")
 
-    print(f"\nDone. Wrote {doc_count} docs + {blog_count} blog posts.")
+    # Phase 5: Build indexes
+    print("Building indexes...")
+    build_index(DOCS_DIR, "libtorrent Documentation", DOCS_DIR / "index.md")
+    build_index(BLOG_DIR, "libtorrent Blog", BLOG_DIR / "index.md")
+
+    img_count = len(list(IMAGES_DIR.glob("*")))
+    print(
+        f"\nDone. Wrote {doc_count} docs + {blog_count} blog posts"
+        f" + {img_count} images."
+    )
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ This specific form of running average is known as [exponential moving average](h
 
 The naive implementation of this initializes SRTT to 0 and then applies this formula to every sample. In an RTT example, you might end up with something like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-naive2-1024x597.png "rfc_793_rto-naive")](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-naive2.png)
+![](../images/rfc_793_rto-naive2-1024x597-db4e3060.png)
 
 naive implementation of running average
 
@@ -36,13 +36,13 @@ As one can see, the initial value of 0 really creates a strong bias and signific
 
 The obvious improvement to this algorithm is to let the first sample we ever see initialize the SRTT variable, that would give us a more reasonable starting point. With this change the plot instead looks like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-init3-1024x597.png "rfc_793_rto-init")](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-init3.png)
+![](../images/rfc_793_rto-init3-1024x597-3f268ba6.png)
 
 initializing using first sample
 
 The converging point is still below the actual average. This is caused by integer arithmetic consistently truncating values. If instead we round the value at the end of the computation (SRTT is still an integer).
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-init-round-1024x597.png "rfc_793_rto-init-round")](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-init-round.png)
+![](../images/rfc_793_rto-init-round-1024x597-a0848c4a.png)
 
 initializing using first sample and rounding
 
@@ -50,7 +50,7 @@ This solves the negative bias of the converging point. However, the first 10 sam
 
 One way to generalize the technique of initializing SRTT using the first sample, is to think of it as a gain of 1. The first sample we get has a gain of 1, because whatever SRTT is initialized to has no meaning. The second sample we get, the value of SRTT does have meaning, but since it only has a single sample in it, it should probably not have a weight of .9. Instead the second sample could have a gain of 1/2, the third sample a gain of 1/3rd and so on, until we reach our steady-state gain factor. With this algorithm, early samples have a more reasonable impact on the estimated average and adapts quicker, with fewer samples. The plot ends up looking like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-weight-round-1024x597.png "rfc_793_rto-weight-round")](http://blog.libtorrent.org/wp-content/uploads/2014/09/rfc_793_rto-weight-round.png)
+![](../images/rfc_793_rto-weight-round-1024x597-3d563b76.png)
 
 using a gradually decreasing gain factor for the first samples
 

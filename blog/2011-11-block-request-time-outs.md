@@ -30,7 +30,7 @@ There’s no way of knowing which order the other end intends to send the blocks
 
 Consider the following piece, there are 5 outstanding requests to a peer that just failed to meet one of the deadlines. The blocks were requested in the order specified.
 
-[![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/timeout-multiple-blocking.png "timeout-multiple-blocking")](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/timeout-multiple-blocking.png)
+![](../images/timeout-multiple-blocking-215d8a4d.png)
 
 If we time out 1, and let another peer pick it, we’re increasing our chances of block 2 timing out, and 3 and so on, assuming the peer actually will send the blocks in order. And we would most definitely get redundant download for block 1.
 
@@ -52,7 +52,7 @@ Never clearing the block causes issues when end-game mode is strict (i.e. it onl
 
 The example below is a piece where every block is complete, except for the yellow one, which we requested from a peer that just timed out (as in it hasn’t sent us the block yet, and we thought it would have).
 
-![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/timeout-blocking.png "timeout-blocking")
+![](../images/timeout-blocking-fa430135.png)
 
 a block timed out in an otherwise complete piece
 
@@ -60,7 +60,7 @@ In this case it is clearly useful to let another peer finish this piece, so we c
 
 On the other hand, if there still are free blocks to pick, like in the next example below:
 
-[![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/timeout-not-blocking1.png "timeout-not-blocking")](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/timeout-not-blocking1.png)
+![](../images/timeout-not-blocking1-6389a841.png)
 
 a block timed out in a piece with unrequested blocks
 

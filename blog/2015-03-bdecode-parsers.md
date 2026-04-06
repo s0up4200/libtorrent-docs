@@ -18,11 +18,11 @@ lazy_bdecode()        4516 ns
 new bdecode()          887 ns
 ```
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2015/03/bdecode-benchmark1-e1425696120903.png)](http://blog.libtorrent.org/wp-content/uploads/2015/03/bdecode-benchmark1-e1425696120903.png)
+![](../images/bdecode-benchmark1-e1425696120903-37772ae4.png)
 
 time to parse the torrent file by decoder
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2015/03/lazy_bdecode-benchmark-e1425696200414.png)](http://blog.libtorrent.org/wp-content/uploads/2015/03/lazy_bdecode-benchmark.png)
+![](../images/lazy_bdecode-benchmark-e1425696200414-e188eb4a.png)
 
 comparison of the two fast decoders
 
@@ -30,7 +30,7 @@ This is the time it takes to parse a normal [.torrent file](http://cdn.media.ccc
 
 The original bdecoder copies all decoded data into a tree representing the structure of the bencoded message. At its core it has a variant type (libtorrent::entry) which can contain any of std::map, std::vector, std::string and int64\_t. When the parser encounters a dictionary, it instantiates a std::map and starts populating it with the data it parses. This means growing vectors, possibly copying parts of the tree while it grows when being built. The data structure is illustrated by Figure 1.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2015/03/original-bdecode-structure.png)](http://blog.libtorrent.org/wp-content/uploads/2015/03/original-bdecode-structure.png)
+![](../images/original-bdecode-structure-36c761b9.png)
 
 Figure 1: The data structure of the original bdecoder
 
@@ -59,7 +59,7 @@ Not only does this save a lot of memory copying while building the data structur
 
 The data structure for the lazy\_entry is illustrated by Figure 2.
 
-[![Figure 2: lazy_entry data structure](http://blog.libtorrent.org/wp-content/uploads/2015/03/lazy-bdecode-structure.png)](http://blog.libtorrent.org/wp-content/uploads/2015/03/lazy-bdecode-structure.png)
+![Figure 2: lazy_entry data structure](../images/lazy-bdecode-structure-689daa36.png)
 
 Figure 2: lazy\_entry data structure
 
@@ -113,7 +113,7 @@ struct bdecode_token
 
 The internal structure is illustrated by Figure 3.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2015/03/new-bdecode-structure1.png)](http://blog.libtorrent.org/wp-content/uploads/2015/03/new-bdecode-structure1.png)
+![](../images/new-bdecode-structure1-c6d0ace7.png)
 
 Figure 3: The data structure of the new bdecoder
 

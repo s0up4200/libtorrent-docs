@@ -6,7 +6,7 @@ source: "https://blog.libtorrent.org/2020/09/bittorrent-v2/"
 
 Monday, September 7th, 2020 by arvid
 
-![libtorrent logo](https://blog.libtorrent.org/wp-content/uploads/2020/09/logo-color-text.png)
+![libtorrent logo](../images/logo-color-text-d57eaa33.png)
 
 libtorrent-2.0 has just been released with a few major new features. One of them is support for [BitTorrent v2](http://bittorrent.org/beps/bep_0052.html).
 
@@ -33,7 +33,7 @@ The leaves of the hash trees are always 16 kiB (the block size), regardless of t
 
 In v2, the .torrent file must still contain these piece hashes (really the hashes in the merkle tree representing the piece-level). This helps distributing and storing the hashes so they don’t have to be recomputed when restarting a client that’s seeding. They’re also stored in the resume state. The .torrent file size is not smaller for a v2 torrent, since it still contains the piece hashes, but the info-dictionary is, which is the part needed for magnet links to start downloading.
 
-![](https://blog.libtorrent.org/wp-content/uploads/2020/09/merkle-hash-tree.png)
+![](../images/merkle-hash-tree-1571a046.png)
 
 Example tree for a file with 4 blocks and a piece size of 32 kiB (2 blocks per piece)
 

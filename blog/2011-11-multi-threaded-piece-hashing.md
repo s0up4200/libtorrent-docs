@@ -12,7 +12,7 @@ However, if the network and disk drive is not the bottleneck (say you’re on a 
 
 In the experimental libtorrent\_aio branch I’ve rewritten the disk cache to be fully asynchronous, to support asynchronous disk I/O, so to make the hashing asynchronous essentially came for free. It’s still configurable whether to run hashing in the disk thread, or in one or more separate threads. There might still be good reasons for embedded devices to not spawn extra threads if there’s no chance of SHA-1 ever being the bottleneck, or for machines that don’t have multiple cores anyway.
 
-[![graph showing download speed over number of hash threasd](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/hash_threads_speedup.png "hash threads speedup")](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/hash_threads_speedup.png)
+![graph showing download speed over number of hash threasd](../images/hash_threads_speedup-dfef5d9f.png)
 
 hash threading speedup. 30 peers
 

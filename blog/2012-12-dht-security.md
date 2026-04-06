@@ -71,7 +71,7 @@ While testing SHA1, I also tested a few other mappings. For instance, in an atte
 
 Source code for this experiment is available on [github](https://github.com/arvidn/hash_complete_prefix "github").
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/complete_bit_prefixes-1024x597.png "complete_bit_prefixes")](http://blog.libtorrent.org/wp-content/uploads/2012/12/complete_bit_prefixes.png)
+![](../images/complete_bit_prefixes-1024x597-58fa8b8c.png)
 
 It turns out that adler32 is completely useless in this regard. Its output is very non-uniform.  
 crc32 does surprisingly well. The intuition about crc32 was that since it was designed to produce 32 bit output, it might be more likely to preserve all the entropy within that word, without spreading it out.

@@ -27,7 +27,7 @@ This technique enables the possibility to receive from the socket directly into 
 
 However, testing this on a PowerMac, receiving into large contiguous (in virtual address space) buffers and then copy it into place, is faster than calling **recv()** twice for every message that’s received.
 
-[![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/12/recv_buffers.png "recv buffer benchmarks")](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/12/recv_buffers.png)
+![](../images/recv_buffers-2fcbaab3.png)
 
 Download rate over loopback when disk I/O and hashing is disabled
 

@@ -30,7 +30,7 @@ Whenever we receive a response from a node, for any reason, its last\_queried ti
 
 Every few seconds (the paper suggests every 6 seconds) ping the most stale node. The most stale is the node with the oldest timestamp. Any node that hasn’t been pinged is considered more stale than any pinged node. Before we have full routing table, there will be a lot of un-pinged nodes. The tiebreak for equally stale nodes is to prefer nodes in buckets close to our own node ID. This creates a bias towards expanding the size of the routing table early on. Once we have reached the “bottom” of the routing table, with a trail of un-pinged nodes behind us, we reverse and start pinging those nodes from bottom to top.
 
-[![The DHT routing table maintenance](http://blog.libtorrent.org/wp-content/uploads/2014/11/nice_routing_table-1024x557.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/nice_routing_table.png)
+![The DHT routing table maintenance](../images/nice_routing_table-1024x557-cc4b08b4.png)
 
 The DHT routing table maintenance
 
@@ -44,11 +44,11 @@ On top of this, whenever we add a node from an external source (for instance, a 
 
 The graphs below illustrate the improvement in routing table maintenance. The first is from a run with current stable libtorrent-1.0.2, the second is head of the 1.0.x branch which includes the changes described in this post.
 
-[![table size during bootstrap using libtorrent-1.0.2](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_size2-1024x597.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_size2.png)
+![table size during bootstrap using libtorrent-1.0.2](../images/dht_routing_table_size2-1024x597-349e5d33.png)
 
 table size during bootstrap using libtorrent-1.0.2
 
-[![routing table size during bootstrap using new maintenance strategy](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_size1-1024x597.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_size1.png)
+![routing table size during bootstrap using new maintenance strategy](../images/dht_routing_table_size1-1024x597-861c7406.png)
 
 routing table size during bootstrap using new maintenance strategy
 
@@ -58,7 +58,7 @@ These tests were run with just two torrents, announcing once every 30 minutes.
 
 Here’s a graph comparing the total number of nodes in the routing table over time.
 
-[![comparison of the total number of nodes over time](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_comparison-1024x597.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/dht_routing_table_comparison.png)
+![comparison of the total number of nodes over time](../images/dht_routing_table_comparison-1024x597-1db242c4.png)
 
 comparison of the total number of nodes over time
 
@@ -77,7 +77,7 @@ We can take this one step further. Whenever we ping a node (using a get\_peers r
 
 For instance, use the penultimate word of the random ID, combine it with a secret session key and hash it with SHA-1. Put the first word in the digest as the last word in the ID.
 
-[!["random" target ID generation](http://blog.libtorrent.org/wp-content/uploads/2014/11/node-id-signature.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/node-id-signature.png)
+!["random" target ID generation](../images/node-id-signature-ce387d80.png)
 
 “random” target ID generation
 

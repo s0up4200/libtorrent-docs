@@ -12,7 +12,7 @@ About a week ago I started looking into lowering the memory cache pressure by ju
 
 Anyway, I ended up with an approach similar to pahole (which as far as I can tell is linux only). By reading the debug information from a program, I could reconstruct the structure layout of all types in the program. On top of this, I could deduce all padding and augment the cache line boundaries for good measure (assuming 64 bytes for now). The resulting output ended up like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2013/12/struct_layout1.png "struct_layout")](http://blog.libtorrent.org/wp-content/uploads/2013/12/struct_layout1.png)
+![](../images/struct_layout1-82dc4c9d.png)
 
 screenshot of [struct\_layout](https://github.com/arvidn/struct_layout), visualizing structure layout with padding and cache line boundaries
 
@@ -45,7 +45,7 @@ At your program shutdown an access\_profile.out is written in current working di
 
 This file can be fed back into struct\_layout, to map the access offsets and counters to the actual field names of the types. The result ends up like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2013/12/access_profile1.png "access_profile")](http://blog.libtorrent.org/wp-content/uploads/2013/12/access_profile1.png)
+![](../images/access_profile1-7617360a.png)
 
 screenshot of struct\_layout visualizing the results from access\_profiler, visualizing which fields in a class are used the most.
 

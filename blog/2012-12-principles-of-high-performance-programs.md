@@ -79,7 +79,7 @@ void session::on_commit_jobs()
 
 Another way to achieve adaptive batching in job queues is to only signal the thread to wake up when the number of jobs in the queue goes from 0 to > 0. As long as the number of jobs in the queue stays above 0, the worker thread(s) won’t go to sleep voluntarily (just by the scheduler granularity). This may achieve lower latencies for jobs, but may also scale the batch size less.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/batching_diskjobs.png "batching disk jobs")](http://blog.libtorrent.org/wp-content/uploads/2012/12/batching_diskjobs.png)
+![](../images/batching_diskjobs-d8797580.png)
 
 There is a cost associated with signaling a thread. The red portions of the threads represent that cost. Batching jobs and signaling fewer times, is more efficient.
 
@@ -115,7 +115,7 @@ Rule of thumb 4:
 
 In the case of the low watermark for a disk cache, one obvious property one would want is to not wake up a peer, for it to just find itself unable to allocate another buffer, because they have all been allocated again. The low watermark should be at least as low as (max\_size – num\_waiters) buffers. i.e. no peer should be woken up until there’s at least one free block each. Setting the low watermark any lower runs the risk of unnecessarily delay peers from making progress. The number of waiters will depend on the load, and effectively adjust the low watermark accordingly.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/disk_cache.png "disk_cache")](http://blog.libtorrent.org/wp-content/uploads/2012/12/disk_cache.png)
+![](../images/disk_cache-9e6d7511.png)
 
 If these rules of thumb were to be taken into account when designing an API for an operating system, you could end up with significantly higher performing programs.
 

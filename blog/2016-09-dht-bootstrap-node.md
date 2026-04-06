@@ -24,7 +24,7 @@ I switched the bdecoder to use one that’s roughly 4x faster and has a lot low
 
 The node buffer is a ring buffer where all accepted nodes are stored (IP, port and node ID). Whenever responding to a request, nodes are copied from this buffer into the response packet. It has a read cursor determining which nodes are returned next. If this buffer is small, the nodes in there will be handed out repeatedly to a lot of newcomers, causing them to be hammered. To avoid returning a very small set of nodes to a large number of newcomers this buffer needs to be large. Ideally large enough so that any single node is only handed out once every minute or so. This is one of the most memory demanding parts of the dht bootstrap node, and I wanted to be able to run with a buffer that could potentially be larger than the amount of physical RAM.
 
-[![The node ring-buffer](http://blog.libtorrent.org/wp-content/uploads/2016/08/mmap-node-buffer.png)](http://blog.libtorrent.org/wp-content/uploads/2016/08/mmap-node-buffer.png)
+![The node ring-buffer](../images/mmap-node-buffer-44e5d716.png)
 
 *Figure 1. The node ring-buffer*
 
@@ -36,13 +36,13 @@ The other main component that uses a lot of memory is the ping queue. When we he
 
 At thousands requests per second, a queue that can hold those nodes for 15 minutes clearly would have to be quite large. The original support for IPv6 was not meant to target low-end machines, so all entries in the queue had enough space to fit an IPv6 endpoint. This wastes 12 bytes per IPv4 entry, as illustrated by figure 2.
 
-[![Figure 2. The original ping queue (entries fit both IPv6 and IPv4 endpoints)](http://blog.libtorrent.org/wp-content/uploads/2016/08/sparse-ping-queue.png)](http://blog.libtorrent.org/wp-content/uploads/2016/08/sparse-ping-queue.png)
+![Figure 2. The original ping queue (entries fit both IPv6 and IPv4 endpoints)](../images/sparse-ping-queue-d1c8cd74.png)
 
 *Figure 2. The original ping queue (entries fit both IPv6 and IPv4 endpoints)*
 
 To solve this I separated the queue into two separate ones, one for IPv4 nodes and one for IPv6 nodes. This is illustrated by figure 3. [[PR](https://github.com/bittorrent/bootstrap-dht/pull/16)]
 
-[![Figure 3. Two separate queues, one for IPv4 and one for IPv6](http://blog.libtorrent.org/wp-content/uploads/2016/08/dense-ping-queue.png)](http://blog.libtorrent.org/wp-content/uploads/2016/08/dense-ping-queue.png)
+![Figure 3. Two separate queues, one for IPv4 and one for IPv6](../images/dense-ping-queue-0664e6e6.png)
 
 *Figure 3. Two separate queues, one for IPv4 and one for IPv6*
 
@@ -50,13 +50,13 @@ To solve this I separated the queue into two separate ones, one for IPv4 nodes a
 
 Another performance optimization I had been tempted to do for a while was to avoid some of the copying when building the response packet with nodes. This is illustrated in figure 4.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2016/08/node-response-copy-1.png)](http://blog.libtorrent.org/wp-content/uploads/2016/08/node-response-copy-1.png)
+![](../images/node-response-copy-1-720bcbb9.png)
 
 *Figure 4. Nodes are returned into a temporary buffer, which then is copied into the response packet*
 
 In this [pull request](https://github.com/bittorrent/bootstrap-dht/pull/23) I made the node buffer return multiple *spans* rather than a heap allocated string with nodes. The [span<> class](https://github.com/bittorrent/bootstrap-dht/blob/master/src/span.hpp) is inspired by the [GSL](https://github.com/Microsoft/GSL) (guideline support library) and provides a surprisingly powerful abstraction. This change allows passing references to the memory ranges to be copied virtually free through multiple function calls. For instance, there’s another layer on top of the node buffer that fills the response up with *backup nodes* in case there aren’t enough nodes in the buffer. This is illustrated by figure 5.
 
-[![Figure 5. The temporary buffer is avoided by returning spans pointing directly into the node buffer](http://blog.libtorrent.org/wp-content/uploads/2016/08/node-response-span.png)](http://blog.libtorrent.org/wp-content/uploads/2016/08/node-response-span.png)
+![Figure 5. The temporary buffer is avoided by returning spans pointing directly into the node buffer](../images/node-response-span-19d93435.png)
 
 *Figure 5. The temporary buffer is avoided by returning spans pointing directly into the node buffer*
 

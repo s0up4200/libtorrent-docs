@@ -16,7 +16,7 @@ Once there is a sign of congestion the slow-start mode is disabled. For TCP, thi
 
 Here’s an example of the problem I saw on new seeding bittorrent connections over uTP (in [simulation](https://github.com/arvidn/libsimulator)):
 
-[![utp-slow-start-issue](http://blog.libtorrent.org/wp-content/uploads/2015/07/utp-slow-start-issue-1024x640.png)](http://blog.libtorrent.org/wp-content/uploads/2015/07/utp-slow-start-issue-e1437361390454.png)
+![utp-slow-start-issue](../images/utp-slow-start-issue-1024x640-09237f6a.png)
 
 Figure1: A new uploading bittorrent connection in slow-start mode
 
@@ -54,7 +54,7 @@ For every piece that’s received. While in slow-start, the regular updating of 
 
 It’s not obvious when to leave slow-start at the application layer. At the transport layer there are clear indications of congestion (delay and packet loss), but these are not typically propagated up to the upper layers. In libtorrent I ended up measuring the number of bytes downloaded every second. Once this counter stops increasing, we leave slow-start. In practice, there’s some slack. When the number of bytes downloaded the last second increases by less than 10 kB/s compared to the previous second, we leave slow start. This is to tolerate noise in the transfer rates.
 
-[![Figure 2: slow-start of a new seeding bittorrent connection over uTP, with fixed request slow-start on requesting client](http://blog.libtorrent.org/wp-content/uploads/2015/07/utp-slow-start-fixed-1024x640.png)](http://blog.libtorrent.org/wp-content/uploads/2015/07/utp-slow-start-fixed.png)
+![Figure 2: slow-start of a new seeding bittorrent connection over uTP, with fixed request slow-start on requesting client](../images/utp-slow-start-fixed-1024x640-0b51103b.png)
 
 Figure 2: slow-start of a new seeding bittorrent connection over uTP, with fixed request slow-start on requesting client
 

@@ -36,7 +36,7 @@ In a sample of about 700k torrents yield the following cumulative piece size dis
  16384 kiB: 100.0 %
 ```
 
-[![piece size distribution](http://blog.libtorrent.org/wp-content/uploads/2014/11/piece_size_cdf.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/piece_size_cdf.png)
+![piece size distribution](../images/piece_size_cdf-ddfbecba.png)
 
 piece size distribution
 
@@ -60,7 +60,7 @@ Looking at the torrent size distribution on the same sample of torrents:
 
 A few observations from this data is half of all torrents are smaller than 300 MiB. 98.36 % of all torrents are smaller than 5 GiB.
 
-[![torrent size distribution](http://blog.libtorrent.org/wp-content/uploads/2014/11/torrent_size_cdf.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/torrent_size_cdf.png)
+![torrent size distribution](../images/torrent_size_cdf-beb8b300.png)
 
 torrent size distribution
 
@@ -88,7 +88,7 @@ The same allocation strategy is used for data blocks as metadata blocks. This ma
 
 Filesystem metadata is the supporting structure around the user data, to associate it with the correct file and location. Filesystem metadata is described in more detail below.
 
-[![overview of filesystem structure](http://blog.libtorrent.org/wp-content/uploads/2014/11/bittorrent_filesystem-791x1024.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/bittorrent_filesystem.png)
+![overview of filesystem structure](../images/bittorrent_filesystem-791x1024-5b12c7e8.png)
 
 overview of filesystem structure
 
@@ -140,7 +140,7 @@ Each slab, in turn, allocates normal filesystem blocks used as storage for the i
 
 This setup supports efficient storage of regular torrents, the common case, as well as supporting the rare case of a very large torrent, several PiB in size.
 
-[![Allocation of i-nodes of varying sizes on top of the filesystem block partitioning.](http://blog.libtorrent.org/wp-content/uploads/2014/11/inode_allocation-1024x645.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/inode_allocation.png)
+![Allocation of i-nodes of varying sizes on top of the filesystem block partitioning.](../images/inode_allocation-1024x645-3719430d.png)
 
 Allocation of i-nodes of varying sizes on top of the filesystem block partitioning.
 
@@ -197,13 +197,13 @@ With a custom filesystem almost no metadata needs to be kept per file, and more 
 
 It turns out that a significant performance gain comes from aligning pieces, and ranges of pieces, to be downloaded and flushed to disk with the filesystem’s default extent allocation size and alignment.
 
-[![When writing a small piece to a filesystem with large default extents, the extent is not fully filled-in by a write. Causing the drive to seek back later when those parts of the file are downloaded](http://blog.libtorrent.org/wp-content/uploads/2014/11/partial_cache_stripe-1024x369.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/partial_cache_stripe.png)
+![When writing a small piece to a filesystem with large default extents, the extent is not fully filled-in by a write. Causing the drive to seek back later when those parts of the file are downloaded](../images/partial_cache_stripe-1024x369-46272ebe.png)
 
 When writing a small piece to a filesystem with large default extents, the extent is not fully filled-in by a write. Causing the drive to seek back later when those parts of the file are downloaded
 
 In the case where the bittorrent cache’s stripe size is not aligned with the file- system’s the allocation strategy is not optimal. Assuming a random uniform distribution of the download order of pieces, early pieces are more likely to allocate a new extent in the file, which is fast because it is done sequentially from the current disk head position. However, later pieces are more likely to have to seek back into the previously allocated extents to fill them in.
 
-[![Write pattern when filling a sparse file at random (where the extents by which the file grows fit 4 blocks).](http://blog.libtorrent.org/wp-content/uploads/2014/11/sparse_access.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/sparse_access.png)
+![Write pattern when filling a sparse file at random (where the extents by which the file grows fit 4 blocks).](../images/sparse_access-e2180b5f.png)
 
 Write pattern when filling a sparse file at random (where the extents by which the file grows fit 4 blocks).
 
@@ -218,11 +218,11 @@ Two different block allocation strategies were tested.
 
 Comparing the two with identical, artificial, payloads yields the following access graphs:
 
-[![disk access pattern for sequential block allocator (writes)](http://blog.libtorrent.org/wp-content/uploads/2014/11/sequential_allocation.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/sequential_allocation.png)
+![disk access pattern for sequential block allocator (writes)](../images/sequential_allocation-4b931781.png)
 
 disk access pattern for sequential block allocator (writes) [simulated]
 
-[![disk access pattern for ordered block allocator (writes)](http://blog.libtorrent.org/wp-content/uploads/2014/11/ordered_allocation.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/ordered_allocation.png)
+![disk access pattern for ordered block allocator (writes)](../images/ordered_allocation-e39ee192.png)
 
 disk access pattern for ordered block allocator (writes) [simulated]
 
@@ -245,7 +245,7 @@ Downloading 25 torrents, 1 GB each, 10 torrents in parallel, 1 GB cache:
 * btfs file on top of hfs+: 281 seconds (avg: 91.10 MB/s)
 * directly to hfs+: 897 seconds (avg: 28.54 MB/s)
 
-[![Write pattern when on the block device level in the btfs benchmark.](http://blog.libtorrent.org/wp-content/uploads/2014/11/file_access1-1024x748.png)](http://blog.libtorrent.org/wp-content/uploads/2014/11/file_access1.png)
+![Write pattern when on the block device level in the btfs benchmark.](../images/file_access1-1024x748-4adffbf6.png)
 
 Write pattern when on the block device level in the btfs benchmark.
 

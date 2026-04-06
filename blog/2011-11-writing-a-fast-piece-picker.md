@@ -71,7 +71,7 @@ struct downloading_piece {
 std::unordered_set<int, downloading_piece> downloading;
 ```
 
-![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/piece_picker1.png "piece_picker")
+![](../images/piece_picker1-a944c52e.png)
 
 Illustration of the relationships between the lists in the piece picker
 

@@ -14,7 +14,7 @@ In the next major release of libtorrent detailed peer logging will be available 
 
 The current alert queue is literally a std::queue of pointers to alert objects. alert is the base class of all alert message objects. When a new message is posted, a new alert object is allocated and enqueued at the end of the queue. If the alert is a log message, the string associated with it also needs to be allocated.
 
-[![current-alert-queue](http://blog.libtorrent.org/wp-content/uploads/2015/04/current-alert-queue.png)](http://blog.libtorrent.org/wp-content/uploads/2015/04/current-alert-queue.png)
+![current-alert-queue](../images/current-alert-queue-e53f6052.png)
 
 When the client polls for alerts, the queue is swapped (under a mutex) and ownership is handed over. This way, alerts are not copied as they are delivered to the user. However, it *does* mean that all alert objects, the memory they allocate as well as the queue itself is, in constant churn. Because alerts are allocated and added to the queue that then is handed over to the client and released.
 
@@ -22,7 +22,7 @@ When the client polls for alerts, the queue is swapped (under a mutex) and owner
 
 In order to optimize memory allocations, by consolidating them, the new alert queue uses a *heterogeneous queue*. That is, a vector-like data structure, but with the ability to push back objects of different types. These objects are still allocated in one contiguous memory allocation, just like std::vector would. In order to access the objects in a meaningful way, they need to all derive from a shared base class which allows RTTI or dynamic dispatch to distinguish the concrete type in the heterogeneous queue. The memory layout ended up looking like this:
 
-[![heterogeneous-queue](http://blog.libtorrent.org/wp-content/uploads/2015/04/heterogeneous-queue.png)](http://blog.libtorrent.org/wp-content/uploads/2015/04/heterogeneous-queue.png)
+![heterogeneous-queue](../images/heterogeneous-queue-fd17c71f.png)
 
 A heterogeneous queue with 3 items in it.
 
@@ -40,7 +40,7 @@ The problem with (2) is that it would be very hard to implement and still honor 
 
 That leaves option (3), which is what libtorrent implements, as illustrated by the figure below.
 
-[![new-alert-queue](http://blog.libtorrent.org/wp-content/uploads/2015/04/new-alert-queue.png)](http://blog.libtorrent.org/wp-content/uploads/2015/04/new-alert-queue.png)
+![new-alert-queue](../images/new-alert-queue-6e963fcf.png)
 
 Also illustrated here is the last issue with the original alert queue, namely churn of the queue itself. Every time it was handed over to the client, ownership of it was also handed over (via swap()) and the client would free it. The new alert manager does not give up ownership of the queue, it simply keeps two alert queues and two stack allocators. Whenever the client asks for more alerts, the alerts the client received previously are invalidated and destructed and the queue they lived in is reused (without requiring any re-allocation) and pointers to the current queue are returned. The alert manager always add alerts and allocation to the queue that isn’t currently in use by the client.
 

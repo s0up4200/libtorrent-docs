@@ -32,7 +32,7 @@ One simple way of striving toward this goal is to, for fast peers, request entir
 
 Compare this to the other extreme, where you request the entire piece from 4 different peers, perfectly interleaved. In this case, all 4 peers may pull in the whole piece into their caches, and their cache hit rate will be low. See figure below:
 
-[![](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/interleaved_block_requests.png "interleaved_block_requests")](http://www.rasterbar.com/libtorrent_blog/wp-content/uploads/2011/11/interleaved_block_requests.png)
+![](../images/interleaved_block_requests-29abfa55.png)
 
 blocks of one piece being requested from 4 different peers, causing all 4 peers to (likely) cache this whole piece
 

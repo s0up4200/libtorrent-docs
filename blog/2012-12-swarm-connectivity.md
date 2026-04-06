@@ -20,7 +20,7 @@ This behavior, under perfect conditions, necessarily creates a complete graph of
 
 To illustrate this, I wrote a simple [simulator](https://github.com/arvidn/peer_ordering) of bittorrent swarms (just the connections between peers in the swarm). Below is the end-state of the swarm. Each node is a peer and each edge is a connection.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/frame2366-300x276.png "disconnected graph")](http://blog.libtorrent.org/wp-content/uploads/2012/12/frame2366.png)
+![](../images/frame2366-300x276-815aeed7.png)
 
 Illustrates the initial complete graph along with every other peer joining after it. Dotted red lines are connection attempts, not established connections. From simulation of a 1000 peers swarm
 
@@ -34,7 +34,7 @@ With such function, peers could decide which peers to disconnect based on their 
 
 With such scheme, the stable state at the end of the simulation instead looks like this:
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/frame2999-300x292.png "swarm with connection ordering")](http://blog.libtorrent.org/wp-content/uploads/2012/12/frame2999.png)
+![](../images/frame2999-300x292-5776cf95.png)
 
 Illustration of a 1000 peer swarm where peer connection has a global order. This is a well connected graph.
 
@@ -50,11 +50,11 @@ Going one step further, if trackers would tend to respond with high priority pee
 To illustrate the startup time improvements, the simulator tracks each peer that joins the swarm (after the initial complete graph, since their startup time is tied to the peer join rate). These tracked peers record the number of connections they have at their **join time + *t***.  
 The following graphs illustrates the distribution of peers based on how many peer connections they have at a certain number of simulation ticks after they joined.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/peer_startup_03.png "join-time for first-come-first-serve swarm")](http://blog.libtorrent.org/wp-content/uploads/2012/12/peer_startup_03.png)
+![](../images/peer_startup_03-23d5d631.png)
 
 The number of peer connections after joining the swarm, when peer connections are first-come-first-serve.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/peer_startup_04.png "join-time for swarm with peer connection ordering")](http://blog.libtorrent.org/wp-content/uploads/2012/12/peer_startup_04.png)
+![](../images/peer_startup_04-57307da2.png)
 
 The number of peer connections after joining the swarm, when peer connections are ordered.
 
@@ -64,11 +64,11 @@ It clearly shows a significant speed-up in acquiring peers when joining a swarm.
 
 A reasonable metric for how well connected a node is would be the average distance (as the number of hops) to the other nodes in the graph. The following plots illustrates the distribution over time of the average distance to other nodes, from all node’s perspectives.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/average_distance_0.png "average node distance, 1000 peers no connection ordering")](http://blog.libtorrent.org/wp-content/uploads/2012/12/average_distance_0.png)
+![](../images/average_distance_0-eec9df96.png)
 
 distribution of average peer distance over time in a 1000 peer swarm with first-come-first-serve connections
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/average_distance_01.png "average peer distance for connection ordered swarm")](http://blog.libtorrent.org/wp-content/uploads/2012/12/average_distance_01.png)
+![](../images/average_distance_01-9286f357.png)
 
 distribution of average peer distance over time in a 1000 peer swarm with connection ordering.
 
@@ -76,11 +76,11 @@ The reason why some nodes have an average distance of 1 is that the nodes belong
 
 The diameter of the graph is another metric, which is the worst case distance between nodes. i.e. the longest shortest-path between two nodes in the graph. The diameter doesn’t describe the graph in as much detail though, since it’s just the worst case, regardless of how many peers experience this distance.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/graph_diameter.png "diameter of graph with first-come-first-serve")](http://blog.libtorrent.org/wp-content/uploads/2012/12/graph_diameter.png)
+![](../images/graph_diameter-481cea0a.png)
 
 Diameter of the graph of 1000 peers and connections are first-come-first-serve.
 
-[![](http://blog.libtorrent.org/wp-content/uploads/2012/12/graph_diameter1.png "diameter with connection ordering")](http://blog.libtorrent.org/wp-content/uploads/2012/12/graph_diameter1.png)
+![](../images/graph_diameter1-536ed532.png)
 
 diameter of the graph with 1000 peers with connection ordering.
 

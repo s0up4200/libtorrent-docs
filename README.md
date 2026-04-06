@@ -17,3 +17,9 @@ Each directory has an `index.md` listing all files.
 ```
 
 Requires [uv](https://github.com/astral-sh/uv). Re-scrapes everything, re-downloads images, and rebuilds indexes.
+
+## License
+
+Original code and repo-authored metadata in this repository are licensed under MIT. See `LICENSE`.
+
+Mirrored third-party content under `docs/`, `blog/`, and `images/` is not relicensed by this repository. Copyright and licensing for that material remain with the upstream authors and rights holders. See `NOTICE`.

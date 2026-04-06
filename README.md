@@ -10,6 +10,12 @@ Scraped mirror of [libtorrent.org](https://libtorrent.org) documentation and [bl
 
 Each directory has an `index.md` listing all files.
 
+## Claude Code skill
+
+`skill/SKILL.md` is a [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) that teaches Claude how to navigate this repo and answer libtorrent questions. To use it, update the docs path inside `SKILL.md` to point at your local clone.
+
+The canonical version of this skill lives in [soup/skills](https://github.com/s0up4200/skills) — the copy here may lag behind.
+
 ## Updating
 
 ```bash

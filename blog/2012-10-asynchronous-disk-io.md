@@ -101,7 +101,3 @@ Posted in [disk](https://blog.libtorrent.org/category/disk/)
 ---
 
 ### 5 Comments
-
-### Leave a Reply [Cancel reply](/2012/10/asynchronous-disk-io/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F10%2Fasynchronous-disk-io%2F) to post a comment.

@@ -48,7 +48,3 @@ Posted in [network](https://blog.libtorrent.org/category/network/)
  [No Comments](https://blog.libtorrent.org/2012/01/seeding-a-million-torrents/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2012/01/seeding-a-million-torrents/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F01%2Fseeding-a-million-torrents%2F) to post a comment.

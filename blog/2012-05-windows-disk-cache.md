@@ -25,7 +25,3 @@ Posted in [disk](https://blog.libtorrent.org/category/disk/)
  [No Comments](https://blog.libtorrent.org/2012/05/windows-disk-cache/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2012/05/windows-disk-cache/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F05%2Fwindows-disk-cache%2F) to post a comment.

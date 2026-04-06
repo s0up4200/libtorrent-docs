@@ -130,7 +130,3 @@ Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
 ---
 
 ### 2 Comments
-
-### Leave a Reply [Cancel reply](/2015/03/bdecode-parsers/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2015%2F03%2Fbdecode-parsers%2F) to post a comment.

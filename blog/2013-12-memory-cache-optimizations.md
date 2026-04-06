@@ -64,7 +64,3 @@ Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
 ---
 
 ### 2 Comments
-
-### Leave a Reply [Cancel reply](/2013/12/memory-cache-optimizations/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2013%2F12%2Fmemory-cache-optimizations%2F) to post a comment.

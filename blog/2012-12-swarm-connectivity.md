@@ -101,7 +101,3 @@ Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](h
 ---
 
 ### 8 Comments
-
-### Leave a Reply [Cancel reply](/2012/12/swarm-connectivity/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F12%2Fswarm-connectivity%2F) to post a comment.

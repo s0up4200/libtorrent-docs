@@ -147,7 +147,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
 Tags: [performance](https://blog.libtorrent.org/tag/performance/)
 
 ---
-
-### Leave a Reply [Cancel reply](/2012/12/principles-of-high-performance-programs/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F12%2Fprinciples-of-high-performance-programs%2F) to post a comment.

@@ -295,6 +295,11 @@ def scrape_blog_post(url: str) -> tuple[str, str, str] | None:
         for el in post.select(selector):
             el.decompose()
 
+    # WordPress embeds the reply/login prompt inline at the end of the article.
+    for selector in ["div#respond", "div.comment-respond"]:
+        for el in post.select(selector):
+            el.decompose()
+
     # Remove the title element from content (we add it via frontmatter)
     for el in post.select("h1"):
         el.decompose()

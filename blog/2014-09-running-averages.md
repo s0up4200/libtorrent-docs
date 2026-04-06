@@ -88,7 +88,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
  [No Comments](https://blog.libtorrent.org/2014/09/running-averages/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2014/09/running-averages/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2014%2F09%2Frunning-averages%2F) to post a comment.

@@ -87,7 +87,3 @@ Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](h
  [No Comments](https://blog.libtorrent.org/2012/12/dht-security/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2012/12/dht-security/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2012%2F12%2Fdht-security%2F) to post a comment.

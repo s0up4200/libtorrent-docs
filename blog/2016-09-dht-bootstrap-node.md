@@ -94,7 +94,3 @@ Posted in [network](https://blog.libtorrent.org/category/network/), [optimizatio
  [No Comments](https://blog.libtorrent.org/2016/09/dht-bootstrap-node/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2016/09/dht-bootstrap-node/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2016%2F09%2Fdht-bootstrap-node%2F) to post a comment.

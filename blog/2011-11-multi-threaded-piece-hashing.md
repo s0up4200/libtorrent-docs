@@ -27,7 +27,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
 Tags: [hashing](https://blog.libtorrent.org/tag/hashing/), [performance](https://blog.libtorrent.org/tag/performance/)
 
 ---
-
-### Leave a Reply [Cancel reply](/2011/11/multi-threaded-piece-hashing/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2011%2F11%2Fmulti-threaded-piece-hashing%2F) to post a comment.

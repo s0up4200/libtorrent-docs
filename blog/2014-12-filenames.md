@@ -101,7 +101,3 @@ Posted in [operating system](https://blog.libtorrent.org/category/operating-syst
  [No Comments](https://blog.libtorrent.org/2014/12/filenames/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2014/12/filenames/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2014%2F12%2Ffilenames%2F) to post a comment.

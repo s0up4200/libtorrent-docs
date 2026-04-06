@@ -150,7 +150,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [c++](
 ---
 
 ### 1 Comment
-
-### Leave a Reply [Cancel reply](/2016/05/unsigned-integers/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2016%2F05%2Funsigned-integers%2F) to post a comment.

@@ -147,7 +147,3 @@ Posted in [protocol](https://blog.libtorrent.org/category/protocol/)
  [No Comments](https://blog.libtorrent.org/2020/09/bittorrent-v2/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2020/09/bittorrent-v2/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2020%2F09%2Fbittorrent-v2%2F) to post a comment.

@@ -46,7 +46,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [proto
  [No Comments](https://blog.libtorrent.org/2011/11/smart-ban/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2011/11/smart-ban/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2011%2F11%2Fsmart-ban%2F) to post a comment.

@@ -81,7 +81,3 @@ Posted in [API](https://blog.libtorrent.org/category/api/)
  [No Comments](https://blog.libtorrent.org/2022/06/evolving-the-torrent_info-api/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2022/06/evolving-the-torrent_info-api/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2022%2F06%2Fevolving-the-torrent_info-api%2F) to post a comment.

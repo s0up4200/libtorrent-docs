@@ -258,7 +258,3 @@ Posted in [disk](https://blog.libtorrent.org/category/disk/), [optimization](htt
  [No Comments](https://blog.libtorrent.org/2014/12/a-bittorrent-filesystem/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2014/12/a-bittorrent-filesystem/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2014%2F12%2Fa-bittorrent-filesystem%2F) to post a comment.

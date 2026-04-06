@@ -90,7 +90,3 @@ Posted in [Uncategorized](https://blog.libtorrent.org/category/uncategorized/)
  [No Comments](https://blog.libtorrent.org/2017/02/building-libtorrent-for-c-h-i-p/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2017/02/building-libtorrent-for-c-h-i-p/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2017%2F02%2Fbuilding-libtorrent-for-c-h-i-p%2F) to post a comment.

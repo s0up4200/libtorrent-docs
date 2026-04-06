@@ -49,7 +49,3 @@ Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
  [No Comments](https://blog.libtorrent.org/2015/04/libtorrent-alert-queue/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2015/04/libtorrent-alert-queue/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2015%2F04%2Flibtorrent-alert-queue%2F) to post a comment.

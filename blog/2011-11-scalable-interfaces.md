@@ -64,7 +64,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [user 
  [No Comments](https://blog.libtorrent.org/2011/11/scalable-interfaces/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2011/11/scalable-interfaces/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2011%2F11%2Fscalable-interfaces%2F) to post a comment.

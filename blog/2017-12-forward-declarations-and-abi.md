@@ -82,7 +82,3 @@ Posted in [c++](https://blog.libtorrent.org/category/c/)
  [No Comments](https://blog.libtorrent.org/2017/12/forward-declarations-and-abi/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2017/12/forward-declarations-and-abi/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2017%2F12%2Fforward-declarations-and-abi%2F) to post a comment.

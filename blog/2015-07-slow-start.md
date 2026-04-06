@@ -71,7 +71,3 @@ Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [netwo
  [No Comments](https://blog.libtorrent.org/2015/07/slow-start/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2015/07/slow-start/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2015%2F07%2Fslow-start%2F) to post a comment.

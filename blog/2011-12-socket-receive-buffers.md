@@ -48,7 +48,3 @@ Posted in [network](https://blog.libtorrent.org/category/network/), [optimizatio
  [No Comments](https://blog.libtorrent.org/2011/12/socket-receive-buffers/#respond)
 
 ---
-
-### Leave a Reply [Cancel reply](/2011/12/socket-receive-buffers/#respond)
-
-You must be [logged in](https://blog.libtorrent.org/wp-login.php?redirect_to=https%3A%2F%2Fblog.libtorrent.org%2F2011%2F12%2Fsocket-receive-buffers%2F) to post a comment.

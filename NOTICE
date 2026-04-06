@@ -2,5 +2,7 @@ License scope:
 
 - `LICENSE` applies only to original code and repo-authored metadata in this repository, including `scrape.py`, `update.sh`, and `README.md`.
 - Mirrored third-party content under `docs/`, `blog/`, and `images/` is not relicensed by this repository.
+- Content under `docs/` mirrors material from `libtorrent.org`, part of libtorrent by Arvid Norberg and contributors.
+- Content under `blog/` mirrors posts from `blog.libtorrent.org`, authored by Arvid Norberg unless otherwise noted upstream.
 - Copyright for mirrored content remains with its upstream authors and rights holders.
 - If you reuse mirrored content, verify the upstream license or obtain permission from the upstream rights holder.

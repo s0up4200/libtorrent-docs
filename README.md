@@ -22,4 +22,4 @@ Requires [uv](https://github.com/astral-sh/uv). Re-scrapes everything, re-downlo
 
 Original code and repo-authored metadata in this repository are licensed under MIT. See `LICENSE`.
 
-Mirrored third-party content under `docs/`, `blog/`, and `images/` is not relicensed by this repository. Copyright and licensing for that material remain with the upstream authors and rights holders. See `NOTICE`.
+Mirrored third-party content under `docs/`, `blog/`, and `images/` is not relicensed by this repository. `docs/` mirrors libtorrent.org material from Arvid Norberg and contributors, and `blog/` mirrors blog.libtorrent.org posts by Arvid Norberg unless otherwise noted upstream. Copyright and licensing for that material remain with the upstream authors and rights holders. See `NOTICE`.

@@ -6,11 +6,12 @@ Scraped mirror of libtorrent.org documentation and blog, stored as markdown for 
 
 ```
 libtorrent-docs/
-├── docs/           # libtorrent.org documentation (~46 pages)
+├── docs/           # libtorrent.org documentation (~47 pages)
 │   └── index.md    # Auto-generated listing of all docs
-├── blog/           # blog.libtorrent.org posts (~30 posts, 2011–2022)
+├── blog/           # blog.libtorrent.org posts (~31 posts, 2011–2022)
 │   └── index.md    # Auto-generated listing with dates
 ├── images/         # Locally downloaded images from docs and blog
+├── AGENTS.md       # Symlink to CLAUDE.md (for non-Claude agents)
 ├── scrape.py       # Scraper script (PEP 723 inline deps, run via uv)
 └── update.sh       # Entry point: ./update.sh
 ```

@@ -11,6 +11,8 @@ libtorrent-docs/
 ├── blog/           # blog.libtorrent.org posts (~31 posts, 2011–2022)
 │   └── index.md    # Auto-generated listing with dates
 ├── images/         # Locally downloaded images from docs and blog
+├── skill/          # Claude Code skill for answering libtorrent questions
+│   └── SKILL.md    # Install or reference — see note inside about paths
 ├── AGENTS.md       # Symlink to CLAUDE.md (for non-Claude agents)
 ├── scrape.py       # Scraper script (PEP 723 inline deps, run via uv)
 └── update.sh       # Entry point: ./update.sh

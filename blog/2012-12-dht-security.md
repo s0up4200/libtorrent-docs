@@ -4,8 +4,6 @@ date: "2012-12"
 source: "https://blog.libtorrent.org/2012/12/dht-security/"
 ---
 
-Sunday, December 23rd, 2012 by arvid
-
 One of the vulnerabilities of typical DHTs, in particular the bittorrent DHT, is the fact that participants can choose their own node ID.
 
 This enables an attacker to deliberately place themselves at a locaton in the DHT where they know they will be responsible for storing some specific data. At that point, there are a few naughty things that can be done, for example:
@@ -81,9 +79,5 @@ The upshot of this is that we can use no more bits from the hash of the IP than 
 1. Find another hash function that is closer to a 1:1 mapping of the bit prefix
 2. Run the hash digest through whitening to condense the entropy
 3. be satisfied with the 28 bits crc32 provides and go with that
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2012/12/dht-security/#respond)
 
 ---

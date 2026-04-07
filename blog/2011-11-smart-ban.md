@@ -4,8 +4,6 @@ date: "2011-11"
 source: "https://blog.libtorrent.org/2011/11/smart-ban/"
 ---
 
-Sunday, November 20th, 2011 by arvid
-
 Bittorrent lets you verify data you receive from the swarm against the SHA-1 hashes in the .torrent file. This enable clients to ban peers that sends data that fails the hash check, and thus cannot be trusted. However, the integrity checking can only be done at piece level. A piece may be several megabytes, and downloaded from multiple peers. If a piece fails, how do you know which peer sent the bad block?
 
 The straight forward solution is to, for each peer, keep track of how many pieces it has participated in that succeeded, and how many pieces it has participated in that has failed. If the success/failure ratio drops below some threshold (and we have at least some number of samples), the peer is considered untrustworthy, and is dropped.
@@ -40,9 +38,5 @@ The main problem with this extension is that it was mainly designed to make the 
 3. disk I/O performance would drop since the contiguous blocks read and written to disks would become a lot smaller
 
 Number 3 is the most important one. A revised hash tree extension should define the leafs to always be 16 kiB, regardless of the piece size. While we’re at it, there could be one hash tree per file, and make all pieces aligned to file boundaries, but that’s a pretty radical change to the protocol.
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/11/smart-ban/#respond)
 
 ---

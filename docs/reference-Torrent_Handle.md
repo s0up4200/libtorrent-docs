@@ -1,11 +1,7 @@
 ---
-title: "block_info"
+title: "Torrent Handle"
 source: "https://libtorrent.org/reference-Torrent_Handle.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+block_info&labels=documentation&body=Documentation+under+heading+%22class+block_info%22+could+be+improved)]
 
 # block\_info
 
@@ -35,8 +31,6 @@ struct block_info
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:block_info%3A%3A%5Bset_peer%28%29+peer%28%29%5D&labels=documentation&body=Documentation+under+heading+%22block_info%3A%3A%5Bset_peer%28%29+peer%28%29%5D%22+could+be+improved)]
-
 ## set\_peer() peer()
 
 ```cpp
@@ -45,8 +39,6 @@ void set_peer (tcp::endpoint const& ep);
 ```
 
 The peer is the ip address of the peer this block was downloaded from.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+block_state_t&labels=documentation&body=Documentation+under+heading+%22enum+block_state_t%22+could+be+improved)]
 
 ## enum block\_state\_t
 
@@ -59,29 +51,19 @@ Declared in "[libtorrent/torrent\_handle.hpp](include/libtorrent/torrent_handle.
 | writing | 2 | The block has been downloaded and is currently queued for being written to disk. |
 | finished | 3 | The block has been written to disk. |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:block_info%3A%3A%5Bbytes_progress%5D&labels=documentation&body=Documentation+under+heading+%22block_info%3A%3A%5Bbytes_progress%5D%22+could+be+improved)]
-
 bytes\_progress
 :   the number of bytes that have been received for this block
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:block_info%3A%3A%5Bblock_size%5D&labels=documentation&body=Documentation+under+heading+%22block_info%3A%3A%5Bblock_size%5D%22+could+be+improved)]
 
 block\_size
 :   the total number of bytes in this block.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:block_info%3A%3A%5Bstate%5D&labels=documentation&body=Documentation+under+heading+%22block_info%3A%3A%5Bstate%5D%22+could+be+improved)]
-
 state
 :   the state this block is in (see [block\_state\_t](reference-Torrent_Handle.md#block_state_t))
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:block_info%3A%3A%5Bnum_peers%5D&labels=documentation&body=Documentation+under+heading+%22block_info%3A%3A%5Bnum_peers%5D%22+could+be+improved)]
 
 num\_peers
 :   the number of peers that is currently requesting this block. Typically
     this is 0 or 1, but at the end of the torrent blocks may be requested
     by more peers in parallel to speed things up.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+partial_piece_info&labels=documentation&body=Documentation+under+heading+%22class+partial_piece_info%22+could+be+improved)]
 
 # partial\_piece\_info
 
@@ -102,35 +84,23 @@ struct partial_piece_info
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Bpiece_index%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Bpiece_index%5D%22+could+be+improved)]
-
 piece\_index
 :   the index of the piece in question. blocks\_in\_piece is the number
     of blocks in this particular piece. This number will be the same for
     most pieces, but
     the last piece may have fewer blocks than the standard pieces.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Bblocks_in_piece%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Bblocks_in_piece%5D%22+could+be+improved)]
-
 blocks\_in\_piece
 :   the number of blocks in this piece
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Bfinished%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Bfinished%5D%22+could+be+improved)]
 
 finished
 :   the number of blocks that are in the finished state
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Bwriting%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Bwriting%5D%22+could+be+improved)]
-
 writing
 :   the number of blocks that are in the writing state
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Brequested%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Brequested%5D%22+could+be+improved)]
-
 requested
 :   the number of blocks that are in the requested state
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:partial_piece_info%3A%3A%5Bblocks%5D&labels=documentation&body=Documentation+under+heading+%22partial_piece_info%3A%3A%5Bblocks%5D%22+could+be+improved)]
 
 blocks
 :   this is an array of blocks\_in\_piece number of
@@ -143,8 +113,6 @@ blocks
     [get\_download\_queue()](reference-Torrent_Handle.md#get_download_queue()) is called, it will be invalidated.
     In the case of [piece\_info\_alert](reference-Alerts.md#piece_info_alert), these pointers point into the [alert](reference-Alerts.md#alert)
     object itself, and will be invalidated when the [alert](reference-Alerts.md#alert) destruct.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_handle&labels=documentation&body=Documentation+under+heading+%22class+torrent_handle%22+could+be+improved)]
 
 # torrent\_handle
 
@@ -308,8 +276,6 @@ struct torrent_handle
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Btorrent_handle%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Btorrent_handle%28%29%5D%22+could+be+improved)]
-
 ## torrent\_handle()
 
 ```cpp
@@ -318,8 +284,6 @@ torrent_handle () noexcept = default;
 
 constructs a torrent handle that does not refer to a torrent.
 i.e. [is\_valid()](reference-Torrent_Info.md#is_valid()) will return false.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Badd_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Badd_piece%28%29%5D%22+could+be+improved)]
 
 ## add\_piece()
 
@@ -356,8 +320,6 @@ to be written at a later point.
 The overload taking a std::vector<char> is not blocking, it will
 send the buffer to the main thread and return immediately.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bread_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bread_piece%28%29%5D%22+could+be+improved)]
-
 ## read\_piece()
 
 ```cpp
@@ -375,8 +337,6 @@ call, it will always be posted, regardless of the [alert](reference-Alerts.md#al
 Note that if you read multiple pieces, the read operations are not
 guaranteed to finish in the same order as you initiated them.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bhave_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bhave_piece%28%29%5D%22+could+be+improved)]
-
 ## have\_piece()
 
 ```cpp
@@ -385,8 +345,6 @@ bool have_piece (piece_index_t piece) const;
 
 Returns true if this piece has been completely downloaded and written
 to disk, and false otherwise.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bget_peer_info%28%29+post_peer_info%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bget_peer_info%28%29+post_peer_info%28%29%5D%22+could+be+improved)]
 
 ## get\_peer\_info() post\_peer\_info()
 
@@ -407,8 +365,6 @@ that will be cleared and filled with one [entry](reference-Bencoding.md#entry) f
 connected to this torrent, given the handle is valid. Each [entry](reference-Bencoding.md#entry) in
 the vector contains information about that particular peer. See
 [peer\_info](reference-Core.md#peer_info).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bstatus%28%29+post_status%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bstatus%28%29+post_status%28%29%5D%22+could+be+improved)]
 
 ## status() post\_status()
 
@@ -437,8 +393,6 @@ consider calling session::post\_torrent\_updates()`` instead.
 By default everything is included. The flags you can use to decide
 what to *include* are defined in this class.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bpost_download_queue%28%29+get_download_queue%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bpost_download_queue%28%29+get_download_queue%28%29%5D%22+could+be+improved)]
-
 ## post\_download\_queue() get\_download\_queue()
 
 ```cpp
@@ -453,8 +407,6 @@ get\_download\_queue() is a synchronous call and returns a vector
 with information about pieces that are partially downloaded or not
 downloaded but partially requested. See [partial\_piece\_info](reference-Torrent_Handle.md#partial_piece_info) for the
 fields in the returned vector.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Breset_piece_deadline%28%29+set_piece_deadline%28%29+clear_piece_deadlines%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Breset_piece_deadline%28%29+set_piece_deadline%28%29+clear_piece_deadlines%28%29%5D%22+could+be+improved)]
 
 ## reset\_piece\_deadline() set\_piece\_deadline() clear\_piece\_deadlines()
 
@@ -486,8 +438,6 @@ priority.
 clear\_piece\_deadlines() removes deadlines on all pieces in
 the torrent. As if [reset\_piece\_deadline()](reference-Torrent_Handle.md#reset_piece_deadline()) was called on all pieces.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bfile_progress%28%29+post_file_progress%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bfile_progress%28%29+post_file_progress%28%29%5D%22+could+be+improved)]
-
 ## file\_progress() post\_file\_progress()
 
 ```cpp
@@ -514,8 +464,6 @@ fully downloaded and passed the hash check count. When specifying
 piece granularity, the operation is a lot cheaper, since libtorrent
 already keeps track of this internally and no calculation is required.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bfile_status%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bfile_status%28%29%5D%22+could+be+improved)]
-
 ## file\_status()
 
 ```cpp
@@ -530,8 +478,6 @@ torrent are currently open.
 
 See [open\_file\_state](reference-Custom_Storage.md#open_file_state)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bclear_error%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bclear_error%28%29%5D%22+could+be+improved)]
-
 ## clear\_error()
 
 ```cpp
@@ -540,8 +486,6 @@ void clear_error () const;
 
 If the torrent is in an error state (i.e. torrent\_status::error is
 non-empty), this will clear the error and start the torrent again.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Badd_tracker%28%29+post_trackers%28%29+replace_trackers%28%29+trackers%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Badd_tracker%28%29+post_trackers%28%29+replace_trackers%28%29+trackers%28%29%5D%22+could+be+improved)]
 
 ## add\_tracker() post\_trackers() replace\_trackers() trackers()
 
@@ -574,8 +518,6 @@ The updated set of trackers will be saved in the resume data, and when
 a torrent is started with resume data, the trackers from the resume
 data will replace the original ones.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Burl_seeds%28%29+add_url_seed%28%29+remove_url_seed%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Burl_seeds%28%29+add_url_seed%28%29+remove_url_seed%28%29%5D%22+could+be+improved)]
-
 ## url\_seeds() add\_url\_seed() remove\_url\_seed()
 
 ```cpp
@@ -595,8 +537,6 @@ the list.
 
 See [http seeding](manual-ref.md#http-seeding) for more information.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Badd_http_seed%28%29+http_seeds%28%29+remove_http_seed%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Badd_http_seed%28%29+http_seeds%28%29+remove_http_seed%28%29%5D%22+could+be+improved)]
-
 ## add\_http\_seed() http\_seeds() remove\_http\_seed()
 
 ```cpp
@@ -609,8 +549,6 @@ These functions are identical as the \*\_url\_seed() variants, but
 they operate on [BEP 17](https://www.bittorrent.org/beps/bep_0017.html) web seeds instead of [BEP 19](https://www.bittorrent.org/beps/bep_0019.html).
 
 See [http seeding](manual-ref.md#http-seeding) for more information.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Badd_extension%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Badd_extension%28%29%5D%22+could+be+improved)]
 
 ## add\_extension()
 
@@ -626,8 +564,6 @@ passing in the internal torrent object and the specified userdata
 pointer. The function is expected to return a shared pointer to
 a [torrent\_plugin](reference-Plugins.md#torrent_plugin) instance.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bset_metadata%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bset_metadata%28%29%5D%22+could+be+improved)]
-
 ## set\_metadata()
 
 ```cpp
@@ -641,8 +577,6 @@ a metadata\_received\_alert is generated. The function returns true
 if the metadata is successfully set on the torrent, and false
 otherwise. If the torrent already has metadata, this function will not
 affect the torrent, and false will be returned.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bis_valid%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bis_valid%28%29%5D%22+could+be+improved)]
 
 ## is\_valid()
 
@@ -666,8 +600,6 @@ Unlike other member functions which return a value, [is\_valid()](reference-Torr
 completes immediately, without blocking on a result from the
 network thread. Also unlike other functions, it never throws
 the system\_error exception.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bresume%28%29+pause%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bresume%28%29+pause%28%29%5D%22+could+be+improved)]
 
 ## resume() pause()
 
@@ -696,8 +628,6 @@ does not make sense to pause an auto-managed torrent without making it
 not auto-managed first. Torrents are auto-managed by default when added
 to the [session](reference-Session.md#session). For more information, see [queuing](manual-ref.md#queuing).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bunset_flags%28%29+set_flags%28%29+flags%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bunset_flags%28%29+set_flags%28%29+flags%28%29%5D%22+could+be+improved)]
-
 ## unset\_flags() set\_flags() flags()
 
 ```cpp
@@ -721,8 +651,6 @@ The seed\_mode flag is special, it can only be cleared once the
 torrent has been added, and it can only be set as part of the
 [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params) flags, when adding the torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bflush_cache%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bflush_cache%28%29%5D%22+could+be+improved)]
-
 ## flush\_cache()
 
 ```cpp
@@ -738,8 +666,6 @@ more data for the torrent, but you are guaranteed that whatever cached
 data libtorrent had by the time you called
 torrent\_handle::flush\_cache() has been written to disk.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bforce_recheck%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bforce_recheck%28%29%5D%22+could+be+improved)]
-
 ## force\_recheck()
 
 ```cpp
@@ -754,8 +680,6 @@ compared to the piece hashes). Once the check is complete, the torrent
 will start connecting to peers again, as normal.
 The torrent will be placed last in queue, i.e. its queue position
 will be the highest of all torrents in the [session](reference-Session.md#session).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bsave_resume_data%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bsave_resume_data%28%29%5D%22+could+be+improved)]
 
 ## save\_resume\_data()
 
@@ -862,8 +786,6 @@ the [alert](reference-Alerts.md#alert), but it has not been received yet. Those 
 report that they don't need to save resume data again, and skipped by
 the initial loop, and thwart the counter otherwise.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bneed_save_resume_data%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bneed_save_resume_data%28%29%5D%22+could+be+improved)]
-
 ## need\_save\_resume\_data()
 
 ```cpp
@@ -888,8 +810,6 @@ A torrent's resume data is considered saved as soon as the
 [save\_resume\_data\_alert](reference-Alerts.md#save_resume_data_alert) is posted. It is important to make sure this
 [alert](reference-Alerts.md#alert) is received and handled in order for this function to be
 meaningful.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bqueue_position_top%28%29+queue_position_up%28%29+queue_position%28%29+queue_position_bottom%28%29+queue_position_down%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bqueue_position_top%28%29+queue_position_up%28%29+queue_position%28%29+queue_position_bottom%28%29+queue_position_down%28%29%5D%22+could+be+improved)]
 
 ## queue\_position\_top() queue\_position\_up() queue\_position() queue\_position\_bottom() queue\_position\_down()
 
@@ -922,8 +842,6 @@ the queue. Up means closer to the front and down means closer to the
 back of the queue. Top and bottom refers to the front and the back of
 the queue respectively.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bqueue_position_set%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bqueue_position_set%28%29%5D%22+could+be+improved)]
-
 ## queue\_position\_set()
 
 ```cpp
@@ -933,8 +851,6 @@ void queue_position_set (queue_position_t p) const;
 updates the position in the queue for this torrent. The relative order
 of all other torrents remain intact but their numerical queue position
 shifts to make space for this torrent's new position
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bset_ssl_certificate_buffer%28%29+set_ssl_certificate%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bset_ssl_certificate_buffer%28%29+set_ssl_certificate%28%29%5D%22+could+be+improved)]
 
 ## set\_ssl\_certificate\_buffer() set\_ssl\_certificate()
 
@@ -978,8 +894,6 @@ If you receive a [torrent\_need\_cert\_alert](reference-Alerts.md#torrent_need_c
 provide a valid cert. If you don't have a cert you won't be allowed to
 connect to any peers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Btorrent_file%28%29+torrent_file_with_hashes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Btorrent_file%28%29+torrent_file_with_hashes%28%29%5D%22+could+be+improved)]
-
 ## torrent\_file() torrent\_file\_with\_hashes()
 
 ```cpp
@@ -1021,8 +935,6 @@ the [torrent\_info](reference-Torrent_Info.md#torrent_info) returned from [torre
 torrent completes downloading all files, becoming a seed, you can
 make a .torrent file from it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bpiece_layers%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bpiece_layers%28%29%5D%22+could+be+improved)]
-
 ## piece\_layers()
 
 ```cpp
@@ -1033,8 +945,6 @@ returns the piece layers for all files in the torrent. If this is a
 v1 torrent (and doesn't have any piece layers) it returns an empty
 vector. This is a blocking call that will synchronize with the
 libtorrent network thread.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bpost_piece_availability%28%29+piece_availability%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bpost_piece_availability%28%29+piece_availability%28%29%5D%22+could+be+improved)]
 
 ## post\_piece\_availability() piece\_availability()
 
@@ -1054,8 +964,6 @@ piece\_availability() fills the specified std::vector<int>
 with the availability for each piece in this torrent. libtorrent does
 not keep track of availability for seeds, so if the torrent is
 seeding the availability for all pieces is reported as 0.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bprioritize_pieces%28%29+get_piece_priorities%28%29+piece_priority%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bprioritize_pieces%28%29+get_piece_priorities%28%29+piece_priority%28%29%5D%22+could+be+improved)]
 
 ## prioritize\_pieces() get\_piece\_priorities() piece\_priority()
 
@@ -1101,8 +1009,6 @@ in the torrent. Each element is the current priority of that piece.
 It's possible to cancel the effect of *file* priorities by setting the
 priorities for the affected pieces. Care has to be taken when mixing
 usage of file- and piece priorities.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bprioritize_files%28%29+get_file_priorities%28%29+file_priority%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bprioritize_files%28%29+get_file_priorities%28%29+file_priority%28%29%5D%22+could+be+improved)]
 
 ## prioritize\_files() get\_file\_priorities() file\_priority()
 
@@ -1152,8 +1058,6 @@ Moving data from a file into the part file is currently not
 supported. If a file has its priority set to 0 *after* it has already
 been created, it will not be moved into the partfile.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bforce_dht_announce%28%29+force_lsd_announce%28%29+force_reannounce%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bforce_dht_announce%28%29+force_lsd_announce%28%29+force_reannounce%28%29%5D%22+could+be+improved)]
-
 ## force\_dht\_announce() force\_lsd\_announce() force\_reannounce()
 
 ```cpp
@@ -1183,8 +1087,6 @@ immediately.
 force\_lsd\_announce will announce the torrent on LSD
 immediately.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bscrape_tracker%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bscrape_tracker%28%29%5D%22+could+be+improved)]
-
 ## scrape\_tracker()
 
 ```cpp
@@ -1202,8 +1104,6 @@ This request will specifically update the num\_complete and
 num\_incomplete fields in the [torrent\_status](reference-Torrent_Status.md#torrent_status) struct once it
 completes. When it completes, it will generate a [scrape\_reply\_alert](reference-Alerts.md#scrape_reply_alert).
 If it fails, it will generate a [scrape\_failed\_alert](reference-Alerts.md#scrape_failed_alert).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bset_download_limit%28%29+download_limit%28%29+set_upload_limit%28%29+upload_limit%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bset_download_limit%28%29+download_limit%28%29+set_upload_limit%28%29+upload_limit%28%29%5D%22+could+be+improved)]
 
 ## set\_download\_limit() download\_limit() set\_upload\_limit() upload\_limit()
 
@@ -1229,8 +1129,6 @@ setting, for upload and download, respectively.
 
 Local peers are not rate limited by default. see [peer classes](manual-ref.md#peer-classes).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bconnect_peer%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bconnect_peer%28%29%5D%22+could+be+improved)]
-
 ## connect\_peer()
 
 ```cpp
@@ -1250,8 +1148,6 @@ tracker, pex, dht etc.
 
 For possible values of flags, see [pex\_flags\_t](reference-Core.md#pex_flags_t).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bclear_peers%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bclear_peers%28%29%5D%22+could+be+improved)]
-
 ## clear\_peers()
 
 ```cpp
@@ -1261,8 +1157,6 @@ void clear_peers ();
 This will disconnect all peers and clear the peer list for this
 torrent. New peers will have to be acquired before resuming, from
 trackers, DHT or local service discovery, for example.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bset_max_uploads%28%29+max_uploads%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bset_max_uploads%28%29+max_uploads%28%29%5D%22+could+be+improved)]
 
 ## set\_max\_uploads() max\_uploads()
 
@@ -1278,8 +1172,6 @@ this is the global unchoke slots limit, set by unchoke\_slots\_limit in
 [settings\_pack](reference-Settings.md#settings_pack).
 
 max\_uploads() returns the current settings.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bset_max_connections%28%29+max_connections%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bset_max_connections%28%29+max_connections%28%29%5D%22+could+be+improved)]
 
 ## set\_max\_connections() max\_connections()
 
@@ -1297,8 +1189,6 @@ global limit of the number of connections, set by
 connections\_limit in [settings\_pack](reference-Settings.md#settings_pack).
 
 max\_connections() returns the current settings.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bmove_storage%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bmove_storage%28%29%5D%22+could+be+improved)]
 
 ## move\_storage()
 
@@ -1361,8 +1251,6 @@ This makes it proportionally more expensive to move a large torrent
 when only few pieces have been downloaded, since the files are then
 allocated with zeros in the destination directory.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Brename_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Brename_file%28%29%5D%22+could+be+improved)]
-
 ## rename\_file()
 
 ```cpp
@@ -1372,8 +1260,6 @@ void rename_file (file_index_t index, std::string const& new_name) const;
 Renames the file with the given index asynchronously. The rename
 operation is complete when either a [file\_renamed\_alert](reference-Alerts.md#file_renamed_alert) or
 [file\_rename\_failed\_alert](reference-Alerts.md#file_rename_failed_alert) is posted.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Binfo_hashes%28%29+info_hash%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Binfo_hashes%28%29+info_hash%28%29%5D%22+could+be+improved)]
 
 ## info\_hashes() info\_hash()
 
@@ -1389,8 +1275,6 @@ The info\_hash() returns the SHA-1 info-hash for v1 torrents and a
 truncated hash for v2 torrents. For the full v2 info-hash, use
 info\_hashes() instead.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Boperator%3D%3D%28%29+operator%3C%28%29+operator%21%3D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Boperator%3D%3D%28%29+operator%3C%28%29+operator%21%3D%28%29%5D%22+could+be+improved)]
-
 ## operator==() operator<() operator!=()
 
 ```cpp
@@ -1402,8 +1286,6 @@ bool operator== (const torrent_handle& h) const;
 comparison operators. The order of the torrents is unspecified
 but stable.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bid%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bid%28%29%5D%22+could+be+improved)]
-
 ## id()
 
 ```cpp
@@ -1412,8 +1294,6 @@ std::uint32_t id () const;
 
 returns a unique identifier for this torrent. It's not a dense index.
 It's not preserved across sessions.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bnative_handle%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bnative_handle%28%29%5D%22+could+be+improved)]
 
 ## native\_handle()
 
@@ -1433,8 +1313,6 @@ built with the exact same build configuration as libtorrent itself.
 i.e. the TORRENT\_ macros must match between libtorrent and the
 client builds.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Buserdata%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Buserdata%28%29%5D%22+could+be+improved)]
-
 ## userdata()
 
 ```cpp
@@ -1442,8 +1320,6 @@ client_data_t userdata () const;
 ```
 
 returns the userdata pointer as set in [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bin_session%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bin_session%28%29%5D%22+could+be+improved)]
 
 ## in\_session()
 
@@ -1457,8 +1333,6 @@ session::remove\_torrent() is called, and false afterward.
 Note that this is a blocking function, unlike [torrent\_handle::is\_valid()](reference-Torrent_Handle.md#is_valid())
 which returns immediately.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Boverwrite_existing%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Boverwrite_existing%5D%22+could+be+improved)]
-
 overwrite\_existing
 :   instruct libtorrent to overwrite any data that may already have been
     downloaded with the data of the new piece being added. Using this
@@ -1466,41 +1340,27 @@ overwrite\_existing
     peers may have some unexpected consequences, as blocks currently
     being downloaded from peers may not be replaced.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_distributed_copies%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_distributed_copies%5D%22+could+be+improved)]
-
 query\_distributed\_copies
 :   calculates distributed\_copies, distributed\_full\_copies and
     distributed\_fraction.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_accurate_download_counters%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_accurate_download_counters%5D%22+could+be+improved)]
 
 query\_accurate\_download\_counters
 :   includes partial downloaded blocks in total\_done and
     total\_wanted\_done.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_last_seen_complete%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_last_seen_complete%5D%22+could+be+improved)]
-
 query\_last\_seen\_complete
 :   includes last\_seen\_complete.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_pieces%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_pieces%5D%22+could+be+improved)]
-
 query\_pieces
 :   populate the pieces field in [torrent\_status](reference-Torrent_Status.md#torrent_status).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_verified_pieces%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_verified_pieces%5D%22+could+be+improved)]
 
 query\_verified\_pieces
 :   includes verified\_pieces (only applies to torrents in *seed
     mode*).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_torrent_file%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_torrent_file%5D%22+could+be+improved)]
-
 query\_torrent\_file
 :   includes torrent\_file, which is all the static information from
     the .torrent file.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_name%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_name%5D%22+could+be+improved)]
 
 query\_name
 :   includes name, the name of the torrent. This is either derived
@@ -1508,13 +1368,9 @@ query\_name
     or possibly some other source. If the name of the torrent is not
     known, this is an empty string.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bquery_save_path%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bquery_save_path%5D%22+could+be+improved)]
-
 query\_save\_path
 :   includes save\_path, the path to the directory the files of the
     torrent are saved to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Balert_when_available%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Balert_when_available%5D%22+could+be+improved)]
 
 alert\_when\_available
 :   used to ask libtorrent to send an [alert](reference-Alerts.md#alert) once the piece has been
@@ -1522,15 +1378,11 @@ alert\_when\_available
     [read\_piece\_alert](reference-Alerts.md#read_piece_alert) [alert](reference-Alerts.md#alert) will be delivered, with the piece data, when
     it's downloaded.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bpiece_granularity%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bpiece_granularity%5D%22+could+be+improved)]
-
 piece\_granularity
 :   only calculate file progress at piece granularity. This makes
     the [file\_progress()](reference-Torrent_Handle.md#file_progress()) call cheaper and also only takes bytes that
     have passed the hash check into account, so progress cannot
     regress in this mode.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bgraceful_pause%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bgraceful_pause%5D%22+could+be+improved)]
 
 graceful\_pause
 :   will delay the disconnect of peers that we're still downloading
@@ -1540,28 +1392,20 @@ graceful\_pause
     disconnected. This is a graceful shut down of the torrent in the sense
     that no downloaded bytes are wasted.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bflush_disk_cache%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bflush_disk_cache%5D%22+could+be+improved)]
-
 flush\_disk\_cache
 :   the disk cache will be flushed before creating the resume data.
     This avoids a problem with file timestamps in the resume data in
     case the cache hasn't been flushed yet.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bsave_info_dict%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bsave_info_dict%5D%22+could+be+improved)]
 
 save\_info\_dict
 :   the resume data will contain the metadata from the torrent file as
     well. This is useful for clients that don't keep .torrent files
     around separately, or for torrents that were added via a magnet link.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bonly_if_modified%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bonly_if_modified%5D%22+could+be+improved)]
-
 only\_if\_modified
 :   this flag has the same behavior as the combination of:
     if\_counters\_changed | if\_download\_progress | if\_config\_changed |
     if\_state\_changed | if\_metadata\_changed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bif_counters_changed%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bif_counters_changed%5D%22+could+be+improved)]
 
 if\_counters\_changed
 :   save resume data if any [counters](reference-Stats.md#counters) has changed since the last time
@@ -1569,15 +1413,11 @@ if\_counters\_changed
     time [counters](reference-Stats.md#counters) and scrape data. A torrent that is not paused will have
     its active time [counters](reference-Stats.md#counters) incremented continuously.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bif_download_progress%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bif_download_progress%5D%22+could+be+improved)]
-
 if\_download\_progress
 :   save the resume data if any blocks have been downloaded since the
     last time resume data was saved. This includes:
     \* checking existing files on disk
     \* downloading a block from a peer
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bif_config_changed%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bif_config_changed%5D%22+could+be+improved)]
 
 if\_config\_changed
 :   save the resume data if configuration options changed since last time
@@ -1594,8 +1434,6 @@ if\_config\_changed
     \* files renamed
     \* storage moved (save\_path changed)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bif_state_changed%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bif_state_changed%5D%22+could+be+improved)]
-
 if\_state\_changed
 :   save the resume data if torrent state has changed since last time the
     resume data was saved. This includes:
@@ -1604,8 +1442,6 @@ if\_state\_changed
     \* super-seeding
     \* seed-mode
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bif_metadata_changed%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bif_metadata_changed%5D%22+could+be+improved)]
-
 if\_metadata\_changed
 :   save the resume data if any *metadata* changed since the last time
     resume data was saved. This includes:
@@ -1613,14 +1449,10 @@ if\_metadata\_changed
     \* add/remove trackers
     \* receiving metadata for a magnet link
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_handle%3A%3A%5Bignore_min_interval%5D&labels=documentation&body=Documentation+under+heading+%22torrent_handle%3A%3A%5Bignore_min_interval%5D%22+could+be+improved)]
-
 ignore\_min\_interval
 :   by default, force-reannounce will still honor the min-interval
     published by the tracker. If this flag is set, it will be ignored
     and the tracker is announced immediately.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hash_value%28%29&labels=documentation&body=Documentation+under+heading+%22hash_value%28%29%22+could+be+improved)]
 
 # hash\_value()
 

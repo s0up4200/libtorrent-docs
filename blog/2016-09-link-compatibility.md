@@ -4,8 +4,6 @@ date: "2016-09"
 source: "https://blog.libtorrent.org/2016/09/link-compatibility/"
 ---
 
-Thursday, September 29th, 2016 by arvid
-
 A major source of errors among users of libtorrent has traditionally been caused by binary incompatibility between the (built) libtorrent library and the client linking against it. Binary- or link compatibility is having two sides of a shared library (or translation unit) boundary have different understandings about the layout of objects or calling conventions.
 
 Consider the following library interface:
@@ -94,9 +92,5 @@ Undefined symbols for architecture x86_64:
  _main in client.o
 ld: symbol(s) not found for architecture x86_64
 ```
-
-Posted in [c++](https://blog.libtorrent.org/category/c/)
-**|**
- [No Comments](https://blog.libtorrent.org/2016/09/link-compatibility/#respond)
 
 ---

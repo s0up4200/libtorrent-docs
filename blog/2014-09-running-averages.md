@@ -4,8 +4,6 @@ date: "2014-09"
 source: "https://blog.libtorrent.org/2014/09/running-averages/"
 ---
 
-Tuesday, September 9th, 2014 by arvid
-
 Many aspects of bittorrent requires maintaining an estimate of some kinds of samples. uTP keeps a running estimate of round-trip times for each connection. When streaming torrents, it is useful to keep an estimate of download time per piece (to know what a reasonable timeout is). This post takes a closer look at how to do this and what can go wrong.
 
 The traditional algorithm for doing this is described in the [TCP specification (rfc 793)](https://www.ietf.org/rfc/rfc793.txt). It’s defined as follows:
@@ -82,9 +80,5 @@ The c++ code can be found on [github](https://github.com/arvidn/moving_average).
    int avg_deviation() const { return m_num_samples > 1
       ? (m_average_deviation + 32) / 64 : 0; }
 ```
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
-**|**
- [No Comments](https://blog.libtorrent.org/2014/09/running-averages/#respond)
 
 ---

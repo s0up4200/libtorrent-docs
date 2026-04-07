@@ -1,9 +1,7 @@
 ---
-title: "a word of caution"
+title: "Plugins"
 source: "https://libtorrent.org/reference-Plugins.html"
 ---
-
-[home](reference.md)
 
 libtorrent has a [plugin](reference-Plugins.md#plugin) interface for implementing extensions to the protocol.
 These can be general extensions for transferring metadata or peer exchange
@@ -119,8 +117,6 @@ name of your [alert](reference-Alerts.md#alert).
 
 For more information, see the [alert section](reference-Alerts.md).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_connection_handle&labels=documentation&body=Documentation+under+heading+%22class+peer_connection_handle%22+could+be+improved)]
-
 # peer\_connection\_handle
 
 Declared in "[libtorrent/peer\_connection\_handle.hpp](include/libtorrent/peer_connection_handle.hpp)"
@@ -174,8 +170,6 @@ struct peer_connection_handle
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+bt_peer_connection_handle&labels=documentation&body=Documentation+under+heading+%22class+bt_peer_connection_handle%22+could+be+improved)]
-
 # bt\_peer\_connection\_handle
 
 Declared in "[libtorrent/peer\_connection\_handle.hpp](include/libtorrent/peer_connection_handle.hpp)"
@@ -196,8 +190,6 @@ struct bt_peer_connection_handle : peer_connection_handle
    std::shared_ptr<bt_peer_connection> native_handle () const;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+plugin&labels=documentation&body=Documentation+under+heading+%22class+plugin%22+could+be+improved)]
 
 # plugin
 
@@ -233,8 +225,6 @@ struct plugin
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bimplemented_features%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bimplemented_features%28%29%5D%22+could+be+improved)]
-
 ## implemented\_features()
 
 ```cpp
@@ -247,8 +237,6 @@ unless the corresponding feature flag is returned here. Note that
 callbacks may still be called even if the corresponding feature is not
 specified in the return value here. See feature\_flags\_t for possible
 flags to return.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bnew_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bnew_torrent%28%29%5D%22+could+be+improved)]
 
 ## new\_torrent()
 
@@ -265,8 +253,6 @@ If the [plugin](reference-Plugins.md#plugin) returns a [torrent\_plugin](referen
 to the new torrent. Otherwise, return an empty shared\_ptr to a
 [torrent\_plugin](reference-Plugins.md#torrent_plugin) (the default).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Badded%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Badded%28%29%5D%22+could+be+improved)]
-
 ## added()
 
 ```cpp
@@ -274,8 +260,6 @@ virtual void added (session_handle const&);
 ```
 
 called when [plugin](reference-Plugins.md#plugin) is added to a [session](reference-Session.md#session)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Babort%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Babort%28%29%5D%22+could+be+improved)]
 
 ## abort()
 
@@ -286,8 +270,6 @@ virtual void abort ();
 called when the [session](reference-Session.md#session) is aborted
 the [plugin](reference-Plugins.md#plugin) should perform any cleanup necessary to allow the session's
 destruction (e.g. cancel outstanding async operations)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bon_dht_request%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bon_dht_request%28%29%5D%22+could+be+improved)]
 
 ## on\_dht\_request()
 
@@ -301,8 +283,6 @@ called when a dht request is received.
 If your [plugin](reference-Plugins.md#plugin) expects this to be called, make sure to include the flag
 dht\_request\_feature in the return value from [implemented\_features()](reference-Plugins.md#implemented_features()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bon_alert%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bon_alert%28%29%5D%22+could+be+improved)]
-
 ## on\_alert()
 
 ```cpp
@@ -313,8 +293,6 @@ called when an [alert](reference-Alerts.md#alert) is posted alerts that are filt
 If your [plugin](reference-Plugins.md#plugin) expects this to be called, make sure to include the flag
 alert\_feature in the return value from [implemented\_features()](reference-Plugins.md#implemented_features()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bon_unknown_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bon_unknown_torrent%28%29%5D%22+could+be+improved)]
-
 ## on\_unknown\_torrent()
 
 ```cpp
@@ -323,8 +301,6 @@ virtual bool on_unknown_torrent (info_hash_t const& /* info_hash */
 ```
 
 return true if the [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params) should be added
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bon_tick%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bon_tick%28%29%5D%22+could+be+improved)]
 
 ## on\_tick()
 
@@ -335,8 +311,6 @@ virtual void on_tick ();
 called once per second.
 If your [plugin](reference-Plugins.md#plugin) expects this to be called, make sure to include the flag
 tick\_feature in the return value from [implemented\_features()](reference-Plugins.md#implemented_features()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bget_unchoke_priority%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bget_unchoke_priority%28%29%5D%22+could+be+improved)]
 
 ## get\_unchoke\_priority()
 
@@ -353,8 +327,6 @@ optimistic\_unchoke\_feature in the return value from [implemented\_features()](
 If multiple plugins implement this function the lowest return value
 (i.e. the highest priority) is used.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bload_state%28%29%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bload_state%28%29%5D%22+could+be+improved)]
-
 ## load\_state()
 
 ```cpp
@@ -363,37 +335,25 @@ virtual void load_state (std::map<std::string, std::string> const&);
 
 called on startup while loading settings state from the [session\_params](reference-Session.md#session_params)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Boptimistic_unchoke_feature%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Boptimistic_unchoke_feature%5D%22+could+be+improved)]
-
 optimistic\_unchoke\_feature
 :   include this bit if your [plugin](reference-Plugins.md#plugin) needs to alter the order of the
     optimistic unchoke of peers. i.e. have the on\_optimistic\_unchoke()
     callback be called.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Btick_feature%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Btick_feature%5D%22+could+be+improved)]
-
 tick\_feature
 :   include this bit if your [plugin](reference-Plugins.md#plugin) needs to have [on\_tick()](reference-Plugins.md#on_tick()) called
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bdht_request_feature%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bdht_request_feature%5D%22+could+be+improved)]
 
 dht\_request\_feature
 :   include this bit if your [plugin](reference-Plugins.md#plugin) needs to have [on\_dht\_request()](reference-Plugins.md#on_dht_request())
     called
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Balert_feature%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Balert_feature%5D%22+could+be+improved)]
-
 alert\_feature
 :   include this bit if your [plugin](reference-Plugins.md#plugin) needs to have [on\_alert()](reference-Plugins.md#on_alert())
     called
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:plugin%3A%3A%5Bunknown_torrent_feature%5D&labels=documentation&body=Documentation+under+heading+%22plugin%3A%3A%5Bunknown_torrent_feature%5D%22+could+be+improved)]
-
 unknown\_torrent\_feature
 :   include this bit if your [plugin](reference-Plugins.md#plugin) needs to have [on\_unknown\_torrent()](reference-Plugins.md#on_unknown_torrent())
     called even if there is no active torrent in the [session](reference-Session.md#session)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_plugin&labels=documentation&body=Documentation+under+heading+%22class+torrent_plugin%22+could+be+improved)]
 
 # torrent\_plugin
 
@@ -422,8 +382,6 @@ struct torrent_plugin
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bnew_connection%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bnew_connection%28%29%5D%22+could+be+improved)]
-
 ## new\_connection()
 
 ```cpp
@@ -446,8 +404,6 @@ to it, use weak\_ptr.
 
 If this function throws an exception, the connection will be closed.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bon_piece_pass%28%29+on_piece_failed%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bon_piece_pass%28%29+on_piece_failed%28%29%5D%22+could+be+improved)]
-
 ## on\_piece\_pass() on\_piece\_failed()
 
 ```cpp
@@ -460,8 +416,6 @@ check, respectively. The index is the piece index that was downloaded.
 It is possible to access the list of peers that participated in sending the
 piece through the torrent and the piece\_picker.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Btick%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Btick%28%29%5D%22+could+be+improved)]
-
 ## tick()
 
 ```cpp
@@ -470,8 +424,6 @@ virtual void tick ();
 
 This hook is called approximately once per second. It is a way of making it
 easy for plugins to do timed events, for sending messages or whatever.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bon_pause%28%29+on_resume%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bon_pause%28%29+on_resume%28%29%5D%22+could+be+improved)]
 
 ## on\_pause() on\_resume()
 
@@ -492,8 +444,6 @@ handler it will recurse back into your handler, so in order to invoke the
 standard handler, you have to keep your own state on whether you want standard
 behavior or overridden behavior.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bon_files_checked%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bon_files_checked%28%29%5D%22+could+be+improved)]
-
 ## on\_files\_checked()
 
 ```cpp
@@ -506,8 +456,6 @@ checked. If there are no files to check, this function is called immediately.
 i.e. This function is always called when the torrent is in a state where it
 can start downloading.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bon_state%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bon_state%28%29%5D%22+could+be+improved)]
-
 ## on\_state()
 
 ```cpp
@@ -517,8 +465,6 @@ virtual void on_state (torrent_status::state_t);
 called when the torrent changes state
 the state is one of [torrent\_status::state\_t](reference-Torrent_Status.md#state_t)
 enum members
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bon_add_peer%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bon_add_peer%28%29%5D%22+could+be+improved)]
 
 ## on\_add\_peer()
 
@@ -534,18 +480,12 @@ the source where we learned about this peer from. It's a
 bitmask, because many sources may have told us about the same
 peer. For peer source flags, see peer\_info::peer\_source\_flags.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bfirst_time%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bfirst_time%5D%22+could+be+improved)]
-
 first\_time
 :   this is the first time we see this peer
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_plugin%3A%3A%5Bfiltered%5D&labels=documentation&body=Documentation+under+heading+%22torrent_plugin%3A%3A%5Bfiltered%5D%22+could+be+improved)]
 
 filtered
 :   this peer was not added because it was
     filtered by the IP filter
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_plugin&labels=documentation&body=Documentation+under+heading+%22class+peer_plugin%22+could+be+improved)]
 
 # peer\_plugin
 
@@ -609,8 +549,6 @@ struct peer_plugin
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Btype%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Btype%28%29%5D%22+could+be+improved)]
-
 ## type()
 
 ```cpp
@@ -619,8 +557,6 @@ virtual string_view type () const;
 
 This function is expected to return the name of
 the [plugin](reference-Plugins.md#plugin).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Badd_handshake%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Badd_handshake%28%29%5D%22+could+be+improved)]
 
 ## add\_handshake()
 
@@ -631,8 +567,6 @@ virtual void add_handshake (entry&);
 can add entries to the extension handshake
 this is not called for web seeds
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_disconnect%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_disconnect%28%29%5D%22+could+be+improved)]
-
 ## on\_disconnect()
 
 ```cpp
@@ -640,8 +574,6 @@ virtual void on_disconnect (error_code const&);
 ```
 
 called when the peer is being disconnected.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_connected%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_connected%28%29%5D%22+could+be+improved)]
 
 ## on\_connected()
 
@@ -654,8 +586,6 @@ incoming connections will have been connected by the time
 the peer [plugin](reference-Plugins.md#plugin) is attached to it, and won't have this hook
 called.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_handshake%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_handshake%28%29%5D%22+could+be+improved)]
-
 ## on\_handshake()
 
 ```cpp
@@ -666,8 +596,6 @@ this is called when the initial bittorrent handshake is received.
 Returning false means that the other end doesn't support this extension
 and will remove it from the list of plugins. this is not called for web
 seeds
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_extension_handshake%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_extension_handshake%28%29%5D%22+could+be+improved)]
 
 ## on\_extension\_handshake()
 
@@ -680,8 +608,6 @@ if this returns false, it means that this extension isn't
 supported by this peer. It will result in this [peer\_plugin](reference-Plugins.md#peer_plugin)
 being removed from the peer\_connection and destructed.
 this is not called for web seeds
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_have_all%28%29+on_interested%28%29+on_choke%28%29+on_dont_have%28%29+on_bitfield%28%29+on_have%28%29+on_request%28%29+on_have_none%28%29+on_allowed_fast%28%29+on_unchoke%28%29+on_not_interested%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_have_all%28%29+on_interested%28%29+on_choke%28%29+on_dont_have%28%29+on_bitfield%28%29+on_have%28%29+on_request%28%29+on_have_none%28%29+on_allowed_fast%28%29+on_unchoke%28%29+on_not_interested%28%29%5D%22+could+be+improved)]
 
 ## on\_have\_all() on\_interested() on\_choke() on\_dont\_have() on\_bitfield() on\_have() on\_request() on\_have\_none() on\_allowed\_fast() on\_unchoke() on\_not\_interested()
 
@@ -705,8 +631,6 @@ it will break the [plugin](reference-Plugins.md#plugin) chain traversing and not
 anyone else handle the message, including the default
 handler.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_piece%28%29%5D%22+could+be+improved)]
-
 ## on\_piece()
 
 ```cpp
@@ -721,8 +645,6 @@ in the length member of the piece parameter.
 returns true to indicate that the piece is handled and the
 rest of the logic should be ignored.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bsent_unchoke%28%29+sent_not_interested%28%29+sent_have%28%29+sent_interested%28%29+sent_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bsent_unchoke%28%29+sent_not_interested%28%29+sent_have%28%29+sent_interested%28%29+sent_piece%28%29%5D%22+could+be+improved)]
-
 ## sent\_unchoke() sent\_not\_interested() sent\_have() sent\_interested() sent\_piece()
 
 ```cpp
@@ -735,8 +657,6 @@ virtual void sent_not_interested ();
 
 called after a choke message has been sent to the peer
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bsent_payload%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bsent_payload%28%29%5D%22+could+be+improved)]
-
 ## sent\_payload()
 
 ```cpp
@@ -746,8 +666,6 @@ virtual void sent_payload (int /* bytes */);
 called after piece data has been sent to the peer
 this can be used for stats book keeping
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bcan_disconnect%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bcan_disconnect%28%29%5D%22+could+be+improved)]
-
 ## can\_disconnect()
 
 ```cpp
@@ -756,8 +674,6 @@ virtual bool can_disconnect (error_code const& /*ec*/);
 
 called when libtorrent think this peer should be disconnected.
 if the [plugin](reference-Plugins.md#plugin) returns false, the peer will not be disconnected.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_extended%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_extended%28%29%5D%22+could+be+improved)]
 
 ## on\_extended()
 
@@ -777,8 +693,6 @@ function will be called, until finally the whole message has been
 received. The purpose of this is to allow early disconnects for invalid
 messages and for reporting progress of receiving large messages.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_unknown_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_unknown_message%28%29%5D%22+could+be+improved)]
-
 ## on\_unknown\_message()
 
 ```cpp
@@ -787,8 +701,6 @@ virtual bool on_unknown_message (int /*length*/, int /*msg*/,
 ```
 
 this is not called for web seeds
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bon_piece_pass%28%29+on_piece_failed%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bon_piece_pass%28%29+on_piece_failed%28%29%5D%22+could+be+improved)]
 
 ## on\_piece\_pass() on\_piece\_failed()
 
@@ -800,8 +712,6 @@ virtual void on_piece_pass (piece_index_t);
 called when a piece that this peer participated in either
 fails or passes the hash\_check
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Btick%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Btick%28%29%5D%22+could+be+improved)]
-
 ## tick()
 
 ```cpp
@@ -809,8 +719,6 @@ virtual void tick ();
 ```
 
 called approximately once every second
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_plugin%3A%3A%5Bwrite_request%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_plugin%3A%3A%5Bwrite_request%28%29%5D%22+could+be+improved)]
 
 ## write\_request()
 
@@ -821,8 +729,6 @@ virtual bool write_request (peer_request const&);
 called each time a request message is to be sent. If true
 is returned, the original request message won't be sent and
 no other [plugin](reference-Plugins.md#plugin) will have this function called.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+crypto_plugin&labels=documentation&body=Documentation+under+heading+%22class+crypto_plugin%22+could+be+improved)]
 
 # crypto\_plugin
 
@@ -837,8 +743,6 @@ struct crypto_plugin
    virtual std::tuple<int, int, int> decrypt (span<span<char>> /*receive_vec*/) = 0;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:crypto_plugin%3A%3A%5Bdecrypt%28%29%5D&labels=documentation&body=Documentation+under+heading+%22crypto_plugin%3A%3A%5Bdecrypt%28%29%5D%22+could+be+improved)]
 
 ## decrypt()
 
@@ -859,8 +763,6 @@ be sent to the upper layer. default is the number of bytes passed in receive\_ve
 packet\_size is set to the minimum number of bytes which must be read to
 advance the next step of decryption. default is 0
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_smart_ban_plugin%28%29&labels=documentation&body=Documentation+under+heading+%22create_smart_ban_plugin%28%29%22+could+be+improved)]
-
 # create\_smart\_ban\_plugin()
 
 Declared in "[libtorrent/extensions/smart\_ban.hpp](include/libtorrent/extensions/smart_ban.hpp)"
@@ -875,8 +777,6 @@ piece completes and passes the hash check bans the peers that turned
 out to have sent corrupt data.
 This function can either be passed in the add\_torrent\_params::extensions
 field, or via [torrent\_handle::add\_extension()](reference-Torrent_Handle.md#add_extension()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_ut_pex_plugin%28%29&labels=documentation&body=Documentation+under+heading+%22create_ut_pex_plugin%28%29%22+could+be+improved)]
 
 # create\_ut\_pex\_plugin()
 
@@ -894,8 +794,6 @@ the [session](reference-Session.md#session) constructor.
 
 This can either be passed in the add\_torrent\_params::extensions field, or
 via [torrent\_handle::add\_extension()](reference-Torrent_Handle.md#add_extension()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_ut_metadata_plugin%28%29&labels=documentation&body=Documentation+under+heading+%22create_ut_metadata_plugin%28%29%22+could+be+improved)]
 
 # create\_ut\_metadata\_plugin()
 

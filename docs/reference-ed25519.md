@@ -1,11 +1,7 @@
 ---
-title: "ed25519_create_seed()"
+title: "ed25519"
 source: "https://libtorrent.org/reference-ed25519.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_create_seed%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_create_seed%28%29%22+could+be+improved)]
 
 # ed25519\_create\_seed()
 
@@ -16,8 +12,6 @@ std::array<char, 32> ed25519_create_seed ();
 ```
 
 See documentation of internal random\_bytes
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_create_keypair%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_create_keypair%28%29%22+could+be+improved)]
 
 # ed25519\_create\_keypair()
 
@@ -42,8 +36,6 @@ space and CPU, saving in one format or another.
 The smaller format is not weaker by any means, in fact, it is only
 the seed (32 bytes) that determines the point in the curve.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_sign%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_sign%28%29%22+could+be+improved)]
-
 # ed25519\_sign()
 
 Declared in "[libtorrent/kademlia/ed25519.hpp](include/libtorrent/kademlia/ed25519.hpp)"
@@ -55,8 +47,6 @@ signature ed25519_sign (span<char const> msg
 
 Creates a signature of the given message with the given key pair.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_verify%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_verify%28%29%22+could+be+improved)]
-
 # ed25519\_verify()
 
 Declared in "[libtorrent/kademlia/ed25519.hpp](include/libtorrent/kademlia/ed25519.hpp)"
@@ -67,8 +57,6 @@ bool ed25519_verify (signature const& sig
 ```
 
 Verifies the signature on the given message using pk
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_add_scalar%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_add_scalar%28%29%22+could+be+improved)]
 
 # ed25519\_add\_scalar()
 
@@ -95,8 +83,6 @@ sure to clear it with scalar[31] &= 127.
 
 see <http://crypto.stackexchange.com/a/6215/4697>
 see test\_ed25519 for a practical example
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ed25519_key_exchange%28%29&labels=documentation&body=Documentation+under+heading+%22ed25519_key_exchange%28%29%22+could+be+improved)]
 
 # ed25519\_key\_exchange()
 

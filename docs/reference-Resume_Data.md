@@ -1,11 +1,7 @@
 ---
-title: "read_resume_data()"
+title: "Resume Data"
 source: "https://libtorrent.org/reference-Resume_Data.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:read_resume_data%28%29&labels=documentation&body=Documentation+under+heading+%22read_resume_data%28%29%22+could+be+improved)]
 
 # read\_resume\_data()
 
@@ -40,8 +36,6 @@ In order to support large torrents, it may also be necessary to raise the
 [settings\_pack::max\_piece\_count](reference-Settings.md#max_piece_count) setting and pass a higher limit to calls
 to [torrent\_info::parse\_info\_section()](reference-Torrent_Info.md#parse_info_section()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:write_resume_data%28%29+write_resume_data_buf%28%29&labels=documentation&body=Documentation+under+heading+%22write_resume_data%28%29+write_resume_data_buf%28%29%22+could+be+improved)]
-
 # write\_resume\_data() write\_resume\_data\_buf()
 
 Declared in "[libtorrent/write\_resume\_data.hpp](include/libtorrent/write_resume_data.hpp)"
@@ -53,8 +47,6 @@ entry write_resume_data (add_torrent_params const& atp);
 
 this function turns the resume data in an add\_torrent\_params object
 into a bencoded structure
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:write_torrent_file_buf%28%29+write_torrent_file%28%29&labels=documentation&body=Documentation+under+heading+%22write_torrent_file_buf%28%29+write_torrent_file%28%29%22+could+be+improved)]
 
 # write\_torrent\_file\_buf() write\_torrent\_file()
 
@@ -77,8 +69,6 @@ with a std::system\_error exception if:
 The write\_torrent\_file\_buf() overload returns the torrent file in
 bencoded buffer form. This overload may be faster at the expense of lost
 flexibility to add custom fields.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:write_torrent_flags_t&labels=documentation&body=Documentation+under+heading+%22write_torrent_flags_t%22+could+be+improved)]
 
 # write\_torrent\_flags\_t
 

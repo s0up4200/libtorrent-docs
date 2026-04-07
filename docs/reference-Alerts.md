@@ -1,9 +1,7 @@
 ---
-title: "dht_routing_bucket"
+title: "Alerts"
 source: "https://libtorrent.org/reference-Alerts.html"
 ---
-
-[home](reference.md)
 
 The [pop\_alerts()](reference-Session.md#pop_alerts()) function on [session](reference-Session.md#session) is the main interface for retrieving
 alerts (warnings, messages and errors from libtorrent). If no alerts have
@@ -29,8 +27,6 @@ Alerts returned by [pop\_alerts()](reference-Session.md#pop_alerts()) are only v
 call to [pop\_alerts()](reference-Session.md#pop_alerts()). Internal members of alerts also become invalid once
 [pop\_alerts()](reference-Session.md#pop_alerts()) is called again.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_routing_bucket&labels=documentation&body=Documentation+under+heading+%22class+dht_routing_bucket%22+could+be+improved)]
-
 # dht\_routing\_bucket
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -46,18 +42,12 @@ struct dht_routing_bucket
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_routing_bucket%3A%3A%5Bnum_nodes+num_replacements%5D&labels=documentation&body=Documentation+under+heading+%22dht_routing_bucket%3A%3A%5Bnum_nodes+num_replacements%5D%22+could+be+improved)]
-
 num\_nodes num\_replacements
 :   the total number of nodes and replacement nodes
     in the routing table
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_routing_bucket%3A%3A%5Blast_active%5D&labels=documentation&body=Documentation+under+heading+%22dht_routing_bucket%3A%3A%5Blast_active%5D%22+could+be+improved)]
-
 last\_active
 :   number of seconds since last activity
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_alert%22+could+be+improved)]
 
 # torrent\_alert
 
@@ -79,8 +69,6 @@ struct torrent_alert : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_alert%3A%3A%5Bmessage%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_alert%3A%3A%5Bmessage%28%29%5D%22+could+be+improved)]
-
 ## message()
 
 ```cpp
@@ -89,13 +77,9 @@ std::string message () const override;
 
 returns the message associated with this [alert](reference-Alerts.md#alert)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_alert%3A%3A%5Bhandle%5D&labels=documentation&body=Documentation+under+heading+%22torrent_alert%3A%3A%5Bhandle%5D%22+could+be+improved)]
-
 handle
 :   The [torrent\_handle](reference-Torrent_Handle.md#torrent_handle) pointing to the torrent this
     [alert](reference-Alerts.md#alert) is associated with.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_alert%22+could+be+improved)]
 
 # peer\_alert
 
@@ -114,17 +98,11 @@ struct peer_alert : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_alert%3A%3A%5Bendpoint%5D&labels=documentation&body=Documentation+under+heading+%22peer_alert%3A%3A%5Bendpoint%5D%22+could+be+improved)]
-
 endpoint
 :   The peer's IP address and port.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_alert%3A%3A%5Bpid%5D&labels=documentation&body=Documentation+under+heading+%22peer_alert%3A%3A%5Bpid%5D%22+could+be+improved)]
-
 pid
 :   the peer ID, if known.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_alert%22+could+be+improved)]
 
 # tracker\_alert
 
@@ -144,8 +122,6 @@ struct tracker_alert : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_alert%3A%3A%5Btracker_url%28%29%5D&labels=documentation&body=Documentation+under+heading+%22tracker_alert%3A%3A%5Btracker_url%28%29%5D%22+could+be+improved)]
-
 ## tracker\_url()
 
 ```cpp
@@ -154,12 +130,8 @@ char const* tracker_url () const;
 
 returns a 0-terminated string of the tracker's URL
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_alert%3A%3A%5Blocal_endpoint%5D&labels=documentation&body=Documentation+under+heading+%22tracker_alert%3A%3A%5Blocal_endpoint%5D%22+could+be+improved)]
-
 local\_endpoint
 :   endpoint of the listen interface being announced
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_removed_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_removed_alert%22+could+be+improved)]
 
 # torrent\_removed\_alert
 
@@ -197,14 +169,10 @@ struct torrent_removed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_removed_alert%3A%3A%5Buserdata%5D&labels=documentation&body=Documentation+under+heading+%22torrent_removed_alert%3A%3A%5Buserdata%5D%22+could+be+improved)]
-
 userdata
 :   'userdata` as set in [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params) at torrent creation.
     This can be used to associate this torrent with related data
     in the client application more efficiently than info\_hashes.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+read_piece_alert&labels=documentation&body=Documentation+under+heading+%22class+read_piece_alert%22+could+be+improved)]
 
 # read\_piece\_alert
 
@@ -232,8 +200,6 @@ struct read_piece_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_completed_alert&labels=documentation&body=Documentation+under+heading+%22class+file_completed_alert%22+could+be+improved)]
-
 # file\_completed\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -250,12 +216,8 @@ struct file_completed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_completed_alert%3A%3A%5Bindex%5D&labels=documentation&body=Documentation+under+heading+%22file_completed_alert%3A%3A%5Bindex%5D%22+could+be+improved)]
-
 index
 :   refers to the index of the file that completed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_renamed_alert&labels=documentation&body=Documentation+under+heading+%22class+file_renamed_alert%22+could+be+improved)]
 
 # file\_renamed\_alert
 
@@ -276,8 +238,6 @@ struct file_renamed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_renamed_alert%3A%3A%5Bnew_name%28%29+old_name%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_renamed_alert%3A%3A%5Bnew_name%28%29+old_name%28%29%5D%22+could+be+improved)]
-
 ## new\_name() old\_name()
 
 ```cpp
@@ -287,12 +247,8 @@ char const* new_name () const;
 
 returns the new and previous file name, respectively.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_renamed_alert%3A%3A%5Bindex%5D&labels=documentation&body=Documentation+under+heading+%22file_renamed_alert%3A%3A%5Bindex%5D%22+could+be+improved)]
-
 index
 :   refers to the index of the file that was renamed,
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_rename_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+file_rename_failed_alert%22+could+be+improved)]
 
 # file\_rename\_failed\_alert
 
@@ -312,13 +268,9 @@ struct file_rename_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_rename_failed_alert%3A%3A%5Bindex+error%5D&labels=documentation&body=Documentation+under+heading+%22file_rename_failed_alert%3A%3A%5Bindex+error%5D%22+could+be+improved)]
-
 index error
 :   refers to the index of the file that was supposed to be renamed,
     error is the error code returned from the filesystem.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+performance_alert&labels=documentation&body=Documentation+under+heading+%22class+performance_alert%22+could+be+improved)]
 
 # performance\_alert
 
@@ -353,8 +305,6 @@ struct performance_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+performance_warning_t&labels=documentation&body=Documentation+under+heading+%22enum+performance_warning_t%22+could+be+improved)]
-
 ## enum performance\_warning\_t
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -374,8 +324,6 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | too\_few\_file\_descriptors | 10 |  |
 | num\_warnings | 11 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+state_changed_alert&labels=documentation&body=Documentation+under+heading+%22class+state_changed_alert%22+could+be+improved)]
-
 # state\_changed\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -393,17 +341,11 @@ struct state_changed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:state_changed_alert%3A%3A%5Bstate%5D&labels=documentation&body=Documentation+under+heading+%22state_changed_alert%3A%3A%5Bstate%5D%22+could+be+improved)]
-
 state
 :   the new state of the torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:state_changed_alert%3A%3A%5Bprev_state%5D&labels=documentation&body=Documentation+under+heading+%22state_changed_alert%3A%3A%5Bprev_state%5D%22+could+be+improved)]
-
 prev\_state
 :   the previous state.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_error_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_error_alert%22+could+be+improved)]
 
 # tracker\_error\_alert
 
@@ -427,8 +369,6 @@ struct tracker_error_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_error_alert%3A%3A%5Bfailure_reason%28%29%5D&labels=documentation&body=Documentation+under+heading+%22tracker_error_alert%3A%3A%5Bfailure_reason%28%29%5D%22+could+be+improved)]
-
 ## failure\_reason()
 
 ```cpp
@@ -438,12 +378,8 @@ char const* failure_reason () const;
 if the tracker sent a "failure reason" string, it will be returned
 here.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_error_alert%3A%3A%5Btimes_in_row%5D&labels=documentation&body=Documentation+under+heading+%22tracker_error_alert%3A%3A%5Btimes_in_row%5D%22+could+be+improved)]
-
 times\_in\_row
 :   This member says how many times in a row this tracker has failed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22tracker_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
 
 error
 :   the error code indicating why the tracker announce failed. If it is
@@ -451,12 +387,8 @@ error
     a more detailed description of why the tracker rejected the request.
     HTTP status codes indicating errors are also set in this field.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_error_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22tracker_error_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that was announced
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_warning_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_warning_alert%22+could+be+improved)]
 
 # tracker\_warning\_alert
 
@@ -477,8 +409,6 @@ struct tracker_warning_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_warning_alert%3A%3A%5Bwarning_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22tracker_warning_alert%3A%3A%5Bwarning_message%28%29%5D%22+could+be+improved)]
-
 ## warning\_message()
 
 ```cpp
@@ -487,12 +417,8 @@ char const* warning_message () const;
 
 the message associated with this warning
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_warning_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22tracker_warning_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that was announced
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+scrape_reply_alert&labels=documentation&body=Documentation+under+heading+%22class+scrape_reply_alert%22+could+be+improved)]
 
 # scrape\_reply\_alert
 
@@ -512,18 +438,12 @@ struct scrape_reply_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:scrape_reply_alert%3A%3A%5Bincomplete+complete%5D&labels=documentation&body=Documentation+under+heading+%22scrape_reply_alert%3A%3A%5Bincomplete+complete%5D%22+could+be+improved)]
-
 incomplete complete
 :   the data returned in the scrape response. These numbers
     may be -1 if the response was malformed.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:scrape_reply_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22scrape_reply_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that was scraped
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+scrape_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+scrape_failed_alert%22+could+be+improved)]
 
 # scrape\_failed\_alert
 
@@ -545,8 +465,6 @@ struct scrape_failed_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:scrape_failed_alert%3A%3A%5Berror_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22scrape_failed_alert%3A%3A%5Berror_message%28%29%5D%22+could+be+improved)]
-
 ## error\_message()
 
 ```cpp
@@ -556,19 +474,13 @@ char const* error_message () const;
 if the error indicates there is an associated message, this returns
 that message. Otherwise and empty string.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:scrape_failed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22scrape_failed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error itself. This may indicate that the tracker sent an error
     message (error::tracker\_failure), in which case it can be
     retrieved by calling error\_message().
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:scrape_failed_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22scrape_failed_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that was scraped
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_reply_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_reply_alert%22+could+be+improved)]
 
 # tracker\_reply\_alert
 
@@ -589,19 +501,13 @@ struct tracker_reply_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_reply_alert%3A%3A%5Bnum_peers%5D&labels=documentation&body=Documentation+under+heading+%22tracker_reply_alert%3A%3A%5Bnum_peers%5D%22+could+be+improved)]
-
 num\_peers
 :   tells how many peers the tracker returned in this response. This is
     not expected to be greater than the num\_want settings. These are not necessarily
     all new peers, some of them may already be connected.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_reply_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22tracker_reply_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that was announced
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_reply_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_reply_alert%22+could+be+improved)]
 
 # dht\_reply\_alert
 
@@ -622,8 +528,6 @@ struct dht_reply_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_announce_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_announce_alert%22+could+be+improved)]
-
 # tracker\_announce\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -643,17 +547,11 @@ struct tracker_announce_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_announce_alert%3A%3A%5Bevent%5D&labels=documentation&body=Documentation+under+heading+%22tracker_announce_alert%3A%3A%5Bevent%5D%22+could+be+improved)]
-
 event
 :   specifies what event was sent to the tracker. See [event\_t](reference-Core.md#event_t).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_announce_alert%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22tracker_announce_alert%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   the bittorrent protocol version that is announced
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+hash_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+hash_failed_alert%22+could+be+improved)]
 
 # hash\_failed\_alert
 
@@ -672,8 +570,6 @@ struct hash_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_ban_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_ban_alert%22+could+be+improved)]
-
 # peer\_ban\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -689,8 +585,6 @@ struct peer_ban_alert final : peer_alert
    static constexpr alert_category_t static_category  = alert_category::peer;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_unsnubbed_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_unsnubbed_alert%22+could+be+improved)]
 
 # peer\_unsnubbed\_alert
 
@@ -708,8 +602,6 @@ struct peer_unsnubbed_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_snubbed_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_snubbed_alert%22+could+be+improved)]
-
 # peer\_snubbed\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -725,8 +617,6 @@ struct peer_snubbed_alert final : peer_alert
    static constexpr alert_category_t static_category  = alert_category::peer;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_error_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_error_alert%22+could+be+improved)]
 
 # peer\_error\_alert
 
@@ -746,18 +636,12 @@ struct peer_error_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_error_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22peer_error_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   a 0-terminated string of the low-level operation that failed, or nullptr if
     there was no low level disk operation.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22peer_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   tells you what error caused this [alert](reference-Alerts.md#alert).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_connect_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_connect_alert%22+could+be+improved)]
 
 # peer\_connect\_alert
 
@@ -785,8 +669,6 @@ struct peer_connect_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+direction_t&labels=documentation&body=Documentation+under+heading+%22enum+direction_t%22+could+be+improved)]
-
 ## enum direction\_t
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -796,12 +678,8 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | in | 0 |  |
 | out | 1 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_connect_alert%3A%3A%5Bdirection%5D&labels=documentation&body=Documentation+under+heading+%22peer_connect_alert%3A%3A%5Bdirection%5D%22+could+be+improved)]
-
 direction
 :   Tells you if the peer was incoming or outgoing
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_disconnected_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_disconnected_alert%22+could+be+improved)]
 
 # peer\_disconnected\_alert
 
@@ -823,28 +701,18 @@ struct peer_disconnected_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_disconnected_alert%3A%3A%5Bsocket_type%5D&labels=documentation&body=Documentation+under+heading+%22peer_disconnected_alert%3A%3A%5Bsocket_type%5D%22+could+be+improved)]
-
 socket\_type
 :   the kind of socket this peer was connected over
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_disconnected_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22peer_disconnected_alert%3A%3A%5Bop%5D%22+could+be+improved)]
 
 op
 :   the operation or level where the error occurred. Specified as an
     value from the [operation\_t](reference-Alerts.md#operation_t) enum. Defined in operations.hpp.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_disconnected_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22peer_disconnected_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   tells you what error caused peer to disconnect.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_disconnected_alert%3A%3A%5Breason%5D&labels=documentation&body=Documentation+under+heading+%22peer_disconnected_alert%3A%3A%5Breason%5D%22+could+be+improved)]
-
 reason
 :   the reason the peer disconnected (if specified)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+invalid_request_alert&labels=documentation&body=Documentation+under+heading+%22class+invalid_request_alert%22+could+be+improved)]
 
 # invalid\_request\_alert
 
@@ -867,29 +735,19 @@ struct invalid_request_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:invalid_request_alert%3A%3A%5Brequest%5D&labels=documentation&body=Documentation+under+heading+%22invalid_request_alert%3A%3A%5Brequest%5D%22+could+be+improved)]
-
 request
 :   the request we received from the peer
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:invalid_request_alert%3A%3A%5Bwe_have%5D&labels=documentation&body=Documentation+under+heading+%22invalid_request_alert%3A%3A%5Bwe_have%5D%22+could+be+improved)]
-
 we\_have
 :   true if we have this piece
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:invalid_request_alert%3A%3A%5Bpeer_interested%5D&labels=documentation&body=Documentation+under+heading+%22invalid_request_alert%3A%3A%5Bpeer_interested%5D%22+could+be+improved)]
 
 peer\_interested
 :   true if the peer indicated that it was interested to download before
     sending the request
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:invalid_request_alert%3A%3A%5Bwithheld%5D&labels=documentation&body=Documentation+under+heading+%22invalid_request_alert%3A%3A%5Bwithheld%5D%22+could+be+improved)]
-
 withheld
 :   if this is true, the peer is not allowed to download this piece because
     of super-seeding rules.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_finished_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_finished_alert%22+could+be+improved)]
 
 # torrent\_finished\_alert
 
@@ -907,8 +765,6 @@ struct torrent_finished_alert final : torrent_alert
    static constexpr alert_category_t static_category  = alert_category::status;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+piece_finished_alert&labels=documentation&body=Documentation+under+heading+%22class+piece_finished_alert%22+could+be+improved)]
 
 # piece\_finished\_alert
 
@@ -930,12 +786,8 @@ struct piece_finished_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:piece_finished_alert%3A%3A%5Bpiece_index%5D&labels=documentation&body=Documentation+under+heading+%22piece_finished_alert%3A%3A%5Bpiece_index%5D%22+could+be+improved)]
-
 piece\_index
 :   the index of the piece that finished
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+request_dropped_alert&labels=documentation&body=Documentation+under+heading+%22class+request_dropped_alert%22+could+be+improved)]
 
 # request\_dropped\_alert
 
@@ -953,8 +805,6 @@ struct request_dropped_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+block_timeout_alert&labels=documentation&body=Documentation+under+heading+%22class+block_timeout_alert%22+could+be+improved)]
-
 # block\_timeout\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -970,8 +820,6 @@ struct block_timeout_alert final : peer_alert
    piece_index_t const piece_index;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+block_finished_alert&labels=documentation&body=Documentation+under+heading+%22class+block_finished_alert%22+could+be+improved)]
 
 # block\_finished\_alert
 
@@ -989,8 +837,6 @@ struct block_finished_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+block_downloading_alert&labels=documentation&body=Documentation+under+heading+%22class+block_downloading_alert%22+could+be+improved)]
-
 # block\_downloading\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1006,8 +852,6 @@ struct block_downloading_alert final : peer_alert
    piece_index_t const piece_index;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+unwanted_block_alert&labels=documentation&body=Documentation+under+heading+%22class+unwanted_block_alert%22+could+be+improved)]
 
 # unwanted\_block\_alert
 
@@ -1026,8 +870,6 @@ struct unwanted_block_alert final : peer_alert
    piece_index_t const piece_index;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+storage_moved_alert&labels=documentation&body=Documentation+under+heading+%22class+storage_moved_alert%22+could+be+improved)]
 
 # storage\_moved\_alert
 
@@ -1050,8 +892,6 @@ struct storage_moved_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_moved_alert%3A%3A%5Bstorage_path%28%29+old_path%28%29%5D&labels=documentation&body=Documentation+under+heading+%22storage_moved_alert%3A%3A%5Bstorage_path%28%29+old_path%28%29%5D%22+could+be+improved)]
-
 ## storage\_path() old\_path()
 
 ```cpp
@@ -1060,8 +900,6 @@ char const* old_path () const;
 ```
 
 the path the torrent was moved to and from, respectively.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+storage_moved_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+storage_moved_failed_alert%22+could+be+improved)]
 
 # storage\_moved\_failed\_alert
 
@@ -1082,8 +920,6 @@ struct storage_moved_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_moved_failed_alert%3A%3A%5Bfile_path%28%29%5D&labels=documentation&body=Documentation+under+heading+%22storage_moved_failed_alert%3A%3A%5Bfile_path%28%29%5D%22+could+be+improved)]
-
 ## file\_path()
 
 ```cpp
@@ -1092,12 +928,8 @@ char const* file_path () const;
 
 If the error happened for a specific file, this returns its path.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_moved_failed_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22storage_moved_failed_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   this indicates what underlying operation caused the error
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_deleted_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_deleted_alert%22+could+be+improved)]
 
 # torrent\_deleted\_alert
 
@@ -1118,15 +950,11 @@ struct torrent_deleted_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_deleted_alert%3A%3A%5Binfo_hashes%5D&labels=documentation&body=Documentation+under+heading+%22torrent_deleted_alert%3A%3A%5Binfo_hashes%5D%22+could+be+improved)]
-
 info\_hashes
 :   The info-hash of the torrent that was just deleted. Most of
     the time the [torrent\_handle](reference-Torrent_Handle.md#torrent_handle) in the torrent\_alert will be invalid by the time
     this [alert](reference-Alerts.md#alert) arrives, since the torrent is being deleted. The info\_hashes member
     is hence the main way of identifying which torrent just completed the delete.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_delete_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_delete_failed_alert%22+could+be+improved)]
 
 # torrent\_delete\_failed\_alert
 
@@ -1147,17 +975,11 @@ struct torrent_delete_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_delete_failed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22torrent_delete_failed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   tells you why it failed.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_delete_failed_alert%3A%3A%5Binfo_hashes%5D&labels=documentation&body=Documentation+under+heading+%22torrent_delete_failed_alert%3A%3A%5Binfo_hashes%5D%22+could+be+improved)]
-
 info\_hashes
 :   the info hash of the torrent whose files failed to be deleted
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+save_resume_data_alert&labels=documentation&body=Documentation+under+heading+%22class+save_resume_data_alert%22+could+be+improved)]
 
 # save\_resume\_data\_alert
 
@@ -1176,8 +998,6 @@ struct save_resume_data_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:save_resume_data_alert%3A%3A%5Bparams%5D&labels=documentation&body=Documentation+under+heading+%22save_resume_data_alert%3A%3A%5Bparams%5D%22+could+be+improved)]
-
 params
 :   the params object is populated with the torrent file whose resume
     data was saved. It is suitable to be:
@@ -1186,8 +1006,6 @@ params
     * saved to disk with [write\_resume\_data()](reference-Resume_Data.md#write_resume_data())
     * turned into a magnet link with [make\_magnet\_uri()](reference-Core.md#make_magnet_uri())
     * saved as a .torrent file with [write\_torrent\_file()](reference-Resume_Data.md#write_torrent_file())
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+save_resume_data_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+save_resume_data_failed_alert%22+could+be+improved)]
 
 # save\_resume\_data\_failed\_alert
 
@@ -1207,12 +1025,8 @@ struct save_resume_data_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:save_resume_data_failed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22save_resume_data_failed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error code from the resume\_data failure
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_paused_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_paused_alert%22+could+be+improved)]
 
 # torrent\_paused\_alert
 
@@ -1231,8 +1045,6 @@ struct torrent_paused_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_resumed_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_resumed_alert%22+could+be+improved)]
-
 # torrent\_resumed\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1249,8 +1061,6 @@ struct torrent_resumed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_checked_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_checked_alert%22+could+be+improved)]
-
 # torrent\_checked\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1266,8 +1076,6 @@ struct torrent_checked_alert final : torrent_alert
    static constexpr alert_category_t static_category  = alert_category::status;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+url_seed_alert&labels=documentation&body=Documentation+under+heading+%22class+url_seed_alert%22+could+be+improved)]
 
 # url\_seed\_alert
 
@@ -1287,8 +1095,6 @@ struct url_seed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:url_seed_alert%3A%3A%5Bserver_url%28%29%5D&labels=documentation&body=Documentation+under+heading+%22url_seed_alert%3A%3A%5Bserver_url%28%29%5D%22+could+be+improved)]
-
 ## server\_url()
 
 ```cpp
@@ -1296,8 +1102,6 @@ char const* server_url () const;
 ```
 
 the URL the error is associated with
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:url_seed_alert%3A%3A%5Berror_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22url_seed_alert%3A%3A%5Berror_message%28%29%5D%22+could+be+improved)]
 
 ## error\_message()
 
@@ -1308,13 +1112,9 @@ char const* error_message () const;
 in case the web server sent an error message, this function returns
 it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:url_seed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22url_seed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error the web seed encountered. If this is not set, the server
     sent an error message, call error\_message().
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_error_alert&labels=documentation&body=Documentation+under+heading+%22class+file_error_alert%22+could+be+improved)]
 
 # file\_error\_alert
 
@@ -1336,8 +1136,6 @@ struct file_error_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_error_alert%3A%3A%5Bfilename%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_error_alert%3A%3A%5Bfilename%28%29%5D%22+could+be+improved)]
-
 ## filename()
 
 ```cpp
@@ -1346,17 +1144,11 @@ char const* filename () const;
 
 the file that experienced the error
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22file_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error code describing the error.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_error_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22file_error_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   indicates which underlying operation caused the error
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+metadata_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+metadata_failed_alert%22+could+be+improved)]
 
 # metadata\_failed\_alert
 
@@ -1377,13 +1169,9 @@ struct metadata_failed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:metadata_failed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22metadata_failed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   indicates what failed when parsing the metadata. This error is
     what's returned from lazy\_bdecode().
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+metadata_received_alert&labels=documentation&body=Documentation+under+heading+%22class+metadata_received_alert%22+could+be+improved)]
 
 # metadata\_received\_alert
 
@@ -1422,8 +1210,6 @@ struct metadata_received_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+udp_error_alert&labels=documentation&body=Documentation+under+heading+%22class+udp_error_alert%22+could+be+improved)]
-
 # udp\_error\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1444,22 +1230,14 @@ struct udp_error_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:udp_error_alert%3A%3A%5Bendpoint%5D&labels=documentation&body=Documentation+under+heading+%22udp_error_alert%3A%3A%5Bendpoint%5D%22+could+be+improved)]
-
 endpoint
 :   the source address associated with the error (if any)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:udp_error_alert%3A%3A%5Boperation%5D&labels=documentation&body=Documentation+under+heading+%22udp_error_alert%3A%3A%5Boperation%5D%22+could+be+improved)]
 
 operation
 :   the operation that failed
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:udp_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22udp_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error code describing the error
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+external_ip_alert&labels=documentation&body=Documentation+under+heading+%22class+external_ip_alert%22+could+be+improved)]
 
 # external\_ip\_alert
 
@@ -1480,12 +1258,8 @@ struct external_ip_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:external_ip_alert%3A%3A%5Bexternal_address%5D&labels=documentation&body=Documentation+under+heading+%22external_ip_alert%3A%3A%5Bexternal_address%5D%22+could+be+improved)]
-
 external\_address
 :   the IP address that is believed to be our external IP
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+listen_failed_alert&labels=documentation&body=Documentation+under+heading+%22class+listen_failed_alert%22+could+be+improved)]
 
 # listen\_failed\_alert
 
@@ -1522,8 +1296,6 @@ struct listen_failed_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Blisten_interface%28%29%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Blisten_interface%28%29%5D%22+could+be+improved)]
-
 ## listen\_interface()
 
 ```cpp
@@ -1532,34 +1304,22 @@ char const* listen_interface () const;
 
 the network device libtorrent attempted to listen on, or the IP address
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error the system returned
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Bop%5D%22+could+be+improved)]
 
 op
 :   the underlying operation that failed
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Bsocket_type%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Bsocket_type%5D%22+could+be+improved)]
-
 socket\_type
 :   the type of listen socket this [alert](reference-Alerts.md#alert) refers to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Baddress%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Baddress%5D%22+could+be+improved)]
 
 address
 :   the address libtorrent attempted to listen on
     see [alert](reference-Alerts.md#alert) documentation for validity of this value
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_failed_alert%3A%3A%5Bport%5D&labels=documentation&body=Documentation+under+heading+%22listen_failed_alert%3A%3A%5Bport%5D%22+could+be+improved)]
-
 port
 :   the port libtorrent attempted to listen on
     see [alert](reference-Alerts.md#alert) documentation for validity of this value
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+listen_succeeded_alert&labels=documentation&body=Documentation+under+heading+%22class+listen_succeeded_alert%22+could+be+improved)]
 
 # listen\_succeeded\_alert
 
@@ -1581,23 +1341,15 @@ struct listen_succeeded_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_succeeded_alert%3A%3A%5Baddress%5D&labels=documentation&body=Documentation+under+heading+%22listen_succeeded_alert%3A%3A%5Baddress%5D%22+could+be+improved)]
-
 address
 :   the address libtorrent ended up listening on. This address
     refers to the local interface.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_succeeded_alert%3A%3A%5Bport%5D&labels=documentation&body=Documentation+under+heading+%22listen_succeeded_alert%3A%3A%5Bport%5D%22+could+be+improved)]
-
 port
 :   the port libtorrent ended up listening on.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:listen_succeeded_alert%3A%3A%5Bsocket_type%5D&labels=documentation&body=Documentation+under+heading+%22listen_succeeded_alert%3A%3A%5Bsocket_type%5D%22+could+be+improved)]
-
 socket\_type
 :   the type of listen socket this [alert](reference-Alerts.md#alert) refers to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+portmap_error_alert&labels=documentation&body=Documentation+under+heading+%22class+portmap_error_alert%22+could+be+improved)]
 
 # portmap\_error\_alert
 
@@ -1624,28 +1376,18 @@ struct portmap_error_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_error_alert%3A%3A%5Bmapping%5D&labels=documentation&body=Documentation+under+heading+%22portmap_error_alert%3A%3A%5Bmapping%5D%22+could+be+improved)]
-
 mapping
 :   refers to the mapping index of the port map that failed, i.e.
     the index returned from add\_mapping().
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_error_alert%3A%3A%5Bmap_transport%5D&labels=documentation&body=Documentation+under+heading+%22portmap_error_alert%3A%3A%5Bmap_transport%5D%22+could+be+improved)]
-
 map\_transport
 :   UPnP or NAT-PMP
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_error_alert%3A%3A%5Blocal_address%5D&labels=documentation&body=Documentation+under+heading+%22portmap_error_alert%3A%3A%5Blocal_address%5D%22+could+be+improved)]
 
 local\_address
 :   the local network the port mapper is running on
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22portmap_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   tells you what failed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+portmap_alert&labels=documentation&body=Documentation+under+heading+%22class+portmap_alert%22+could+be+improved)]
 
 # portmap\_alert
 
@@ -1670,23 +1412,15 @@ struct portmap_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_alert%3A%3A%5Bmapping%5D&labels=documentation&body=Documentation+under+heading+%22portmap_alert%3A%3A%5Bmapping%5D%22+could+be+improved)]
-
 mapping
 :   refers to the mapping index of the port map that failed, i.e.
     the index returned from add\_mapping().
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_alert%3A%3A%5Bexternal_port%5D&labels=documentation&body=Documentation+under+heading+%22portmap_alert%3A%3A%5Bexternal_port%5D%22+could+be+improved)]
-
 external\_port
 :   the external port allocated for the mapping.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_alert%3A%3A%5Blocal_address%5D&labels=documentation&body=Documentation+under+heading+%22portmap_alert%3A%3A%5Blocal_address%5D%22+could+be+improved)]
-
 local\_address
 :   the local network the port mapper is running on
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+portmap_log_alert&labels=documentation&body=Documentation+under+heading+%22class+portmap_log_alert%22+could+be+improved)]
 
 # portmap\_log\_alert
 
@@ -1711,8 +1445,6 @@ struct portmap_log_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_log_alert%3A%3A%5Blog_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22portmap_log_alert%3A%3A%5Blog_message%28%29%5D%22+could+be+improved)]
-
 ## log\_message()
 
 ```cpp
@@ -1721,12 +1453,8 @@ char const* log_message () const;
 
 the message associated with this log line
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:portmap_log_alert%3A%3A%5Blocal_address%5D&labels=documentation&body=Documentation+under+heading+%22portmap_log_alert%3A%3A%5Blocal_address%5D%22+could+be+improved)]
-
 local\_address
 :   the local network the port mapper is running on
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+fastresume_rejected_alert&labels=documentation&body=Documentation+under+heading+%22class+fastresume_rejected_alert%22+could+be+improved)]
 
 # fastresume\_rejected\_alert
 
@@ -1749,8 +1477,6 @@ struct fastresume_rejected_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:fastresume_rejected_alert%3A%3A%5Bfile_path%28%29%5D&labels=documentation&body=Documentation+under+heading+%22fastresume_rejected_alert%3A%3A%5Bfile_path%28%29%5D%22+could+be+improved)]
-
 ## file\_path()
 
 ```cpp
@@ -1759,12 +1485,8 @@ char const* file_path () const;
 
 If the error happened to a specific file, this returns the path to it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:fastresume_rejected_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22fastresume_rejected_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   the underlying operation that failed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_blocked_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_blocked_alert%22+could+be+improved)]
 
 # peer\_blocked\_alert
 
@@ -1801,8 +1523,6 @@ struct peer_blocked_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+reason_t&labels=documentation&body=Documentation+under+heading+%22enum+reason_t%22+could+be+improved)]
-
 ## enum reason\_t
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1818,13 +1538,9 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | invalid\_local\_interface | 6 |  |
 | ssrf\_mitigation | 7 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_blocked_alert%3A%3A%5Breason%5D&labels=documentation&body=Documentation+under+heading+%22peer_blocked_alert%3A%3A%5Breason%5D%22+could+be+improved)]
-
 reason
 :   the reason for the peer being blocked. Is one of the values from the
     [reason\_t](reference-Alerts.md#reason_t) enum.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_announce_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_announce_alert%22+could+be+improved)]
 
 # dht\_announce\_alert
 
@@ -1845,8 +1561,6 @@ struct dht_announce_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_get_peers_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_get_peers_alert%22+could+be+improved)]
-
 # dht\_get\_peers\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1863,8 +1577,6 @@ struct dht_get_peers_alert final : alert
    sha1_hash info_hash;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+cache_flushed_alert&labels=documentation&body=Documentation+under+heading+%22class+cache_flushed_alert%22+could+be+improved)]
 
 # cache\_flushed\_alert
 
@@ -1884,8 +1596,6 @@ struct cache_flushed_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+lsd_peer_alert&labels=documentation&body=Documentation+under+heading+%22class+lsd_peer_alert%22+could+be+improved)]
-
 # lsd\_peer\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -1901,8 +1611,6 @@ struct lsd_peer_alert final : peer_alert
    static constexpr alert_category_t static_category  = alert_category::peer;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+trackerid_alert&labels=documentation&body=Documentation+under+heading+%22class+trackerid_alert%22+could+be+improved)]
 
 # trackerid\_alert
 
@@ -1922,8 +1630,6 @@ struct trackerid_alert final : tracker_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:trackerid_alert%3A%3A%5Btracker_id%28%29%5D&labels=documentation&body=Documentation+under+heading+%22trackerid_alert%3A%3A%5Btracker_id%28%29%5D%22+could+be+improved)]
-
 ## tracker\_id()
 
 ```cpp
@@ -1931,8 +1637,6 @@ char const* tracker_id () const;
 ```
 
 The tracker ID returned by the tracker
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_bootstrap_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_bootstrap_alert%22+could+be+improved)]
 
 # dht\_bootstrap\_alert
 
@@ -1948,8 +1652,6 @@ struct dht_bootstrap_alert final : alert
    static constexpr alert_category_t static_category  = alert_category::dht;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_error_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_error_alert%22+could+be+improved)]
 
 # torrent\_error\_alert
 
@@ -1971,8 +1673,6 @@ struct torrent_error_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_error_alert%3A%3A%5Bfilename%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_error_alert%3A%3A%5Bfilename%28%29%5D%22+could+be+improved)]
-
 ## filename()
 
 ```cpp
@@ -1981,12 +1681,8 @@ char const* filename () const;
 
 the filename (or object) the error occurred on.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22torrent_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   specifies which error the torrent encountered.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_need_cert_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_need_cert_alert%22+could+be+improved)]
 
 # torrent\_need\_cert\_alert
 
@@ -2005,8 +1701,6 @@ struct torrent_need_cert_alert final : torrent_alert
    static constexpr alert_category_t static_category  = alert_category::status;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+incoming_connection_alert&labels=documentation&body=Documentation+under+heading+%22class+incoming_connection_alert%22+could+be+improved)]
 
 # incoming\_connection\_alert
 
@@ -2030,17 +1724,11 @@ struct incoming_connection_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:incoming_connection_alert%3A%3A%5Bsocket_type%5D&labels=documentation&body=Documentation+under+heading+%22incoming_connection_alert%3A%3A%5Bsocket_type%5D%22+could+be+improved)]
-
 socket\_type
 :   tells you what kind of socket the connection was accepted
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:incoming_connection_alert%3A%3A%5Bendpoint%5D&labels=documentation&body=Documentation+under+heading+%22incoming_connection_alert%3A%3A%5Bendpoint%5D%22+could+be+improved)]
-
 endpoint
 :   is the IP address and port the connection came from.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+add_torrent_alert&labels=documentation&body=Documentation+under+heading+%22class+add_torrent_alert%22+could+be+improved)]
 
 # add\_torrent\_alert
 
@@ -2062,8 +1750,6 @@ struct add_torrent_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_alert%3A%3A%5Bparams%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_alert%3A%3A%5Bparams%5D%22+could+be+improved)]
-
 params
 :   This contains copies of the most important fields from the original
     [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params) object, passed to [add\_torrent()](reference-Session.md#add_torrent()) or
@@ -2081,12 +1767,8 @@ params
     the info\_hash field will be updated with the info-hash of the torrent
     specified by ti.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   set to the error, if one occurred while adding the torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+state_update_alert&labels=documentation&body=Documentation+under+heading+%22class+state_update_alert%22+could+be+improved)]
 
 # state\_update\_alert
 
@@ -2108,16 +1790,12 @@ struct state_update_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:state_update_alert%3A%3A%5Bstatus%5D&labels=documentation&body=Documentation+under+heading+%22state_update_alert%3A%3A%5Bstatus%5D%22+could+be+improved)]
-
 status
 :   contains the torrent status of all torrents that changed since last
     time this message was posted. Note that you can map a torrent status
     to a specific torrent via its handle member. The receiving end is
     suggested to have all torrents sorted by the [torrent\_handle](reference-Torrent_Handle.md#torrent_handle) or hashed
     by it, for efficient updates.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_stats_alert&labels=documentation&body=Documentation+under+heading+%22class+session_stats_alert%22+could+be+improved)]
 
 # session\_stats\_alert
 
@@ -2144,8 +1822,6 @@ struct session_stats_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_stats_alert%3A%3A%5Bcounters%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_stats_alert%3A%3A%5Bcounters%28%29%5D%22+could+be+improved)]
-
 ## counters()
 
 ```cpp
@@ -2161,8 +1837,6 @@ versions. The intended usage is to request the mapping, i.e. call
 interpret these values throughout the process' runtime.
 
 For more information, see the [session statistics](manual-ref.md#session-statistics) section.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_error_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_error_alert%22+could+be+improved)]
 
 # dht\_error\_alert
 
@@ -2182,17 +1856,11 @@ struct dht_error_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22dht_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error code
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_error_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22dht_error_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   the operation that failed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_immutable_item_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_immutable_item_alert%22+could+be+improved)]
 
 # dht\_immutable\_item\_alert
 
@@ -2212,18 +1880,12 @@ struct dht_immutable_item_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_immutable_item_alert%3A%3A%5Btarget%5D&labels=documentation&body=Documentation+under+heading+%22dht_immutable_item_alert%3A%3A%5Btarget%5D%22+could+be+improved)]
-
 target
 :   the target hash of the immutable item. This must
     match the SHA-1 hash of the bencoded form of item.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_immutable_item_alert%3A%3A%5Bitem%5D&labels=documentation&body=Documentation+under+heading+%22dht_immutable_item_alert%3A%3A%5Bitem%5D%22+could+be+improved)]
-
 item
 :   the data for this item
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_mutable_item_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_mutable_item_alert%22+could+be+improved)]
 
 # dht\_mutable\_item\_alert
 
@@ -2247,12 +1909,8 @@ struct dht_mutable_item_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bkey%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bkey%5D%22+could+be+improved)]
-
 key
 :   the public key that was looked up
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bsignature%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bsignature%5D%22+could+be+improved)]
 
 signature
 :   the signature of the data. This is not the signature of the
@@ -2261,28 +1919,18 @@ signature
     information. This is primarily useful for echoing back in a store
     request.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bseq%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bseq%5D%22+could+be+improved)]
-
 seq
 :   the sequence number of this item
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bsalt%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bsalt%5D%22+could+be+improved)]
 
 salt
 :   the salt, if any, used to lookup and store this item. If no
     salt was used, this is an empty string
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bitem%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bitem%5D%22+could+be+improved)]
-
 item
 :   the data for this item
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_mutable_item_alert%3A%3A%5Bauthoritative%5D&labels=documentation&body=Documentation+under+heading+%22dht_mutable_item_alert%3A%3A%5Bauthoritative%5D%22+could+be+improved)]
-
 authoritative
 :   the last response for mutable data is authoritative.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_put_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_put_alert%22+could+be+improved)]
 
 # dht\_put\_alert
 
@@ -2306,27 +1954,19 @@ struct dht_put_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_put_alert%3A%3A%5Btarget%5D&labels=documentation&body=Documentation+under+heading+%22dht_put_alert%3A%3A%5Btarget%5D%22+could+be+improved)]
-
 target
 :   the target hash the item was stored under if this was an *immutable*
     item.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_put_alert%3A%3A%5Bpublic_key+signature+salt+seq%5D&labels=documentation&body=Documentation+under+heading+%22dht_put_alert%3A%3A%5Bpublic_key+signature+salt+seq%5D%22+could+be+improved)]
-
 public\_key signature salt seq
 :   if a mutable item was stored, these are the public key, signature,
     salt and sequence number the item was stored under.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_put_alert%3A%3A%5Bnum_success%5D&labels=documentation&body=Documentation+under+heading+%22dht_put_alert%3A%3A%5Bnum_success%5D%22+could+be+improved)]
 
 num\_success
 :   DHT put operation usually writes item to k nodes, maybe the node
     is stale so no response, or the node doesn't support 'put', or the
     token for write is out of date, etc. num\_success is the number of
     successful responses we got from the puts.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+i2p_alert&labels=documentation&body=Documentation+under+heading+%22class+i2p_alert%22+could+be+improved)]
 
 # i2p\_alert
 
@@ -2344,12 +1984,8 @@ struct i2p_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:i2p_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22i2p_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error that occurred in the i2p SAM connection
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_outgoing_get_peers_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_outgoing_get_peers_alert%22+could+be+improved)]
 
 # dht\_outgoing\_get\_peers\_alert
 
@@ -2370,23 +2006,15 @@ struct dht_outgoing_get_peers_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_outgoing_get_peers_alert%3A%3A%5Binfo_hash%5D&labels=documentation&body=Documentation+under+heading+%22dht_outgoing_get_peers_alert%3A%3A%5Binfo_hash%5D%22+could+be+improved)]
-
 info\_hash
 :   the info\_hash of the torrent we're looking for peers for.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_outgoing_get_peers_alert%3A%3A%5Bobfuscated_info_hash%5D&labels=documentation&body=Documentation+under+heading+%22dht_outgoing_get_peers_alert%3A%3A%5Bobfuscated_info_hash%5D%22+could+be+improved)]
 
 obfuscated\_info\_hash
 :   if this was an obfuscated lookup, this is the info-hash target
     actually sent to the node.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_outgoing_get_peers_alert%3A%3A%5Bendpoint%5D&labels=documentation&body=Documentation+under+heading+%22dht_outgoing_get_peers_alert%3A%3A%5Bendpoint%5D%22+could+be+improved)]
-
 endpoint
 :   the endpoint we're sending this query to
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+log_alert&labels=documentation&body=Documentation+under+heading+%22class+log_alert%22+could+be+improved)]
 
 # log\_alert
 
@@ -2407,8 +2035,6 @@ struct log_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:log_alert%3A%3A%5Blog_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22log_alert%3A%3A%5Blog_message%28%29%5D%22+could+be+improved)]
-
 ## log\_message()
 
 ```cpp
@@ -2416,8 +2042,6 @@ char const* log_message () const;
 ```
 
 returns the log message
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_log_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_log_alert%22+could+be+improved)]
 
 # torrent\_log\_alert
 
@@ -2438,8 +2062,6 @@ struct torrent_log_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_log_alert%3A%3A%5Blog_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_log_alert%3A%3A%5Blog_message%28%29%5D%22+could+be+improved)]
-
 ## log\_message()
 
 ```cpp
@@ -2447,8 +2069,6 @@ char const* log_message () const;
 ```
 
 returns the log message
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_log_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_log_alert%22+could+be+improved)]
 
 # peer\_log\_alert
 
@@ -2480,8 +2100,6 @@ struct peer_log_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_log_alert%3A%3A%5Blog_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_log_alert%3A%3A%5Blog_message%28%29%5D%22+could+be+improved)]
-
 ## log\_message()
 
 ```cpp
@@ -2489,8 +2107,6 @@ char const* log_message () const;
 ```
 
 returns the log message
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+direction_t&labels=documentation&body=Documentation+under+heading+%22enum+direction_t%22+could+be+improved)]
 
 ## enum direction\_t
 
@@ -2504,13 +2120,9 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | outgoing | 3 |  |
 | info | 4 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_log_alert%3A%3A%5Bevent_type%5D&labels=documentation&body=Documentation+under+heading+%22peer_log_alert%3A%3A%5Bevent_type%5D%22+could+be+improved)]
-
 event\_type
 :   string literal indicating the kind of event. For messages, this is the
     message name.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+lsd_error_alert&labels=documentation&body=Documentation+under+heading+%22class+lsd_error_alert%22+could+be+improved)]
 
 # lsd\_error\_alert
 
@@ -2530,18 +2142,12 @@ struct lsd_error_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:lsd_error_alert%3A%3A%5Blocal_address%5D&labels=documentation&body=Documentation+under+heading+%22lsd_error_alert%3A%3A%5Blocal_address%5D%22+could+be+improved)]
-
 local\_address
 :   the local network the corresponding local service discovery is running
     on
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:lsd_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22lsd_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   The error code
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_lookup&labels=documentation&body=Documentation+under+heading+%22class+dht_lookup%22+could+be+improved)]
 
 # dht\_lookup
 
@@ -2567,37 +2173,25 @@ struct dht_lookup
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Btype%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Btype%5D%22+could+be+improved)]
-
 type
 :   string literal indicating which kind of lookup this is
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Boutstanding_requests%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Boutstanding_requests%5D%22+could+be+improved)]
 
 outstanding\_requests
 :   the number of outstanding request to individual nodes
     this lookup has right now
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Btimeouts%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Btimeouts%5D%22+could+be+improved)]
-
 timeouts
 :   the total number of requests that have timed out so far
     for this lookup
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Bresponses%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Bresponses%5D%22+could+be+improved)]
 
 responses
 :   the total number of responses we have received for this
     lookup so far for this lookup
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Bbranch_factor%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Bbranch_factor%5D%22+could+be+improved)]
-
 branch\_factor
 :   the branch factor for this lookup. This is the number of
     nodes we keep outstanding requests to in parallel by default.
     when nodes time out we may increase this.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Bnodes_left%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Bnodes_left%5D%22+could+be+improved)]
 
 nodes\_left
 :   the number of nodes left that could be queries for this
@@ -2605,14 +2199,10 @@ nodes\_left
     while performing the lookup and would never end up actually
     being queried.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Blast_sent%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Blast_sent%5D%22+could+be+improved)]
-
 last\_sent
 :   the number of seconds ago the
     last message was sent that's still
     outstanding
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Bfirst_timeout%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Bfirst_timeout%5D%22+could+be+improved)]
 
 first\_timeout
 :   the number of outstanding requests
@@ -2621,12 +2211,8 @@ first\_timeout
     sense that they increased the branch
     factor
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_lookup%3A%3A%5Btarget%5D&labels=documentation&body=Documentation+under+heading+%22dht_lookup%3A%3A%5Btarget%5D%22+could+be+improved)]
-
 target
 :   the node-id or info-hash target for this lookup
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_stats_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_stats_alert%22+could+be+improved)]
 
 # dht\_stats\_alert
 
@@ -2647,28 +2233,18 @@ struct dht_stats_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_stats_alert%3A%3A%5Bactive_requests%5D&labels=documentation&body=Documentation+under+heading+%22dht_stats_alert%3A%3A%5Bactive_requests%5D%22+could+be+improved)]
-
 active\_requests
 :   a vector of the currently running DHT lookups.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_stats_alert%3A%3A%5Brouting_table%5D&labels=documentation&body=Documentation+under+heading+%22dht_stats_alert%3A%3A%5Brouting_table%5D%22+could+be+improved)]
 
 routing\_table
 :   contains information about every bucket in the DHT routing
     table.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_stats_alert%3A%3A%5Bnid%5D&labels=documentation&body=Documentation+under+heading+%22dht_stats_alert%3A%3A%5Bnid%5D%22+could+be+improved)]
-
 nid
 :   the node ID of the DHT node instance
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_stats_alert%3A%3A%5Blocal_endpoint%5D&labels=documentation&body=Documentation+under+heading+%22dht_stats_alert%3A%3A%5Blocal_endpoint%5D%22+could+be+improved)]
-
 local\_endpoint
 :   the local socket this DHT node is running on
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+incoming_request_alert&labels=documentation&body=Documentation+under+heading+%22class+incoming_request_alert%22+could+be+improved)]
 
 # incoming\_request\_alert
 
@@ -2689,12 +2265,8 @@ struct incoming_request_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:incoming_request_alert%3A%3A%5Breq%5D&labels=documentation&body=Documentation+under+heading+%22incoming_request_alert%3A%3A%5Breq%5D%22+could+be+improved)]
-
 req
 :   the request this peer sent to us
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_log_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_log_alert%22+could+be+improved)]
 
 # dht\_log\_alert
 
@@ -2723,8 +2295,6 @@ struct dht_log_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_log_alert%3A%3A%5Blog_message%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_log_alert%3A%3A%5Blog_message%28%29%5D%22+could+be+improved)]
-
 ## log\_message()
 
 ```cpp
@@ -2732,8 +2302,6 @@ char const* log_message () const;
 ```
 
 the log message
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+dht_module_t&labels=documentation&body=Documentation+under+heading+%22enum+dht_module_t%22+could+be+improved)]
 
 ## enum dht\_module\_t
 
@@ -2747,12 +2315,8 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | rpc\_manager | 3 |  |
 | traversal | 4 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_log_alert%3A%3A%5Bmodule%5D&labels=documentation&body=Documentation+under+heading+%22dht_log_alert%3A%3A%5Bmodule%5D%22+could+be+improved)]
-
 module
 :   the module, or part, of the DHT that produced this log message.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_pkt_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_pkt_alert%22+could+be+improved)]
 
 # dht\_pkt\_alert
 
@@ -2780,8 +2344,6 @@ struct dht_pkt_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_pkt_alert%3A%3A%5Bpkt_buf%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_pkt_alert%3A%3A%5Bpkt_buf%28%29%5D%22+could+be+improved)]
-
 ## pkt\_buf()
 
 ```cpp
@@ -2793,8 +2355,6 @@ respectively. This buffer is only valid for as long as the [alert](reference-Ale
 is valid, which is owned by libtorrent and reclaimed whenever
 [pop\_alerts()](reference-Session.md#pop_alerts()) is called on the [session](reference-Session.md#session).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+direction_t&labels=documentation&body=Documentation+under+heading+%22enum+direction_t%22+could+be+improved)]
-
 ## enum direction\_t
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -2804,18 +2364,12 @@ Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
 | incoming | 0 |  |
 | outgoing | 1 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_pkt_alert%3A%3A%5Bdirection%5D&labels=documentation&body=Documentation+under+heading+%22dht_pkt_alert%3A%3A%5Bdirection%5D%22+could+be+improved)]
-
 direction
 :   whether this is an incoming or outgoing packet.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_pkt_alert%3A%3A%5Bnode%5D&labels=documentation&body=Documentation+under+heading+%22dht_pkt_alert%3A%3A%5Bnode%5D%22+could+be+improved)]
 
 node
 :   the DHT node we received this packet from, or sent this packet to
     (depending on direction).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_get_peers_reply_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_get_peers_reply_alert%22+could+be+improved)]
 
 # dht\_get\_peers\_reply\_alert
 
@@ -2835,8 +2389,6 @@ struct dht_get_peers_reply_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_direct_response_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_direct_response_alert%22+could+be+improved)]
-
 # dht\_direct\_response\_alert
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -2855,8 +2407,6 @@ struct dht_direct_response_alert final : alert
    aux::noexcept_movable<udp::endpoint> endpoint;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+picker_log_alert&labels=documentation&body=Documentation+under+heading+%22class+picker_log_alert%22+could+be+improved)]
 
 # picker\_log\_alert
 
@@ -2894,13 +2444,9 @@ struct picker_log_alert final : peer_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:picker_log_alert%3A%3A%5Bpicker_flags%5D&labels=documentation&body=Documentation+under+heading+%22picker_log_alert%3A%3A%5Bpicker_flags%5D%22+could+be+improved)]
-
 picker\_flags
 :   this is a bitmask of which features were enabled for this particular
     pick. The bits are defined in the picker\_flags\_t enum.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_error_alert&labels=documentation&body=Documentation+under+heading+%22class+session_error_alert%22+could+be+improved)]
 
 # session\_error\_alert
 
@@ -2919,12 +2465,8 @@ struct session_error_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_error_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22session_error_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   The error code, if one is associated with this error
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_live_nodes_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_live_nodes_alert%22+could+be+improved)]
 
 # dht\_live\_nodes\_alert
 
@@ -2946,8 +2488,6 @@ struct dht_live_nodes_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_live_nodes_alert%3A%3A%5Bnum_nodes%28%29+nodes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_live_nodes_alert%3A%3A%5Bnum_nodes%28%29+nodes%28%29%5D%22+could+be+improved)]
-
 ## num\_nodes() nodes()
 
 ```cpp
@@ -2957,12 +2497,8 @@ int num_nodes () const;
 
 the number of nodes in the routing table and the actual nodes.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_live_nodes_alert%3A%3A%5Bnode_id%5D&labels=documentation&body=Documentation+under+heading+%22dht_live_nodes_alert%3A%3A%5Bnode_id%5D%22+could+be+improved)]
-
 node\_id
 :   the local DHT node's node-ID this routing table belongs to
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_stats_header_alert&labels=documentation&body=Documentation+under+heading+%22class+session_stats_header_alert%22+could+be+improved)]
 
 # session\_stats\_header\_alert
 
@@ -2986,8 +2522,6 @@ struct session_stats_header_alert final : alert
    static constexpr alert_category_t static_category  = {};
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_sample_infohashes_alert&labels=documentation&body=Documentation+under+heading+%22class+dht_sample_infohashes_alert%22+could+be+improved)]
 
 # dht\_sample\_infohashes\_alert
 
@@ -3013,8 +2547,6 @@ struct dht_sample_infohashes_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bnum_samples%28%29+samples%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bnum_samples%28%29+samples%28%29%5D%22+could+be+improved)]
-
 ## num\_samples() samples()
 
 ```cpp
@@ -3026,8 +2558,6 @@ returns the number of info-hashes returned by the node, as well as the
 actual info-hashes. num\_samples() is more efficient than
 samples().size().
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bnum_nodes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bnum_nodes%28%29%5D%22+could+be+improved)]
-
 ## num\_nodes()
 
 ```cpp
@@ -3035,8 +2565,6 @@ int num_nodes () const;
 ```
 
 The total number of nodes returned by nodes().
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bnodes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bnodes%28%29%5D%22+could+be+improved)]
 
 ## nodes()
 
@@ -3050,29 +2578,19 @@ The information is included so that indexing nodes can perform a key
 space traversal with a single RPC per node by adjusting the target
 value for each RPC.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bnode_id%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bnode_id%5D%22+could+be+improved)]
-
 node\_id
 :   id of the node the request was sent to (and this response was received from)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bendpoint%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bendpoint%5D%22+could+be+improved)]
 
 endpoint
 :   the node the request was sent to (and this response was received from)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Binterval%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Binterval%5D%22+could+be+improved)]
-
 interval
 :   the interval to wait before making another request to this node
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_sample_infohashes_alert%3A%3A%5Bnum_infohashes%5D&labels=documentation&body=Documentation+under+heading+%22dht_sample_infohashes_alert%3A%3A%5Bnum_infohashes%5D%22+could+be+improved)]
 
 num\_infohashes
 :   This field indicates how many info-hash keys are currently in the node's storage.
     If the value is larger than the number of returned samples it indicates that the
     indexer may obtain additional samples after waiting out the interval.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+block_uploaded_alert&labels=documentation&body=Documentation+under+heading+%22class+block_uploaded_alert%22+could+be+improved)]
 
 # block\_uploaded\_alert
 
@@ -3092,8 +2610,6 @@ struct block_uploaded_alert final : peer_alert
    piece_index_t const piece_index;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+alerts_dropped_alert&labels=documentation&body=Documentation+under+heading+%22class+alerts_dropped_alert%22+could+be+improved)]
 
 # alerts\_dropped\_alert
 
@@ -3115,14 +2631,10 @@ struct alerts_dropped_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alerts_dropped_alert%3A%3A%5Bdropped_alerts%5D&labels=documentation&body=Documentation+under+heading+%22alerts_dropped_alert%3A%3A%5Bdropped_alerts%5D%22+could+be+improved)]
-
 dropped\_alerts
 :   a bitmask indicating which alerts were dropped. Each bit represents the
     [alert](reference-Alerts.md#alert) type ID, where bit 0 represents whether any [alert](reference-Alerts.md#alert) of type 0 has
     been dropped, and so on.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+socks5_alert&labels=documentation&body=Documentation+under+heading+%22class+socks5_alert%22+could+be+improved)]
 
 # socks5\_alert
 
@@ -3143,22 +2655,14 @@ struct socks5_alert final : alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:socks5_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22socks5_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:socks5_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22socks5_alert%3A%3A%5Bop%5D%22+could+be+improved)]
 
 op
 :   the operation that failed
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:socks5_alert%3A%3A%5Bip%5D&labels=documentation&body=Documentation+under+heading+%22socks5_alert%3A%3A%5Bip%5D%22+could+be+improved)]
-
 ip
 :   the endpoint configured as the proxy
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_prio_alert&labels=documentation&body=Documentation+under+heading+%22class+file_prio_alert%22+could+be+improved)]
 
 # file\_prio\_alert
 
@@ -3181,17 +2685,11 @@ struct file_prio_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_prio_alert%3A%3A%5Berror%5D&labels=documentation&body=Documentation+under+heading+%22file_prio_alert%3A%3A%5Berror%5D%22+could+be+improved)]
-
 error
 :   the error
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_prio_alert%3A%3A%5Bop%5D&labels=documentation&body=Documentation+under+heading+%22file_prio_alert%3A%3A%5Bop%5D%22+could+be+improved)]
-
 op
 :   the operation that failed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+oversized_file_alert&labels=documentation&body=Documentation+under+heading+%22class+oversized_file_alert%22+could+be+improved)]
 
 # oversized\_file\_alert
 
@@ -3213,8 +2711,6 @@ struct oversized_file_alert final : torrent_alert
    static constexpr alert_category_t static_category  = alert_category::storage;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_conflict_alert&labels=documentation&body=Documentation+under+heading+%22class+torrent_conflict_alert%22+could+be+improved)]
 
 # torrent\_conflict\_alert
 
@@ -3240,21 +2736,15 @@ struct torrent_conflict_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_conflict_alert%3A%3A%5Bconflicting_torrent%5D&labels=documentation&body=Documentation+under+heading+%22torrent_conflict_alert%3A%3A%5Bconflicting_torrent%5D%22+could+be+improved)]
-
 conflicting\_torrent
 :   the handle to the torrent in conflict. The swarm associated with this
     torrent handle did not download the metadata, but the downloaded
     metadata collided with this swarm's info-hash.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_conflict_alert%3A%3A%5Bmetadata%5D&labels=documentation&body=Documentation+under+heading+%22torrent_conflict_alert%3A%3A%5Bmetadata%5D%22+could+be+improved)]
-
 metadata
 :   the metadata that was received by one of the torrents in conflict.
     One way to resolve the conflict is to remove both failing torrents
     and re-add it using this metadata
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_info_alert&labels=documentation&body=Documentation+under+heading+%22class+peer_info_alert%22+could+be+improved)]
 
 # peer\_info\_alert
 
@@ -3272,12 +2762,8 @@ struct peer_info_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info_alert%3A%3A%5Bpeer_info%5D&labels=documentation&body=Documentation+under+heading+%22peer_info_alert%3A%3A%5Bpeer_info%5D%22+could+be+improved)]
-
 peer\_info
 :   the list of the currently connected peers
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_progress_alert&labels=documentation&body=Documentation+under+heading+%22class+file_progress_alert%22+could+be+improved)]
 
 # file\_progress\_alert
 
@@ -3295,12 +2781,8 @@ struct file_progress_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_progress_alert%3A%3A%5Bfiles%5D&labels=documentation&body=Documentation+under+heading+%22file_progress_alert%3A%3A%5Bfiles%5D%22+could+be+improved)]
-
 files
 :   the list of the files in the torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+piece_info_alert&labels=documentation&body=Documentation+under+heading+%22class+piece_info_alert%22+could+be+improved)]
 
 # piece\_info\_alert
 
@@ -3319,17 +2801,11 @@ struct piece_info_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:piece_info_alert%3A%3A%5Bpiece_info%5D&labels=documentation&body=Documentation+under+heading+%22piece_info_alert%3A%3A%5Bpiece_info%5D%22+could+be+improved)]
-
 piece\_info
 :   info about pieces being downloaded for the torrent
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:piece_info_alert%3A%3A%5Bblock_data%5D&labels=documentation&body=Documentation+under+heading+%22piece_info_alert%3A%3A%5Bblock_data%5D%22+could+be+improved)]
-
 block\_data
 :   storage for [block\_info](reference-Torrent_Handle.md#block_info) pointers in [partial\_piece\_info](reference-Torrent_Handle.md#partial_piece_info) objects
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+piece_availability_alert&labels=documentation&body=Documentation+under+heading+%22class+piece_availability_alert%22+could+be+improved)]
 
 # piece\_availability\_alert
 
@@ -3347,12 +2823,8 @@ struct piece_availability_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:piece_availability_alert%3A%3A%5Bpiece_availability%5D&labels=documentation&body=Documentation+under+heading+%22piece_availability_alert%3A%3A%5Bpiece_availability%5D%22+could+be+improved)]
-
 piece\_availability
 :   info about pieces being downloaded for the torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+tracker_list_alert&labels=documentation&body=Documentation+under+heading+%22class+tracker_list_alert%22+could+be+improved)]
 
 # tracker\_list\_alert
 
@@ -3370,12 +2842,8 @@ struct tracker_list_alert final : torrent_alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:tracker_list_alert%3A%3A%5Btrackers%5D&labels=documentation&body=Documentation+under+heading+%22tracker_list_alert%3A%3A%5Btrackers%5D%22+could+be+improved)]
-
 trackers
 :   list of trackers and their status for the torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+alert&labels=documentation&body=Documentation+under+heading+%22class+alert%22+could+be+improved)]
 
 # alert
 
@@ -3421,8 +2889,6 @@ struct alert
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert%3A%3A%5Btimestamp%28%29%5D&labels=documentation&body=Documentation+under+heading+%22alert%3A%3A%5Btimestamp%28%29%5D%22+could+be+improved)]
-
 ## timestamp()
 
 ```cpp
@@ -3430,8 +2896,6 @@ time_point timestamp () const;
 ```
 
 a timestamp is automatically created in the constructor
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert%3A%3A%5Btype%28%29%5D&labels=documentation&body=Documentation+under+heading+%22alert%3A%3A%5Btype%28%29%5D%22+could+be+improved)]
 
 ## type()
 
@@ -3470,8 +2934,6 @@ for (alert* a : alerts) {
 }
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert%3A%3A%5Bwhat%28%29%5D&labels=documentation&body=Documentation+under+heading+%22alert%3A%3A%5Bwhat%28%29%5D%22+could+be+improved)]
-
 ## what()
 
 ```cpp
@@ -3480,8 +2942,6 @@ virtual char const* what () const noexcept = 0;
 
 returns a string literal describing the type of the [alert](reference-Alerts.md#alert). It does
 not include any information that might be bundled with the [alert](reference-Alerts.md#alert).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert%3A%3A%5Bmessage%28%29%5D&labels=documentation&body=Documentation+under+heading+%22alert%3A%3A%5Bmessage%28%29%5D%22+could+be+improved)]
 
 ## message()
 
@@ -3495,8 +2955,6 @@ to use this for applications that may be localized. Instead, handle each [alert]
 type individually and extract and render the information from the [alert](reference-Alerts.md#alert) depending
 on the locale.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert%3A%3A%5Bcategory%28%29%5D&labels=documentation&body=Documentation+under+heading+%22alert%3A%3A%5Bcategory%28%29%5D%22+could+be+improved)]
-
 ## category()
 
 ```cpp
@@ -3504,8 +2962,6 @@ virtual alert_category_t category () const noexcept = 0;
 ```
 
 returns a bitmask specifying which categories this [alert](reference-Alerts.md#alert) belong to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert_cast%28%29&labels=documentation&body=Documentation+under+heading+%22alert_cast%28%29%22+could+be+improved)]
 
 # alert\_cast()
 
@@ -3524,8 +2980,6 @@ Note
 
 alert\_cast<> can only cast to an exact [alert](reference-Alerts.md#alert) type, not a base class
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:operation_name%28%29&labels=documentation&body=Documentation+under+heading+%22operation_name%28%29%22+could+be+improved)]
-
 # operation\_name()
 
 Declared in "[libtorrent/operations.hpp](include/libtorrent/operations.hpp)"
@@ -3536,8 +2990,6 @@ char const* operation_name (operation_t op);
 
 maps an operation id (from [peer\_error\_alert](reference-Alerts.md#peer_error_alert) and [peer\_disconnected\_alert](reference-Alerts.md#peer_disconnected_alert))
 to its name. See [operation\_t](reference-Alerts.md#operation_t) for the constants
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+operation_t&labels=documentation&body=Documentation+under+heading+%22enum+operation_t%22+could+be+improved)]
 
 # enum operation\_t
 
@@ -3593,8 +3045,6 @@ Declared in "[libtorrent/operations.hpp](include/libtorrent/operations.hpp)"
 | file\_mmap | 45 | call to mmap() (or windows counterpart) |
 | file\_truncate | 46 | call to ftruncate() (or SetEndOfFile() on windows) |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:int&labels=documentation&body=Documentation+under+heading+%22int%22+could+be+improved)]
-
 # int
 
 Declared in "[libtorrent/alert\_types.hpp](include/libtorrent/alert_types.hpp)"
@@ -3604,8 +3054,6 @@ user\_alert\_id
 
 num\_alert\_types
 :   this constant represents "max\_alert\_index" + 1
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:alert_category_t&labels=documentation&body=Documentation+under+heading+%22alert_category_t%22+could+be+improved)]
 
 # alert\_category\_t
 

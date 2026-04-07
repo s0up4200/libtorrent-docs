@@ -4,8 +4,6 @@ date: "2015-07"
 source: "https://blog.libtorrent.org/2015/07/slow-start/"
 ---
 
-Friday, July 31st, 2015 by arvid
-
 This post is a result of looking into a *slow-start* performance issue in [uTP](http://libtorrent.org/utp.html). Slow-start is a mechanism in TCP employed to discover the capacity of a link, before transitioning into the steady state regime of [additive increase and multiplicative decrease](https://en.wikipedia.org/wiki/Additive_increase/multiplicative_decrease). Slow start is employed on new connections and after time-outs (where the congestion window was set below the size of 1 packet). Slow start is implemented by increasing the congestion window size by the number of bytes that were ACKed by an incoming packet. Basically, for every byte that is ACKed, two more bytes are sent. This has the effect of doubling the send rate every round-trip.
 
 ## leave slow-start
@@ -65,9 +63,5 @@ In Figure 1, the connection leaves slow start about 3.2 seconds after it was con
 This problem is specific to protocols that use many small requests for downloads. For example, an HTTP request referring to a large file avoids this problem by making the server immediately have lots of data to send, and it can just keep pushing the file down the socket. However, if there instead are hundreds of small files, the requester need to make sure there are enough requests outstanding at any given time. Web servers sometimes limit the number of outstanding requests a client may have to quite few.
 
 This problem was fixed in [libtorrent 1.0.6](https://github.com/arvidn/libtorrent/releases/tag/libtorrent-1_0_6) [[diff](https://github.com/arvidn/libtorrent/commit/578d353bce60b66ea886e623f5d0930411430d3c)]
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [network](https://blog.libtorrent.org/category/network/), [optimization](https://blog.libtorrent.org/category/optimization/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2015/07/slow-start/#respond)
 
 ---

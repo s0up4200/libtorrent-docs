@@ -4,8 +4,6 @@ date: "2012-10"
 source: "https://blog.libtorrent.org/2012/10/asynchronous-disk-io/"
 ---
 
-Friday, October 26th, 2012 by arvid
-
 Since 2010, I’ve been working, on and off, on a branch off of libtorrent which use asynchronous disk I/O, instead of the synchronous disk calls in the disk thread in 0.16.x versions.
 
 The aio branch has several performance improvements apart from allowing multiple disk operations outstanding at any given time. For instance:
@@ -93,10 +91,6 @@ Benefits of using a thread pool with blocking operations instead of asynchronous
 * Every disk operation is asynchrounous, including rename and copy files.
 * The disk code is entirely platform-independent (with the exception for systems not supporting pwritev()/preadv())
 * The disk thread can use vector operations (readv and writev), and typically pass more buffers than Mac OS X would allow using AIO.
-
-Posted in [disk](https://blog.libtorrent.org/category/disk/)
-**|**
- [5 Comments](https://blog.libtorrent.org/2012/10/asynchronous-disk-io/#comments)
 
 ---
 

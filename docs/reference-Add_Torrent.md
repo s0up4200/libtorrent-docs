@@ -1,11 +1,7 @@
 ---
-title: "client_data_t"
+title: "Add Torrent"
 source: "https://libtorrent.org/reference-Add_Torrent.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+client_data_t&labels=documentation&body=Documentation+under+heading+%22class+client_data_t%22+could+be+improved)]
 
 # client\_data\_t
 
@@ -32,8 +28,6 @@ struct client_data_t
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:client_data_t%3A%3A%5Bclient_data_t%28%29%5D&labels=documentation&body=Documentation+under+heading+%22client_data_t%3A%3A%5Bclient_data_t%28%29%5D%22+could+be+improved)]
-
 ## client\_data\_t()
 
 ```cpp
@@ -41,8 +35,6 @@ client_data_t () = default;
 ```
 
 construct a nullptr client data
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:client_data_t%3A%3A%5Boperator%3D%28%29+void%2A%28%29+const%2A%28%29%5D&labels=documentation&body=Documentation+under+heading+%22client_data_t%3A%3A%5Boperator%3D%28%29+void%2A%28%29+const%2A%28%29%5D%22+could+be+improved)]
 
 ## operator=() void\*() const\*()
 
@@ -54,8 +46,6 @@ operator void const* () const = delete;
 ```
 
 we don't allow type-unsafe operations
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+add_torrent_params&labels=documentation&body=Documentation+under+heading+%22class+add_torrent_params%22+could+be+improved)]
 
 # add\_torrent\_params
 
@@ -142,25 +132,17 @@ struct add_torrent_params
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bversion%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bversion%5D%22+could+be+improved)]
-
 version
 :   filled in by the constructor and should be left untouched. It is used
     for forward binary compatibility.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bti%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bti%5D%22+could+be+improved)]
 
 ti
 :   [torrent\_info](reference-Torrent_Info.md#torrent_info) object with the torrent to add. Unless the
     info\_hash is set, this is required to be initialized.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Btrackers%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Btrackers%5D%22+could+be+improved)]
-
 trackers
 :   If the torrent doesn't have a tracker, but relies on the DHT to find
     peers, the trackers can specify tracker URLs for the torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Btracker_tiers%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Btracker_tiers%5D%22+could+be+improved)]
 
 tracker\_tiers
 :   the tiers the URLs in trackers belong to. Trackers belonging to
@@ -169,19 +151,13 @@ tracker\_tiers
     assumed to be part of tier 0, or whichever the last tier was as
     iterating over the trackers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bdht_nodes%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bdht_nodes%5D%22+could+be+improved)]
-
 dht\_nodes
 :   a list of hostname and port pairs, representing DHT nodes to be added
     to the [session](reference-Session.md#session) (if DHT is enabled). The hostname may be an IP address.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bname%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bname%5D%22+could+be+improved)]
-
 name
 :   in case there's no other name in this torrent, this name will be used.
     The name out of the [torrent\_info](reference-Torrent_Info.md#torrent_info) object takes precedence if available.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bsave_path%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bsave_path%5D%22+could+be+improved)]
 
 save\_path
 :   the path where the torrent is or will be stored.
@@ -195,21 +171,15 @@ save\_path
     Setting this to an absolute path performs slightly better than a
     relative path.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bstorage_mode%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bstorage_mode%5D%22+could+be+improved)]
-
 storage\_mode
 :   One of the values from [storage\_mode\_t](reference-Storage.md#storage_mode_t). For more information, see
     [storage allocation](manual-ref.md#storage-allocation).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Buserdata%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Buserdata%5D%22+could+be+improved)]
 
 userdata
 :   The userdata parameter is optional and will be passed on to the
     extension constructor functions, if any
     (see [torrent\_handle::add\_extension()](reference-Torrent_Handle.md#add_extension())). It will also be stored in the
     torrent object and can be retrieved by calling [userdata()](reference-Torrent_Handle.md#userdata()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bfile_priorities%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bfile_priorities%5D%22+could+be+improved)]
 
 file\_priorities
 :   can be set to control the initial file priorities when adding a
@@ -222,15 +192,11 @@ file\_priorities
     have the default download priority. This default can be changed by
     setting the default\_dont\_download torrent\_flag.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Btrackerid%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Btrackerid%5D%22+could+be+improved)]
-
 trackerid
 :   the default tracker id to be used when announcing to trackers. By
     default this is empty, and no tracker ID is used, since this is an
     optional argument. If a tracker returns a tracker ID, that ID is used
     instead of this.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bflags%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bflags%5D%22+could+be+improved)]
 
 flags
 :   flags controlling aspects of this torrent and how it's added. See
@@ -243,16 +209,12 @@ flags
     setting other flags, make sure to bitwise OR or in a flag or bitwise
     AND the inverse of a flag to clear it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Binfo_hashes%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Binfo_hashes%5D%22+could+be+improved)]
-
 info\_hashes
 :   set this to the info hash of the torrent to add in case the info-hash
     is the only known property of the torrent. i.e. you don't have a
     .torrent file nor a magnet link.
     To add a magnet link, use [parse\_magnet\_uri()](reference-Core.md#parse_magnet_uri()) to populate fields in the
     [add\_torrent\_params](reference-Add_Torrent.md#add_torrent_params) object.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bmax_uploads+max_connections%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bmax_uploads+max_connections%5D%22+could+be+improved)]
 
 max\_uploads max\_connections
 :   max\_uploads, max\_connections, upload\_limit,
@@ -268,25 +230,17 @@ max\_uploads max\_connections
     For fine grained control over rate limits, including making them apply
     to local peers, see [peer classes](manual-ref.md#peer-classes).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bupload_limit+download_limit%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bupload_limit+download_limit%5D%22+could+be+improved)]
-
 upload\_limit download\_limit
 :   the upload and download rate limits for this torrent, specified in
     bytes per second. -1 means unlimited.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Btotal_uploaded+total_downloaded%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Btotal_uploaded+total_downloaded%5D%22+could+be+improved)]
 
 total\_uploaded total\_downloaded
 :   the total number of bytes uploaded and downloaded by this torrent so
     far.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bactive_time+finished_time+seeding_time%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bactive_time+finished_time+seeding_time%5D%22+could+be+improved)]
-
 active\_time finished\_time seeding\_time
 :   the number of seconds this torrent has spent in started, finished and
     seeding state so far, respectively.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Badded_time+completed_time%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Badded_time+completed_time%5D%22+could+be+improved)]
 
 added\_time completed\_time
 :   if set to a non-zero value, this is the posix time of when this torrent
@@ -294,15 +248,11 @@ added\_time completed\_time
     internal added\_time will be set to the time of when [add\_torrent()](reference-Session.md#add_torrent()) is
     called.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Blast_seen_complete%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Blast_seen_complete%5D%22+could+be+improved)]
-
 last\_seen\_complete
 :   if set to non-zero, initializes the time (expressed in posix time) when
     we last saw a seed or peers that together formed a complete copy of the
     torrent. If left set to zero, the internal counterpart to this field
     will be updated when we see a seed or a distributed copies >= 1.0.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bnum_complete+num_incomplete+num_downloaded%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bnum_complete+num_incomplete+num_downloaded%5D%22+could+be+improved)]
 
 num\_complete num\_incomplete num\_downloaded
 :   these field can be used to initialize the torrent's cached scrape data.
@@ -318,8 +268,6 @@ num\_complete num\_incomplete num\_downloaded
     Leaving any of these values set to -1 indicates we don't know, or we
     have not received any scrape data.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bhttp_seeds+url_seeds%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bhttp_seeds+url_seeds%5D%22+could+be+improved)]
-
 http\_seeds url\_seeds
 :   URLs can be added to these two lists to specify additional web
     seeds to be used by the torrent. If the flag\_override\_web\_seeds
@@ -332,38 +280,26 @@ http\_seeds url\_seeds
     url\_seeds expects URLs to regular web servers, aka "get right" style,
     specified in [BEP 19](https://www.bittorrent.org/beps/bep_0019.html).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bpeers%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bpeers%5D%22+could+be+improved)]
-
 peers
 :   peers to add to the torrent, to be tried to be connected to as
     bittorrent peers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bbanned_peers%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bbanned_peers%5D%22+could+be+improved)]
-
 banned\_peers
 :   peers banned from this torrent. The will not be connected to
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bunfinished_pieces%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bunfinished_pieces%5D%22+could+be+improved)]
 
 unfinished\_pieces
 :   this is a map of partially downloaded piece. The key is the piece index
     and the value is a [bitfield](reference-Utility.md#bitfield) where each bit represents a 16 kiB block.
     A set bit means we have that block.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bhave_pieces%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bhave_pieces%5D%22+could+be+improved)]
-
 have\_pieces
 :   this is a [bitfield](reference-Utility.md#bitfield) indicating which pieces we already have of this
     torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bverified_pieces%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bverified_pieces%5D%22+could+be+improved)]
 
 verified\_pieces
 :   when in seed\_mode, pieces with a set bit in this [bitfield](reference-Utility.md#bitfield) have been
     verified to be valid. Other pieces will be verified the first time a
     peer requests it.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bpiece_priorities%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bpiece_priorities%5D%22+could+be+improved)]
 
 piece\_priorities
 :   this sets the priorities for each individual piece in the torrent. Each
@@ -371,12 +307,8 @@ piece\_priorities
     set both file- and piece priorities, file priorities will take
     precedence.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bmerkle_trees%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bmerkle_trees%5D%22+could+be+improved)]
-
 merkle\_trees
 :   v2 hashes, if known
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bmerkle_tree_mask%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bmerkle_tree_mask%5D%22+could+be+improved)]
 
 merkle\_tree\_mask
 :   if set, indicates which hashes are included in the corresponding
@@ -386,20 +318,14 @@ merkle\_tree\_mask
     merkle\_trees is the hash for that node. This is an optimization
     to avoid storing a lot of zeros.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Bverified_leaf_hashes%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Bverified_leaf_hashes%5D%22+could+be+improved)]
-
 verified\_leaf\_hashes
 :   bit-fields indicating which v2 leaf hashes have been verified
     against the root hash. If this vector is empty and merkle\_trees is
     non-empty it implies that all hashes in merkle\_trees are verified.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Brenamed_files%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Brenamed_files%5D%22+could+be+improved)]
-
 renamed\_files
 :   this is a map of file indices in the torrent and new filenames to be
     applied before the torrent is added.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_torrent_params%3A%3A%5Blast_download+last_upload%5D&labels=documentation&body=Documentation+under+heading+%22add_torrent_params%3A%3A%5Blast_download+last_upload%5D%22+could+be+improved)]
 
 last\_download last\_upload
 :   the posix time of the last time payload was received or sent for this

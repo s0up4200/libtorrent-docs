@@ -4,8 +4,6 @@ date: "2017-02"
 source: "https://blog.libtorrent.org/2017/02/building-libtorrent-for-c-h-i-p/"
 ---
 
-Tuesday, February 28th, 2017 by arvid
-
 I recently bought a [C.H.I.P.](https://getchip.com/) and naturally wanted to build libtorrent for it. I’m on a mac and chip runs arm, so first I needed to install the cross compiler toolchain. The target for chip is arm on linux, so the toolchain I’m looking for is “arm-linux-gnueabihf”.
 
 ## toolchain
@@ -84,9 +82,5 @@ For a development build, you want to disable invariant checks, since they can be
 ```
 $ b2 gcc-chip -j4 link=static target-os=linux architecture=arm invariant-checks=off
 ```
-
-Posted in [Uncategorized](https://blog.libtorrent.org/category/uncategorized/)
-**|**
- [No Comments](https://blog.libtorrent.org/2017/02/building-libtorrent-for-c-h-i-p/#respond)
 
 ---

@@ -1,11 +1,7 @@
 ---
-title: "storage_params"
+title: "Storage"
 source: "https://libtorrent.org/reference-Storage.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+storage_params&labels=documentation&body=Documentation+under+heading+%22class+storage_params%22+could+be+improved)]
 
 # storage\_params
 
@@ -31,8 +27,6 @@ struct storage_params
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_slice&labels=documentation&body=Documentation+under+heading+%22class+file_slice%22+could+be+improved)]
-
 # file\_slice
 
 Declared in "[libtorrent/file\_storage.hpp](include/libtorrent/file_storage.hpp)"
@@ -54,22 +48,14 @@ struct file_slice
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_slice%3A%3A%5Bfile_index%5D&labels=documentation&body=Documentation+under+heading+%22file_slice%3A%3A%5Bfile_index%5D%22+could+be+improved)]
-
 file\_index
 :   the index of the file
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_slice%3A%3A%5Boffset%5D&labels=documentation&body=Documentation+under+heading+%22file_slice%3A%3A%5Boffset%5D%22+could+be+improved)]
 
 offset
 :   the offset from the start of the file, in bytes
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_slice%3A%3A%5Bsize%5D&labels=documentation&body=Documentation+under+heading+%22file_slice%3A%3A%5Bsize%5D%22+could+be+improved)]
-
 size
 :   the size of the window, in bytes
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+file_storage&labels=documentation&body=Documentation+under+heading+%22class+file_storage%22+could+be+improved)]
 
 # file\_storage
 
@@ -158,8 +144,6 @@ class file_storage
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bis_valid%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bis_valid%28%29%5D%22+could+be+improved)]
-
 ## is\_valid()
 
 ```cpp
@@ -171,8 +155,6 @@ on the [file\_storage](reference-Storage.md#file_storage). This is typically tak
 of whether the [file\_storage](reference-Storage.md#file_storage) as a whole is initialized or
 not.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Breserve%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Breserve%28%29%5D%22+could+be+improved)]
-
 ## reserve()
 
 ```cpp
@@ -182,8 +164,6 @@ void reserve (int num_files);
 allocates space for num\_files in the internal file list. This can
 be used to avoid reallocating the internal file list when the number
 of files to be added is known up-front.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Badd_file%28%29+add_file_borrow%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Badd_file%28%29+add_file_borrow%28%29%5D%22+could+be+improved)]
 
 ## add\_file() add\_file\_borrow()
 
@@ -259,8 +239,6 @@ can be changed by calling set\_name.
 The overloads that take an error\_code reference will report failures
 via that variable, otherwise system\_error is thrown.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Brename_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Brename_file%28%29%5D%22+could+be+improved)]
-
 ## rename\_file()
 
 ```cpp
@@ -269,8 +247,6 @@ void rename_file (file_index_t index, std::string const& new_filename);
 
 renames the file at index to new\_filename. Keep in mind
 that filenames are expected to be UTF-8 encoded.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bmap_block%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bmap_block%28%29%5D%22+could+be+improved)]
 
 ## map\_block()
 
@@ -290,8 +266,6 @@ torrents address space. piece may not be negative and
 
 may not exceed the total size of the torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bmap_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bmap_file%28%29%5D%22+could+be+improved)]
-
 ## map\_file()
 
 ```cpp
@@ -305,8 +279,6 @@ is meant to hold bittorrent block requests, which may not be larger
 than 16 kiB. Mapping a range larger than that may return an overflown
 integer.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bnum_files%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bnum_files%28%29%5D%22+could+be+improved)]
-
 ## num\_files()
 
 ```cpp
@@ -315,8 +287,6 @@ int num_files () const noexcept;
 
 returns the number of files in the [file\_storage](reference-Storage.md#file_storage)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bend_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bend_file%28%29%5D%22+could+be+improved)]
-
 ## end\_file()
 
 ```cpp
@@ -324,8 +294,6 @@ file_index_t end_file () const noexcept;
 ```
 
 returns the index of the one-past-end file in the file storage
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_range%28%29%5D%22+could+be+improved)]
 
 ## file\_range()
 
@@ -337,8 +305,6 @@ returns an implementation-defined type that can be used as the
 container in a range-for loop. Where the values are the indices of all
 files in the [file\_storage](reference-Storage.md#file_storage).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Btotal_size%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Btotal_size%28%29%5D%22+could+be+improved)]
-
 ## total\_size()
 
 ```cpp
@@ -346,8 +312,6 @@ std::int64_t total_size () const;
 ```
 
 returns the total number of bytes all the files in this torrent spans
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bset_num_pieces%28%29+num_pieces%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bset_num_pieces%28%29+num_pieces%28%29%5D%22+could+be+improved)]
 
 ## set\_num\_pieces() num\_pieces()
 
@@ -358,8 +322,6 @@ void set_num_pieces (int n);
 
 set and get the number of pieces in the torrent
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bend_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bend_piece%28%29%5D%22+could+be+improved)]
-
 ## end\_piece()
 
 ```cpp
@@ -367,8 +329,6 @@ piece_index_t end_piece () const;
 ```
 
 returns the index of the one-past-end piece in the file storage
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Blast_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Blast_piece%28%29%5D%22+could+be+improved)]
 
 ## last\_piece()
 
@@ -380,8 +340,6 @@ returns the index of the last piece in the torrent. The last piece is
 special in that it may be smaller than the other pieces (and the other
 pieces are all the same size).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bpiece_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bpiece_range%28%29%5D%22+could+be+improved)]
-
 ## piece\_range()
 
 ```cpp
@@ -391,8 +349,6 @@ index_range<piece_index_t> piece_range () const noexcept;
 returns an implementation-defined type that can be used as the
 container in a range-for loop. Where the values are the indices of all
 pieces in the [file\_storage](reference-Storage.md#file_storage).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bpiece_length%28%29+set_piece_length%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bpiece_length%28%29+set_piece_length%28%29%5D%22+could+be+improved)]
 
 ## piece\_length() set\_piece\_length()
 
@@ -404,8 +360,6 @@ int piece_length () const;
 set and get the size of each piece in this torrent. It must be a power of two
 and at least 16 kiB.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bpiece_size%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bpiece_size%28%29%5D%22+could+be+improved)]
-
 ## piece\_size()
 
 ```cpp
@@ -414,8 +368,6 @@ int piece_size (piece_index_t index) const;
 
 returns the piece size of index. This will be the same as [piece\_length()](reference-Torrent_Info.md#piece_length()), except
 for the last piece, which may be shorter.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bpiece_size2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bpiece_size2%28%29%5D%22+could+be+improved)]
 
 ## piece\_size2()
 
@@ -428,8 +380,6 @@ only the first file is considered part of the piece. This is used for
 v2 torrents, where all files are piece aligned and padded. i.e. The pad
 files are not considered part of the piece for this purpose.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bblocks_in_piece2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bblocks_in_piece2%28%29%5D%22+could+be+improved)]
-
 ## blocks\_in\_piece2()
 
 ```cpp
@@ -437,8 +387,6 @@ int blocks_in_piece2 (piece_index_t index) const;
 ```
 
 returns the number of blocks in the specified piece, for v2 torrents.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bblocks_per_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bblocks_per_piece%28%29%5D%22+could+be+improved)]
 
 ## blocks\_per\_piece()
 
@@ -448,8 +396,6 @@ int blocks_per_piece () const;
 
 returns the number of blocks there are in the typical piece. There
 may be fewer in the last piece)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bname%28%29+set_name%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bname%28%29+set_name%28%29%5D%22+could+be+improved)]
 
 ## name() set\_name()
 
@@ -461,8 +407,6 @@ std::string const& name () const;
 set and get the name of this torrent. For multi-file torrents, this is also
 the name of the root directory all the files are stored in.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bswap%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bswap%28%29%5D%22+could+be+improved)]
-
 ## swap()
 
 ```cpp
@@ -470,8 +414,6 @@ void swap (file_storage& ti) noexcept;
 ```
 
 swap all content of *this* with *ti*.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bcanonicalize%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bcanonicalize%28%29%5D%22+could+be+improved)]
 
 ## canonicalize()
 
@@ -481,8 +423,6 @@ void canonicalize ();
 
 arrange files and padding to match the canonical form required
 by BEP 52
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Broot_ptr%28%29+symlink%28%29+hash%28%29+root%28%29+file_offset%28%29+file_name%28%29+pad_file_at%28%29+file_path%28%29+file_size%28%29+mtime%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Broot_ptr%28%29+symlink%28%29+hash%28%29+root%28%29+file_offset%28%29+file_name%28%29+pad_file_at%28%29+file_path%28%29+file_size%28%29+mtime%28%29%5D%22+could+be+improved)]
 
 ## root\_ptr() symlink() hash() root() file\_offset() file\_name() pad\_file\_at() file\_path() file\_size() mtime()
 
@@ -532,8 +472,6 @@ file\_offset() returns the byte offset within the torrent file
 where this file starts. It can be used to map the file to a piece
 index (given the piece size).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_num_blocks%28%29+file_num_pieces%28%29+file_piece_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_num_blocks%28%29+file_num_pieces%28%29+file_piece_range%28%29%5D%22+could+be+improved)]
-
 ## file\_num\_blocks() file\_num\_pieces() file\_piece\_range()
 
 ```cpp
@@ -549,8 +487,6 @@ such alignment.
 These numbers are used to size and navigate the merkle hash tree for
 each file.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_first_block_node%28%29+file_first_piece_node%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_first_block_node%28%29+file_first_piece_node%28%29%5D%22+could+be+improved)]
-
 ## file\_first\_block\_node() file\_first\_piece\_node()
 
 ```cpp
@@ -560,8 +496,6 @@ int file_first_block_node (file_index_t index) const;
 
 index of first piece node in the merkle tree
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_path_hash%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_path_hash%28%29%5D%22+could+be+improved)]
-
 ## file\_path\_hash()
 
 ```cpp
@@ -569,8 +503,6 @@ std::uint32_t file_path_hash (file_index_t index, std::string const& save_path) 
 ```
 
 returns the crc32 hash of file\_path(index)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Ball_path_hashes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Ball_path_hashes%28%29%5D%22+could+be+improved)]
 
 ## all\_path\_hashes()
 
@@ -585,8 +517,6 @@ levels. i.e. if one path in the torrent is foo/bar/baz, the CRC32
 hashes for foo, foo/bar and foo/bar/baz will be added to
 the set.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_flags%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_flags%28%29%5D%22+could+be+improved)]
-
 ## file\_flags()
 
 ```cpp
@@ -595,8 +525,6 @@ file_flags_t file_flags (file_index_t index) const;
 
 returns a bitmask of flags from file\_flags\_t that apply
 to file at index.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_absolute_path%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_absolute_path%28%29%5D%22+could+be+improved)]
 
 ## file\_absolute\_path()
 
@@ -608,8 +536,6 @@ returns true if the file at the specified index has been renamed to
 have an absolute path, i.e. is not anchored in the save path of the
 torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_index_at_offset%28%29+file_index_at_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_index_at_offset%28%29+file_index_at_piece%28%29%5D%22+could+be+improved)]
-
 ## file\_index\_at\_offset() file\_index\_at\_piece()
 
 ```cpp
@@ -618,8 +544,6 @@ file_index_t file_index_at_offset (std::int64_t offset) const;
 ```
 
 returns the index of the file at the given offset in the torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bfile_index_for_root%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bfile_index_for_root%28%29%5D%22+could+be+improved)]
 
 ## file\_index\_for\_root()
 
@@ -630,8 +554,6 @@ file_index_t file_index_for_root (sha256_hash const& root_hash) const;
 finds the file with the given root hash and returns its index
 if there is no file with the root hash, file\_index\_t{-1} is returned
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bpiece_index_at_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bpiece_index_at_file%28%29%5D%22+could+be+improved)]
-
 ## piece\_index\_at\_file()
 
 ```cpp
@@ -639,8 +561,6 @@ piece_index_t piece_index_at_file (file_index_t f) const;
 ```
 
 returns the piece index the given file starts at
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bsanitize_symlinks%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bsanitize_symlinks%28%29%5D%22+could+be+improved)]
 
 ## sanitize\_symlinks()
 
@@ -652,8 +572,6 @@ validate any symlinks, to ensure they all point to
 other files or directories inside this storage. Any invalid symlinks
 are updated to point to themselves.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bv2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bv2%28%29%5D%22+could+be+improved)]
-
 ## v2()
 
 ```cpp
@@ -662,31 +580,21 @@ bool v2 () const;
 
 returns true if this torrent contains v2 metadata.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bflag_pad_file%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bflag_pad_file%5D%22+could+be+improved)]
-
 flag\_pad\_file
 :   the file is a pad file. It's required to contain zeros
     at it will not be saved to disk. Its purpose is to make
     the following file start on a piece boundary.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bflag_hidden%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bflag_hidden%5D%22+could+be+improved)]
-
 flag\_hidden
 :   this file has the hidden attribute set. This is primarily
     a windows attribute
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bflag_executable%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bflag_executable%5D%22+could+be+improved)]
-
 flag\_executable
 :   this file has the executable attribute set.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_storage%3A%3A%5Bflag_symlink%5D&labels=documentation&body=Documentation+under+heading+%22file_storage%3A%3A%5Bflag_symlink%5D%22+could+be+improved)]
 
 flag\_symlink
 :   this file is a symbolic link. It should have a link
     target string associated with it.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:mmap_disk_io_constructor%28%29&labels=documentation&body=Documentation+under+heading+%22mmap_disk_io_constructor%28%29%22+could+be+improved)]
 
 # mmap\_disk\_io\_constructor()
 
@@ -698,8 +606,6 @@ std::unique_ptr<disk_interface> mmap_disk_io_constructor (
 ```
 
 constructs a memory mapped file disk I/O object.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:default_disk_io_constructor%28%29&labels=documentation&body=Documentation+under+heading+%22default_disk_io_constructor%28%29%22+could+be+improved)]
 
 # default\_disk\_io\_constructor()
 
@@ -714,8 +620,6 @@ the constructor function for the default storage. On systems that support
 memory mapped files (and a 64 bit address space) the memory mapped storage
 will be constructed, otherwise the portable posix storage.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disabled_disk_io_constructor%28%29&labels=documentation&body=Documentation+under+heading+%22disabled_disk_io_constructor%28%29%22+could+be+improved)]
-
 # disabled\_disk\_io\_constructor()
 
 Declared in "[libtorrent/disabled\_disk\_io.hpp](include/libtorrent/disabled_disk_io.hpp)"
@@ -728,8 +632,6 @@ std::unique_ptr<disk_interface> disabled_disk_io_constructor (
 creates a disk io object that discards all data written to it, and only
 returns zero-buffers when read from. May be useful for testing and
 benchmarking.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:posix_disk_io_constructor%28%29&labels=documentation&body=Documentation+under+heading+%22posix_disk_io_constructor%28%29%22+could+be+improved)]
 
 # posix\_disk\_io\_constructor()
 
@@ -744,8 +646,6 @@ this is a simple posix disk I/O back-end, used for systems that don't
 have a 64 bit virtual address space or don't support memory mapped files.
 It's implemented using portable C file functions and is single-threaded.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+storage_mode_t&labels=documentation&body=Documentation+under+heading+%22enum+storage_mode_t%22+could+be+improved)]
-
 # enum storage\_mode\_t
 
 Declared in "[libtorrent/storage\_defs.hpp](include/libtorrent/storage_defs.hpp)"
@@ -754,8 +654,6 @@ Declared in "[libtorrent/storage\_defs.hpp](include/libtorrent/storage_defs.hpp)
 | --- | --- | --- |
 | storage\_mode\_allocate | 0 | All pieces will be written to their final position, all files will be allocated in full when the torrent is first started. This mode minimizes fragmentation but could be a costly operation. |
 | storage\_mode\_sparse | 1 | All pieces will be written to the place where they belong and sparse files will be used. This is the recommended, and default mode. |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+status_t&labels=documentation&body=Documentation+under+heading+%22enum+status_t%22+could+be+improved)]
 
 # enum status\_t
 
@@ -768,8 +666,6 @@ Declared in "[libtorrent/storage\_defs.hpp](include/libtorrent/storage_defs.hpp)
 | need\_full\_check | 2 |  |
 | file\_exist | 3 |  |
 | oversized\_file | 16 | this is not an enum value, but a flag that can be set in the return from async\_check\_files, in case an existing file was found larger than specified in the torrent. i.e. it has garbage at the end the [status\_t](reference-Storage.md#status_t) field is used for this to preserve ABI. |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+move_flags_t&labels=documentation&body=Documentation+under+heading+%22enum+move_flags_t%22+could+be+improved)]
 
 # enum move\_flags\_t
 

@@ -1,9 +1,7 @@
 ---
-title: "entry"
+title: "Bencoding"
 source: "https://libtorrent.org/reference-Bencoding.html"
 ---
-
-[home](reference.md)
 
 Bencoding is a common representation in bittorrent used for dictionary,
 list, [int](reference-Core.md#int) and string hierarchies. It's used to encode .torrent files and
@@ -21,8 +19,6 @@ is discarded.
 
 It's possible to construct an [entry](reference-Bencoding.md#entry) from a [bdecode\_node](reference-Bdecoding.md#bdecode_node), if a structure needs
 to be altered and re-encoded.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+entry&labels=documentation&body=Documentation+under+heading+%22class+entry%22+could+be+improved)]
 
 # entry
 
@@ -82,8 +78,6 @@ class entry
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Btype%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Btype%28%29%5D%22+could+be+improved)]
-
 ## type()
 
 ```cpp
@@ -91,8 +85,6 @@ data_type type () const;
 ```
 
 returns the concrete type of the [entry](reference-Bencoding.md#entry)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bentry%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bentry%28%29%5D%22+could+be+improved)]
 
 ## entry()
 
@@ -108,8 +100,6 @@ constructors directly from a specific type.
 The content of the argument is copied into the
 newly constructed [entry](reference-Bencoding.md#entry)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bentry%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bentry%28%29%5D%22+could+be+improved)]
-
 ## entry()
 
 ```cpp
@@ -119,8 +109,6 @@ entry (data_type t);
 construct an empty [entry](reference-Bencoding.md#entry) of the specified type.
 see [data\_type](reference-Bencoding.md#data_type) enum.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bentry%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bentry%28%29%5D%22+could+be+improved)]
-
 ## entry()
 
 ```cpp
@@ -128,8 +116,6 @@ entry (bdecode_node const& n);
 ```
 
 construct from [bdecode\_node](reference-Bdecoding.md#bdecode_node) parsed form (see [bdecode()](reference-Bdecoding.md#bdecode()))
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Boperator%3D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Boperator%3D%28%29%5D%22+could+be+improved)]
 
 ## operator=()
 
@@ -146,8 +132,6 @@ entry& operator= (span<char const>) &;
 
 copies the structure of the right hand side into this
 [entry](reference-Bencoding.md#entry).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bstring%28%29+integer%28%29+dict%28%29+list%28%29+preformatted%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bstring%28%29+integer%28%29+dict%28%29+list%28%29+preformatted%28%29%5D%22+could+be+improved)]
 
 ## string() integer() dict() list() preformatted()
 
@@ -210,8 +194,6 @@ if (entry* i = torrent_file.find_key("announce"))
 To make it easier to extract information from a torrent file, the
 class [torrent\_info](reference-Torrent_Info.md#torrent_info) exists.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bswap%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bswap%28%29%5D%22+could+be+improved)]
-
 ## swap()
 
 ```cpp
@@ -219,8 +201,6 @@ void swap (entry& e);
 ```
 
 swaps the content of *this* with e.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Boperator%5B%5D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Boperator%5B%5D%28%29%5D%22+could+be+improved)]
 
 ## operator[]()
 
@@ -241,8 +221,6 @@ The const version of operator[] will only return a reference to an
 existing element at the given key. If the key is not found, it will
 throw system\_error.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bfind_key%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bfind_key%28%29%5D%22+could+be+improved)]
-
 ## find\_key()
 
 ```cpp
@@ -257,8 +235,6 @@ They will look for an element at the given key in the dictionary, if
 the element cannot be found, they will return nullptr. If an element
 with the given key is found, the return a pointer to it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:entry%3A%3A%5Bto_string%28%29%5D&labels=documentation&body=Documentation+under+heading+%22entry%3A%3A%5Bto_string%28%29%5D%22+could+be+improved)]
-
 ## to\_string()
 
 ```cpp
@@ -267,8 +243,6 @@ std::string to_string (bool single_line = false) const;
 
 returns a pretty-printed string representation
 of the bencoded structure, with JSON-style syntax
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+data_type&labels=documentation&body=Documentation+under+heading+%22enum+data_type%22+could+be+improved)]
 
 ## enum data\_type
 
@@ -283,8 +257,6 @@ Declared in "[libtorrent/entry.hpp](include/libtorrent/entry.hpp)"
 | undefined\_t | 4 |  |
 | preformatted\_t | 5 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:operator%3C%3C%28%29&labels=documentation&body=Documentation+under+heading+%22operator%3C%3C%28%29%22+could+be+improved)]
-
 # operator<<()
 
 Declared in "[libtorrent/entry.hpp](include/libtorrent/entry.hpp)"
@@ -294,8 +266,6 @@ inline std::ostream& operator<< (std::ostream& os, const entry& e);
 ```
 
 prints the bencoded structure to the ostream as a JSON-style structure.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bencode%28%29&labels=documentation&body=Documentation+under+heading+%22bencode%28%29%22+could+be+improved)]
 
 # bencode()
 

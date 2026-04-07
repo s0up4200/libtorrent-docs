@@ -1,9 +1,7 @@
 ---
-title: "settings_pack"
+title: "Settings"
 source: "https://libtorrent.org/reference-Settings.html"
 ---
-
-[home](reference.md)
 
 You have some control over [session](reference-Session.md#session) configuration through the session::apply\_settings()
 member function. To change one or more configuration options, create a [settings\_pack](reference-Settings.md#settings_pack)
@@ -19,8 +17,6 @@ client with other peers.
 
 Each configuration option is named with an enum value inside the
 [settings\_pack](reference-Settings.md#settings_pack) class. These are the available settings:
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+settings_pack&labels=documentation&body=Documentation+under+heading+%22class+settings_pack%22+could+be+improved)]
 
 # settings\_pack
 
@@ -2093,8 +2089,6 @@ struct settings_pack final : settings_interface
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:settings_pack%3A%3A%5Bset_int%28%29+set_bool%28%29+set_str%28%29%5D&labels=documentation&body=Documentation+under+heading+%22settings_pack%3A%3A%5Bset_int%28%29+set_bool%28%29+set_str%28%29%5D%22+could+be+improved)]
-
 ## set\_int() set\_bool() set\_str()
 
 ```cpp
@@ -2108,8 +2102,6 @@ set a configuration option in the [settings\_pack](reference-Settings.md#setting
 the enum values from string\_types, int\_types or bool\_types. They must
 match the respective type of the set\_\* function.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:settings_pack%3A%3A%5Bhas_val%28%29%5D&labels=documentation&body=Documentation+under+heading+%22settings_pack%3A%3A%5Bhas_val%28%29%5D%22+could+be+improved)]
-
 ## has\_val()
 
 ```cpp
@@ -2120,8 +2112,6 @@ queries whether the specified configuration option has a value set in
 this pack. name can be any enumeration value from string\_types,
 int\_types or bool\_types.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:settings_pack%3A%3A%5Bclear%28%29%5D&labels=documentation&body=Documentation+under+heading+%22settings_pack%3A%3A%5Bclear%28%29%5D%22+could+be+improved)]
-
 ## clear()
 
 ```cpp
@@ -2130,8 +2120,6 @@ void clear ();
 
 clear the settings pack from all settings
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:settings_pack%3A%3A%5Bclear%28%29%5D&labels=documentation&body=Documentation+under+heading+%22settings_pack%3A%3A%5Bclear%28%29%5D%22+could+be+improved)]
-
 ## clear()
 
 ```cpp
@@ -2139,8 +2127,6 @@ void clear (int name);
 ```
 
 clear a specific setting from the pack
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:settings_pack%3A%3A%5Bget_str%28%29+get_int%28%29+get_bool%28%29%5D&labels=documentation&body=Documentation+under+heading+%22settings_pack%3A%3A%5Bget_str%28%29+get_int%28%29+get_bool%28%29%5D%22+could+be+improved)]
 
 ## get\_str() get\_int() get\_bool()
 
@@ -2156,8 +2142,6 @@ or bool\_types. The enum value must match the type of the get\_\*
 function. If the specified setting field has not been set, the default
 value is returned.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+type_bases&labels=documentation&body=Documentation+under+heading+%22enum+type_bases%22+could+be+improved)]
-
 ## enum type\_bases
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2170,8 +2154,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | type\_mask | 49152 |  |
 | index\_mask | 16383 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+mmap_write_mode_t&labels=documentation&body=Documentation+under+heading+%22enum+mmap_write_mode_t%22+could+be+improved)]
-
 ## enum mmap\_write\_mode\_t
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2182,8 +2164,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | always\_mmap\_write | 1 | prefer using memory mapped files for disk writes (at least for large files where it might make sense) |
 | auto\_mmap\_write | 2 | determine whether to use pwrite or memory mapped files for disk writes depending on the kind of storage behind the save path |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+suggest_mode_t&labels=documentation&body=Documentation+under+heading+%22enum+suggest_mode_t%22+could+be+improved)]
-
 ## enum suggest\_mode\_t
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2192,8 +2172,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | --- | --- | --- |
 | no\_piece\_suggestions | 0 |  |
 | suggest\_read\_cache | 1 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+choking_algorithm_t&labels=documentation&body=Documentation+under+heading+%22enum+choking_algorithm_t%22+could+be+improved)]
 
 ## enum choking\_algorithm\_t
 
@@ -2205,8 +2183,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | rate\_based\_choker | 2 | This opens up unchoke slots based on the upload rate achieved to peers. The more slots that are opened, the marginal upload rate required to open up another slot increases. Configure the initial threshold with [settings\_pack::rate\_choker\_initial\_threshold](reference-Settings.md#rate_choker_initial_threshold).  For more information, see [rate based choking](manual-ref.md#rate-based-choking). |
 | deprecated\_bittyrant\_choker | 3 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+seed_choking_algorithm_t&labels=documentation&body=Documentation+under+heading+%22enum+seed_choking_algorithm_t%22+could+be+improved)]
-
 ## enum seed\_choking\_algorithm\_t
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2216,8 +2192,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | round\_robin | 0 | which round-robins the peers that are unchoked when seeding. This distributes the upload bandwidth uniformly and fairly. It minimizes the ability for a peer to download everything without redistributing it. |
 | fastest\_upload | 1 | unchokes the peers we can send to the fastest. This might be a bit more reliable in utilizing all available capacity. |
 | anti\_leech | 2 | prioritizes peers who have just started or are just about to finish the download. The intention is to force peers in the middle of the download to trade with each other. This does not just take into account the pieces a peer is reporting having downloaded, but also the pieces we have sent to it. |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+io_buffer_mode_t&labels=documentation&body=Documentation+under+heading+%22enum+io_buffer_mode_t%22+could+be+improved)]
 
 ## enum io\_buffer\_mode\_t
 
@@ -2230,8 +2204,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | disable\_os\_cache | 2 |  |
 | write\_through | 3 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+bandwidth_mixed_algo_t&labels=documentation&body=Documentation+under+heading+%22enum+bandwidth_mixed_algo_t%22+could+be+improved)]
-
 ## enum bandwidth\_mixed\_algo\_t
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2240,8 +2212,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | --- | --- | --- |
 | prefer\_tcp | 0 | disables the mixed mode bandwidth balancing |
 | peer\_proportional | 1 | does not throttle uTP, throttles TCP to the same proportion of throughput as there are TCP connections |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+enc_policy&labels=documentation&body=Documentation+under+heading+%22enum+enc_policy%22+could+be+improved)]
 
 ## enum enc\_policy
 
@@ -2253,8 +2223,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | pe\_enabled | 1 | encrypted connections are enabled, but non-encrypted connections are allowed. An incoming non-encrypted connection will be accepted, and if an outgoing encrypted connection fails, a non- encrypted connection will be tried. |
 | pe\_disabled | 2 | only non-encrypted connections are allowed. |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+enc_level&labels=documentation&body=Documentation+under+heading+%22enum+enc_level%22+could+be+improved)]
-
 ## enum enc\_level
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2264,8 +2232,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | pe\_plaintext | 1 | use only plain text encryption |
 | pe\_rc4 | 2 | use only RC4 encryption |
 | pe\_both | 3 | allow both |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+proxy_type_t&labels=documentation&body=Documentation+under+heading+%22enum+proxy_type_t%22+could+be+improved)]
 
 ## enum proxy\_type\_t
 
@@ -2279,8 +2245,6 @@ Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hp
 | socks5\_pw | 3 | The server is assumed to be a SOCKS5 server that supports plain text username and password authentication ([RFC 1929](http://www.faqs.org/rfcs/rfc1929.html)). The username and password specified may be sent to the proxy if it requires. |
 | http | 4 | The server is assumed to be an HTTP proxy. If the transport used for the connection is non-HTTP, the server is assumed to support the [CONNECT](http://tools.ietf.org/html/draft-luotonen-web-proxy-tunneling-01) method. i.e. for web seeds and HTTP trackers, a plain proxy will suffice. The proxy is assumed to not require authorization. The username and password will not be used. |
 | http\_pw | 5 | The server is assumed to be an HTTP proxy that requires user authorization. The username and password will be sent to the proxy. |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:min_memory_usage%28%29+high_performance_seed%28%29&labels=documentation&body=Documentation+under+heading+%22min_memory_usage%28%29+high_performance_seed%28%29%22+could+be+improved)]
 
 # min\_memory\_usage() high\_performance\_seed()
 
@@ -2315,8 +2279,6 @@ serving many peers and that doesn't do any downloading. It has a 128 MB
 disk cache and has a limit of 400 files in its file pool. It support fast
 upload rates by allowing large send buffers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:name_for_setting%28%29+setting_by_name%28%29&labels=documentation&body=Documentation+under+heading+%22name_for_setting%28%29+setting_by_name%28%29%22+could+be+improved)]
-
 # name\_for\_setting() setting\_by\_name()
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2329,8 +2291,6 @@ int setting_by_name (string_view name);
 converts a setting integer (from the enums string\_types, int\_types or
 bool\_types) to a string, and vice versa.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:default_settings%28%29&labels=documentation&body=Documentation+under+heading+%22default_settings%28%29%22+could+be+improved)]
-
 # default\_settings()
 
 Declared in "[libtorrent/settings\_pack.hpp](include/libtorrent/settings_pack.hpp)"
@@ -2340,8 +2300,6 @@ settings_pack default_settings ();
 ```
 
 returns a [settings\_pack](reference-Settings.md#settings_pack) with every setting set to its default value
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:generate_fingerprint%28%29&labels=documentation&body=Documentation+under+heading+%22generate_fingerprint%28%29%22+could+be+improved)]
 
 # generate\_fingerprint()
 

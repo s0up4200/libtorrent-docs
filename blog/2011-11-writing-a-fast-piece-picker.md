@@ -4,8 +4,6 @@ date: "2011-11"
 source: "https://blog.libtorrent.org/2011/11/writing-a-fast-piece-picker/"
 ---
 
-Wednesday, November 9th, 2011 by arvid
-
 One of the key algorithms in bittorrent is the rarest-first piece picker. It is vital to bittorrent’s performance that the piece picker fulfills both of these requirements:
 
 * The rarest piece is picked (from the client’s point of view of the swarm)
@@ -115,11 +113,5 @@ This yields a generally fast piece picker, and is essentially what’s in libtor
 
 * If the churn of non-seeds is high, and the request rate is high, the whole data structure has to be rebuilt for every request.
 * If we have few pieces (the pieces list contains almost all pieces) and we’re requesting from a peer that have very few pieces, it may take a while to come across a piece the peer has. In situations like these, it would be more efficient to simply build a list of all pieces the peer has and order those by availability.
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/11/writing-a-fast-piece-picker/#respond)
-
-Tags: [algorithm](https://blog.libtorrent.org/tag/algorithm/), [bittorrent](https://blog.libtorrent.org/tag/bittorrent/), [performance](https://blog.libtorrent.org/tag/performance/)
 
 ---

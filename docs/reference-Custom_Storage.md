@@ -1,9 +1,7 @@
 ---
-title: "disk_observer"
+title: "Custom Storage"
 source: "https://libtorrent.org/reference-Custom_Storage.html"
 ---
-
-[home](reference.md)
 
 The disk I/O can be customized in libtorrent. In previous versions, the
 customization was at the level of each torrent. Now, the customization point
@@ -279,8 +277,6 @@ std::unique_ptr<lt::disk_interface> temp_disk_constructor(
 }
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+disk_observer&labels=documentation&body=Documentation+under+heading+%22class+disk_observer%22+could+be+improved)]
-
 # disk\_observer
 
 Declared in "[libtorrent/disk\_observer.hpp](include/libtorrent/disk_observer.hpp)"
@@ -292,8 +288,6 @@ struct disk_observer
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_observer%3A%3A%5Bon_disk%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_observer%3A%3A%5Bon_disk%28%29%5D%22+could+be+improved)]
-
 ## on\_disk()
 
 ```cpp
@@ -303,8 +297,6 @@ virtual void on_disk () = 0;
 called when the disk cache size has dropped
 below the low watermark again and we can
 resume downloading from peers
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+buffer_allocator_interface&labels=documentation&body=Documentation+under+heading+%22class+buffer_allocator_interface%22+could+be+improved)]
 
 # buffer\_allocator\_interface
 
@@ -320,8 +312,6 @@ struct buffer_allocator_interface
    virtual void free_disk_buffer (char* b) = 0;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+disk_buffer_holder&labels=documentation&body=Documentation+under+heading+%22class+disk_buffer_holder%22+could+be+improved)]
 
 # disk\_buffer\_holder
 
@@ -353,8 +343,6 @@ struct disk_buffer_holder
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bdisk_buffer_holder%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bdisk_buffer_holder%28%29%5D%22+could+be+improved)]
-
 ## disk\_buffer\_holder()
 
 ```cpp
@@ -366,8 +354,6 @@ construct a buffer holder that will free the held buffer
 using a disk buffer pool directly (there's only one
 disk\_buffer\_pool per [session](reference-Session.md#session))
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bdisk_buffer_holder%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bdisk_buffer_holder%28%29%5D%22+could+be+improved)]
-
 ## disk\_buffer\_holder()
 
 ```cpp
@@ -375,8 +361,6 @@ disk_buffer_holder () noexcept = default;
 ```
 
 default construct a holder that does not own any buffer
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5B~disk_buffer_holder%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5B~disk_buffer_holder%28%29%5D%22+could+be+improved)]
 
 ## ~disk\_buffer\_holder()
 
@@ -386,8 +370,6 @@ default construct a holder that does not own any buffer
 
 frees disk buffer held by this object
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bdata%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bdata%28%29%5D%22+could+be+improved)]
-
 ## data()
 
 ```cpp
@@ -395,8 +377,6 @@ char* data () const noexcept;
 ```
 
 return a pointer to the held buffer, if any. Otherwise returns nullptr.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Breset%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Breset%28%29%5D%22+could+be+improved)]
 
 ## reset()
 
@@ -407,8 +387,6 @@ void reset ();
 free the held disk buffer, if any, and clear the holder. This sets the
 holder object to a default-constructed state
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bswap%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bswap%28%29%5D%22+could+be+improved)]
-
 ## swap()
 
 ```cpp
@@ -416,8 +394,6 @@ void swap (disk_buffer_holder& h) noexcept;
 ```
 
 swap pointers of two disk buffer holders.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bis_mutable%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bis_mutable%28%29%5D%22+could+be+improved)]
 
 ## is\_mutable()
 
@@ -427,8 +403,6 @@ bool is_mutable () const noexcept;
 
 if this returns true, the buffer may not be modified in place
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_buffer_holder%3A%3A%5Bbool%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_buffer_holder%3A%3A%5Bbool%28%29%5D%22+could+be+improved)]
-
 ## bool()
 
 ```cpp
@@ -437,8 +411,6 @@ explicit operator bool () const noexcept;
 
 implicitly convertible to true if the object is currently holding a
 buffer
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+settings_interface&labels=documentation&body=Documentation+under+heading+%22class+settings_interface%22+could+be+improved)]
 
 # settings\_interface
 
@@ -460,8 +432,6 @@ struct settings_interface
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+open_file_state&labels=documentation&body=Documentation+under+heading+%22class+open_file_state%22+could+be+improved)]
-
 # open\_file\_state
 
 Declared in "[libtorrent/disk\_interface.hpp](include/libtorrent/disk_interface.hpp)"
@@ -478,13 +448,9 @@ struct open_file_state
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:open_file_state%3A%3A%5Bfile_index%5D&labels=documentation&body=Documentation+under+heading+%22open_file_state%3A%3A%5Bfile_index%5D%22+could+be+improved)]
-
 file\_index
 :   the index of the file this [entry](reference-Bencoding.md#entry) refers to into the file\_storage
     file list of this torrent. This starts indexing at 0.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:open_file_state%3A%3A%5Bopen_mode%5D&labels=documentation&body=Documentation+under+heading+%22open_file_state%3A%3A%5Bopen_mode%5D%22+could+be+improved)]
 
 open\_mode
 :   open\_mode is a bitmask of the file flags this file is currently
@@ -493,12 +459,8 @@ open\_mode
     Note that the read/write mode is not a bitmask. The two least significant bits are used
     to represent the read/write mode. Those bits can be masked out using the rw\_mask constant.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:open_file_state%3A%3A%5Blast_use%5D&labels=documentation&body=Documentation+under+heading+%22open_file_state%3A%3A%5Blast_use%5D%22+could+be+improved)]
-
 last\_use
 :   a (high precision) timestamp of when the file was last used.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+disk_interface&labels=documentation&body=Documentation+under+heading+%22class+disk_interface%22+could+be+improved)]
 
 # disk\_interface
 
@@ -570,8 +532,6 @@ struct disk_interface
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bnew_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bnew_torrent%28%29%5D%22+could+be+improved)]
-
 ## new\_torrent()
 
 ```cpp
@@ -585,8 +545,6 @@ outstanding disk operations on the storage.
 The returned [storage\_holder](reference-Custom_Storage.md#storage_holder) is an owning reference to the underlying
 storage that was just created. It is fundamentally a storage\_index\_t
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bremove_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bremove_torrent%28%29%5D%22+could+be+improved)]
-
 ## remove\_torrent()
 
 ```cpp
@@ -596,8 +554,6 @@ virtual void remove_torrent (storage_index_t) = 0;
 remove the storage with the specified index. This is not expected to
 delete any files from disk, just to clean up any resources associated
 with the specified storage.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_write%28%29+async_read%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_write%28%29+async_read%28%29%5D%22+could+be+improved)]
 
 ## async\_write() async\_read()
 
@@ -629,8 +585,6 @@ necessarily aligned to blocks (but it is most of the time). However,
 all writes (passed to async\_write) are guaranteed to be block
 aligned.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_hash%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_hash%28%29%5D%22+could+be+improved)]
-
 ## async\_hash()
 
 ```cpp
@@ -648,8 +602,6 @@ should not be computed. If v2 is non-empty it must be at least large
 enough to hold all v2 blocks in the piece, and this function will
 fill in the span with the SHA-256 block hashes of the piece.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_hash2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_hash2%28%29%5D%22+could+be+improved)]
-
 ## async\_hash2()
 
 ```cpp
@@ -659,8 +611,6 @@ virtual void async_hash2 (storage_index_t storage, piece_index_t piece, int offs
 
 computes the v2 hash (SHA-256) of a single block. The block at
 offset in piece piece.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_move_storage%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_move_storage%28%29%5D%22+could+be+improved)]
 
 ## async\_move\_storage()
 
@@ -674,8 +624,6 @@ moved to a new location. It is the disk I/O object's responsibility
 to synchronize this with any currently outstanding disk operations to
 the storage. Whether files are replaced at the destination path or
 not is controlled by flags (see [move\_flags\_t](reference-Storage.md#move_flags_t)).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_release_files%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_release_files%28%29%5D%22+could+be+improved)]
 
 ## async\_release\_files()
 
@@ -691,8 +639,6 @@ this should provide at least one point in time when all files are
 closed. It is possible that later asynchronous operations will
 re-open some of the files, by the time this completion handler is
 called, that's fine.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_check_files%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_check_files%28%29%5D%22+could+be+improved)]
 
 ## async\_check\_files()
 
@@ -725,8 +671,6 @@ Any file with a piece set in the resume\_data->have\_pieces bitmask
 should exist on disk, this should be verified. Pad files and files
 with zero priority may be skipped.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_stop_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_stop_torrent%28%29%5D%22+could+be+improved)]
-
 ## async\_stop\_torrent()
 
 ```cpp
@@ -738,8 +682,6 @@ This is called when a torrent is stopped. It gives the disk I/O
 object an opportunity to flush any data to disk that's currently kept
 cached. This function should at least do the same thing as
 [async\_release\_files()](reference-Custom_Storage.md#async_release_files()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_rename_file%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_rename_file%28%29%5D%22+could+be+improved)]
 
 ## async\_rename\_file()
 
@@ -755,8 +697,6 @@ responsible for renaming the file without racing with other
 potentially outstanding operations against the file (such as read,
 write, move, etc.).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_delete_files%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_delete_files%28%29%5D%22+could+be+improved)]
-
 ## async\_delete\_files()
 
 ```cpp
@@ -770,8 +710,6 @@ referred to. See [session\_handle](reference-Session.md#session_handle) for remo
 indicating which files are to be removed.
 e.g. [session\_handle::delete\_files](reference-Session.md#delete_files) - delete all files
 [session\_handle::delete\_partfile](reference-Session.md#delete_partfile) - only delete part file.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_set_file_priority%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_set_file_priority%28%29%5D%22+could+be+improved)]
 
 ## async\_set\_file\_priority()
 
@@ -792,8 +730,6 @@ prio is a vector of the file priority for all files. If it's
 shorter than the total number of files in the torrent, they are
 assumed to be set to the default priority.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Basync_clear_piece%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Basync_clear_piece%28%29%5D%22+could+be+improved)]
-
 ## async\_clear\_piece()
 
 ```cpp
@@ -808,8 +744,6 @@ object does not need to perform any action other than synchronize
 with all outstanding disk operations to the specified piece before
 posting the result back.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bupdate_stats_counters%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bupdate_stats_counters%28%29%5D%22+could+be+improved)]
-
 ## update\_stats\_counters()
 
 ```cpp
@@ -821,8 +755,6 @@ opportunity to update gauges in the c stats [counters](reference-Stats.md#counte
 updated continuously as operations are performed. This is called
 before a snapshot of the [counters](reference-Stats.md#counters) are passed to the client.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bget_status%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bget_status%28%29%5D%22+could+be+improved)]
-
 ## get\_status()
 
 ```cpp
@@ -833,8 +765,6 @@ Return a list of all the files that are currently open for the
 specified storage/torrent. This is is just used for the client to
 query the currently open files, and which modes those files are open
 in.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Babort%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Babort%28%29%5D%22+could+be+improved)]
 
 ## abort()
 
@@ -850,8 +780,6 @@ not return until all threads have stopped and all jobs have either
 been aborted or completed and the disk I/O object is ready to be
 destructed.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bsubmit_jobs%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bsubmit_jobs%28%29%5D%22+could+be+improved)]
-
 ## submit\_jobs()
 
 ```cpp
@@ -865,8 +793,6 @@ thread(s). The async\_\* calls can of course also notify condition
 variables, but doing it in this call allows for batching jobs, by
 issuing the notification once for a collection of jobs.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bsettings_updated%28%29%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bsettings_updated%28%29%5D%22+could+be+improved)]
-
 ## settings\_updated()
 
 ```cpp
@@ -879,41 +805,29 @@ reference is passed in. Whenever these settings are updated, this
 function is called to allow the disk I/O object to react to any
 changed settings relevant to its operations.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bforce_copy%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bforce_copy%5D%22+could+be+improved)]
-
 force\_copy
 :   force making a copy of the cached block, rather than getting a
     reference to a block already in the cache. This is used the block is
     expected to be overwritten very soon, by async\_write()`, and we need
     access to the previous content.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bsequential_access%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bsequential_access%5D%22+could+be+improved)]
-
 sequential\_access
 :   hint that there may be more disk operations with sequential access to
     the file
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bvolatile_read%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bvolatile_read%5D%22+could+be+improved)]
 
 volatile\_read
 :   don't keep the read block in cache. This is a hint that this block is
     unlikely to be read again anytime soon, and caching it would be
     wasteful.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bv1_hash%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bv1_hash%5D%22+could+be+improved)]
-
 v1\_hash
 :   compute a v1 piece hash. This is only used by the [async\_hash()](reference-Custom_Storage.md#async_hash()) call.
     If this flag is not set in the [async\_hash()](reference-Custom_Storage.md#async_hash()) call, the SHA-1 piece
     hash does not need to be computed.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:disk_interface%3A%3A%5Bflush_piece%5D&labels=documentation&body=Documentation+under+heading+%22disk_interface%3A%3A%5Bflush_piece%5D%22+could+be+improved)]
-
 flush\_piece
 :   this flag instructs a hash job that we just completed this piece, and
     it should be flushed to disk
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+storage_holder&labels=documentation&body=Documentation+under+heading+%22class+storage_holder%22+could+be+improved)]
 
 # storage\_holder
 
@@ -941,8 +855,6 @@ struct storage_holder
    storage_holder& operator= (storage_holder&& rhs) noexcept;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:file_open_mode_t&labels=documentation&body=Documentation+under+heading+%22file_open_mode_t%22+could+be+improved)]
 
 # file\_open\_mode\_t
 

@@ -1,11 +1,7 @@
 ---
-title: "storage_error"
+title: "Error Codes"
 source: "https://libtorrent.org/reference-Error_Codes.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+storage_error&labels=documentation&body=Documentation+under+heading+%22class+storage_error%22+could+be+improved)]
 
 # storage\_error
 
@@ -27,8 +23,6 @@ struct storage_error
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_error%3A%3A%5Bbool%28%29%5D&labels=documentation&body=Documentation+under+heading+%22storage_error%3A%3A%5Bbool%28%29%5D%22+could+be+improved)]
-
 ## bool()
 
 ```cpp
@@ -37,8 +31,6 @@ explicit operator bool () const;
 
 explicitly converts to true if this object represents an error, and
 false if it does not.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_error%3A%3A%5Bfile%28%29%5D&labels=documentation&body=Documentation+under+heading+%22storage_error%3A%3A%5Bfile%28%29%5D%22+could+be+improved)]
 
 ## file()
 
@@ -51,18 +43,12 @@ set and query the index (in the torrent) of the file this error
 occurred on. This may also have special values defined in
 [torrent\_status](reference-Torrent_Status.md#torrent_status).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_error%3A%3A%5Bec%5D&labels=documentation&body=Documentation+under+heading+%22storage_error%3A%3A%5Bec%5D%22+could+be+improved)]
-
 ec
 :   the error that occurred
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:storage_error%3A%3A%5Boperation%5D&labels=documentation&body=Documentation+under+heading+%22storage_error%3A%3A%5Boperation%5D%22+could+be+improved)]
 
 operation
 :   A code from [operation\_t](reference-Alerts.md#operation_t) enum, indicating what
     kind of operation failed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:gzip_category%28%29&labels=documentation&body=Documentation+under+heading+%22gzip_category%28%29%22+could+be+improved)]
 
 # gzip\_category()
 
@@ -74,8 +60,6 @@ boost::system::error_category& gzip_category ();
 
 get the error\_category for zip errors
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:pcp_category%28%29&labels=documentation&body=Documentation+under+heading+%22pcp_category%28%29%22+could+be+improved)]
-
 # pcp\_category()
 
 Declared in "[libtorrent/natpmp.hpp](include/libtorrent/natpmp.hpp)"
@@ -84,8 +68,6 @@ Declared in "[libtorrent/natpmp.hpp](include/libtorrent/natpmp.hpp)"
 boost::system::error_category& pcp_category ();
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_category%28%29&labels=documentation&body=Documentation+under+heading+%22bdecode_category%28%29%22+could+be+improved)]
-
 # bdecode\_category()
 
 Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
@@ -93,8 +75,6 @@ Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
 ```cpp
 boost::system::error_category& bdecode_category ();
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:libtorrent_category%28%29&labels=documentation&body=Documentation+under+heading+%22libtorrent_category%28%29%22+could+be+improved)]
 
 # libtorrent\_category()
 
@@ -107,8 +87,6 @@ boost::system::error_category& libtorrent_category ();
 return the instance of the libtorrent\_error\_category which
 maps libtorrent error codes to human readable error messages.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:http_category%28%29&labels=documentation&body=Documentation+under+heading+%22http_category%28%29%22+could+be+improved)]
-
 # http\_category()
 
 Declared in "[libtorrent/error\_code.hpp](include/libtorrent/error_code.hpp)"
@@ -118,8 +96,6 @@ boost::system::error_category& http_category ();
 ```
 
 returns the error\_category for HTTP errors
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:i2p_category%28%29&labels=documentation&body=Documentation+under+heading+%22i2p_category%28%29%22+could+be+improved)]
 
 # i2p\_category()
 
@@ -131,8 +107,6 @@ boost::system::error_category& i2p_category ();
 
 returns the error category for I2P errors
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:socks_category%28%29&labels=documentation&body=Documentation+under+heading+%22socks_category%28%29%22+could+be+improved)]
-
 # socks\_category()
 
 Declared in "[libtorrent/socks5\_stream.hpp](include/libtorrent/socks5_stream.hpp)"
@@ -143,8 +117,6 @@ boost::system::error_category& socks_category ();
 
 returns the error\_category for SOCKS5 errors
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:upnp_category%28%29&labels=documentation&body=Documentation+under+heading+%22upnp_category%28%29%22+could+be+improved)]
-
 # upnp\_category()
 
 Declared in "[libtorrent/upnp.hpp](include/libtorrent/upnp.hpp)"
@@ -154,8 +126,6 @@ boost::system::error_category& upnp_category ();
 ```
 
 the boost.system error category for UPnP errors
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+error_code_enum&labels=documentation&body=Documentation+under+heading+%22enum+error_code_enum%22+could+be+improved)]
 
 # enum error\_code\_enum
 
@@ -181,8 +151,6 @@ Declared in "[libtorrent/gzip.hpp](include/libtorrent/gzip.hpp)"
 | unknown\_gzip\_error | 15 | an unknown error occurred during gzip inflation |
 | error\_code\_max | 16 | the number of error codes |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+pcp_errors&labels=documentation&body=Documentation+under+heading+%22enum+pcp_errors%22+could+be+improved)]
-
 # enum pcp\_errors
 
 Declared in "[libtorrent/natpmp.hpp](include/libtorrent/natpmp.hpp)"
@@ -204,8 +172,6 @@ Declared in "[libtorrent/natpmp.hpp](include/libtorrent/natpmp.hpp)"
 | pcp\_address\_mismatch | 12 |  |
 | pcp\_excessive\_remote\_peers | 13 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+error_code_enum&labels=documentation&body=Documentation+under+heading+%22enum+error_code_enum%22+could+be+improved)]
-
 # enum error\_code\_enum
 
 Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
@@ -221,8 +187,6 @@ Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
 | limit\_exceeded | 6 | bencoded item count limit exceeded |
 | overflow | 7 | integer overflow |
 | error\_code\_max | 8 | the number of error codes |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+error_code_enum&labels=documentation&body=Documentation+under+heading+%22enum+error_code_enum%22+could+be+improved)]
 
 # enum error\_code\_enum
 
@@ -400,8 +364,6 @@ Declared in "[libtorrent/error\_code.hpp](include/libtorrent/error_code.hpp)"
 | torrent\_invalid\_pad\_file | 218 | a file in the v2 metadata has the pad attribute set |
 | error\_code\_max | 219 | the number of error codes |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+http_errors&labels=documentation&body=Documentation+under+heading+%22enum+http_errors%22+could+be+improved)]
-
 # enum http\_errors
 
 Declared in "[libtorrent/error\_code.hpp](include/libtorrent/error_code.hpp)"
@@ -426,8 +388,6 @@ Declared in "[libtorrent/error\_code.hpp](include/libtorrent/error_code.hpp)"
 | bad\_gateway | 502 |  |
 | service\_unavailable | 503 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+i2p_error_code&labels=documentation&body=Documentation+under+heading+%22enum+i2p_error_code%22+could+be+improved)]
-
 # enum i2p\_error\_code
 
 Declared in "[libtorrent/i2p\_stream.hpp](include/libtorrent/i2p_stream.hpp)"
@@ -444,8 +404,6 @@ Declared in "[libtorrent/i2p\_stream.hpp](include/libtorrent/i2p_stream.hpp)"
 | key\_not\_found | 7 |  |
 | duplicated\_id | 8 |  |
 | num\_errors | 9 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+socks_error_code&labels=documentation&body=Documentation+under+heading+%22enum+socks_error_code%22+could+be+improved)]
 
 # enum socks\_error\_code
 
@@ -464,8 +422,6 @@ Declared in "[libtorrent/socks5\_stream.hpp](include/libtorrent/socks5_stream.hp
 | no\_identd | 8 |  |
 | identd\_error | 9 |  |
 | num\_errors | 10 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+error_code_enum&labels=documentation&body=Documentation+under+heading+%22enum+error_code_enum%22+could+be+improved)]
 
 # enum error\_code\_enum
 

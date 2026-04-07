@@ -1,11 +1,7 @@
 ---
-title: "ip_filter"
+title: "Filter"
 source: "https://libtorrent.org/reference-Filter.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+ip_filter&labels=documentation&body=Documentation+under+heading+%22class+ip_filter%22+could+be+improved)]
 
 # ip\_filter
 
@@ -40,8 +36,6 @@ struct ip_filter
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ip_filter%3A%3A%5Bempty%28%29%5D&labels=documentation&body=Documentation+under+heading+%22ip_filter%3A%3A%5Bempty%28%29%5D%22+could+be+improved)]
-
 ## empty()
 
 ```cpp
@@ -49,8 +43,6 @@ bool empty () const;
 ```
 
 returns true if the filter does not contain any rules
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ip_filter%3A%3A%5Badd_rule%28%29%5D&labels=documentation&body=Documentation+under+heading+%22ip_filter%3A%3A%5Badd_rule%28%29%5D%22+could+be+improved)]
 
 ## add\_rule()
 
@@ -72,8 +64,6 @@ access(x) == flags for every x in the range [first, last]
 This means that in a case of overlapping ranges, the last one applied takes
 precedence.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ip_filter%3A%3A%5Baccess%28%29%5D&labels=documentation&body=Documentation+under+heading+%22ip_filter%3A%3A%5Baccess%28%29%5D%22+could+be+improved)]
-
 ## access()
 
 ```cpp
@@ -84,8 +74,6 @@ Returns the access permissions for the given address (addr). The permission
 can currently be 0 or ip\_filter::blocked. The complexity of this operation
 is O(log n), where n is the minimum number of non-overlapping ranges to describe
 the current filter.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:ip_filter%3A%3A%5Bexport_filter%28%29%5D&labels=documentation&body=Documentation+under+heading+%22ip_filter%3A%3A%5Bexport_filter%28%29%5D%22+could+be+improved)]
 
 ## export\_filter()
 
@@ -101,8 +89,6 @@ flags field.
 The return value is a tuple containing two range-lists. One for IPv4 addresses
 and one for IPv6 addresses.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+access_flags&labels=documentation&body=Documentation+under+heading+%22enum+access_flags%22+could+be+improved)]
-
 ## enum access\_flags
 
 Declared in "[libtorrent/ip\_filter.hpp](include/libtorrent/ip_filter.hpp)"
@@ -110,8 +96,6 @@ Declared in "[libtorrent/ip\_filter.hpp](include/libtorrent/ip_filter.hpp)"
 | name | value | description |
 | --- | --- | --- |
 | blocked | 1 | indicates that IPs in this range should not be connected to nor accepted as incoming connections |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+port_filter&labels=documentation&body=Documentation+under+heading+%22class+port_filter%22+could+be+improved)]
 
 # port\_filter
 
@@ -141,8 +125,6 @@ class port_filter
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:port_filter%3A%3A%5Badd_rule%28%29%5D&labels=documentation&body=Documentation+under+heading+%22port_filter%3A%3A%5Badd_rule%28%29%5D%22+could+be+improved)]
-
 ## add\_rule()
 
 ```cpp
@@ -153,8 +135,6 @@ set the flags for the specified port range (first, last) to
 flags overwriting any existing rule for those ports. The range
 is inclusive, i.e. the port last also has the flag set on it.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:port_filter%3A%3A%5Baccess%28%29%5D&labels=documentation&body=Documentation+under+heading+%22port_filter%3A%3A%5Baccess%28%29%5D%22+could+be+improved)]
-
 ## access()
 
 ```cpp
@@ -164,8 +144,6 @@ std::uint32_t access (std::uint16_t port) const;
 test the specified port (port) for whether it is blocked
 or not. The returned value is the flags set for this port.
 see [access\_flags](reference-Filter.md#access_flags).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+access_flags&labels=documentation&body=Documentation+under+heading+%22enum+access_flags%22+could+be+improved)]
 
 ## enum access\_flags
 

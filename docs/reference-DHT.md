@@ -1,11 +1,7 @@
 ---
-title: "dht_state"
+title: "DHT"
 source: "https://libtorrent.org/reference-DHT.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_state&labels=documentation&body=Documentation+under+heading+%22class+dht_state%22+could+be+improved)]
 
 # dht\_state
 
@@ -27,17 +23,11 @@ struct dht_state
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_state%3A%3A%5Bnodes%5D&labels=documentation&body=Documentation+under+heading+%22dht_state%3A%3A%5Bnodes%5D%22+could+be+improved)]
-
 nodes
 :   the bootstrap nodes saved from the buckets node
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_state%3A%3A%5Bnodes6%5D&labels=documentation&body=Documentation+under+heading+%22dht_state%3A%3A%5Bnodes6%5D%22+could+be+improved)]
-
 nodes6
 :   the bootstrap nodes saved from the IPv6 buckets node
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_storage_counters&labels=documentation&body=Documentation+under+heading+%22class+dht_storage_counters%22+could+be+improved)]
 
 # dht\_storage\_counters
 
@@ -57,8 +47,6 @@ struct dht_storage_counters
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_counters%3A%3A%5Breset%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_counters%3A%3A%5Breset%28%29%5D%22+could+be+improved)]
-
 ## reset()
 
 ```cpp
@@ -66,8 +54,6 @@ void reset ();
 ```
 
 This member function set the [counters](reference-Stats.md#counters) to zero.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+dht_storage_interface&labels=documentation&body=Documentation+under+heading+%22class+dht_storage_interface%22+could+be+improved)]
 
 # dht\_storage\_interface
 
@@ -119,8 +105,6 @@ struct dht_storage_interface
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bupdate_node_ids%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bupdate_node_ids%28%29%5D%22+could+be+improved)]
-
 ## update\_node\_ids()
 
 ```cpp
@@ -132,8 +116,6 @@ of each DHT running inside libtorrent. It's advisable
 that the concrete implementation keeps a copy of this list
 for an eventual prioritization when deleting an element
 to make room for a new one.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bget_peers%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bget_peers%28%29%5D%22+could+be+improved)]
 
 ## get\_peers()
 
@@ -170,8 +152,6 @@ If noseed is true only peers marked as no seed should be included.
 returns true if the maximum number of peers are stored
 for this info\_hash.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bannounce_peer%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bannounce_peer%28%29%5D%22+could+be+improved)]
-
 ## announce\_peer()
 
 ```cpp
@@ -190,8 +170,6 @@ the announce\_peer DHT message. The length of this value should
 have a maximum length in the final storage. The default
 implementation truncate the value for a maximum of 50 characters.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bget_immutable_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bget_immutable_item%28%29%5D%22+could+be+improved)]
-
 ## get\_immutable\_item()
 
 ```cpp
@@ -206,8 +184,6 @@ The value should be returned as an [entry](reference-Bencoding.md#entry) in the 
 
 returns true if the item is found and the data is returned
 inside the ([entry](reference-Bencoding.md#entry)) out parameter item.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bput_immutable_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bput_immutable_item%28%29%5D%22+could+be+improved)]
 
 ## put\_immutable\_item()
 
@@ -225,8 +201,6 @@ This data can be stored only if the target is not already
 present. The implementation should consider the value of
 [settings\_pack::dht\_max\_dht\_items](reference-Settings.md#dht_max_dht_items).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bget_mutable_item_seq%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bget_mutable_item_seq%28%29%5D%22+could+be+improved)]
-
 ## get\_mutable\_item\_seq()
 
 ```cpp
@@ -238,8 +212,6 @@ This function retrieves the sequence number of a mutable item.
 
 returns true if the item is found and the data is returned
 inside the out parameter seq.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bget_mutable_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bget_mutable_item%28%29%5D%22+could+be+improved)]
 
 ## get\_mutable\_item()
 
@@ -262,8 +234,6 @@ item["k"] - with a string representation of the public key.
 returns true if the item is found and the data is returned
 inside the ([entry](reference-Bencoding.md#entry)) out parameter item.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bput_mutable_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bput_mutable_item%28%29%5D%22+could+be+improved)]
-
 ## put\_mutable\_item()
 
 ```cpp
@@ -284,8 +254,6 @@ The sequence number should be checked if the item is already
 present. The implementation should consider the value of
 [settings\_pack::dht\_max\_dht\_items](reference-Settings.md#dht_max_dht_items).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bget_infohashes_sample%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bget_infohashes_sample%28%29%5D%22+could+be+improved)]
-
 ## get\_infohashes\_sample()
 
 ```cpp
@@ -305,8 +273,6 @@ and modify the actual sample to put in item
 
 returns the number of info-hashes in the sample.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Btick%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Btick%28%29%5D%22+could+be+improved)]
-
 ## tick()
 
 ```cpp
@@ -319,8 +285,6 @@ For implementers:
 Use this functions for expire peers or items or any other
 storage cleanup.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_storage_interface%3A%3A%5Bcounters%28%29%5D&labels=documentation&body=Documentation+under+heading+%22dht_storage_interface%3A%3A%5Bcounters%28%29%5D%22+could+be+improved)]
-
 ## counters()
 
 ```cpp
@@ -328,8 +292,6 @@ virtual dht_storage_counters counters () const = 0;
 ```
 
 return stats [counters](reference-Stats.md#counters) for the store
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:dht_default_storage_constructor%28%29&labels=documentation&body=Documentation+under+heading+%22dht_default_storage_constructor%28%29%22+could+be+improved)]
 
 # dht\_default\_storage\_constructor()
 
@@ -343,8 +305,6 @@ std::unique_ptr<dht_storage_interface> dht_default_storage_constructor (
 constructor for the default DHT storage. The DHT storage is responsible
 for maintaining peers and mutable and immutable items announced and
 stored/put to the DHT node.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:sign_mutable_item%28%29&labels=documentation&body=Documentation+under+heading+%22sign_mutable_item%28%29%22+could+be+improved)]
 
 # sign\_mutable\_item()
 
@@ -365,8 +325,6 @@ sk (must be 64 bytes), this function produces a signature which
 is written into a 64 byte buffer pointed to by sig. The caller
 is responsible for allocating the destination buffer that's passed in
 as the sig argument. Typically it would be allocated on the stack.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:announce_flags_t&labels=documentation&body=Documentation+under+heading+%22announce_flags_t%22+could+be+improved)]
 
 # announce\_flags\_t
 

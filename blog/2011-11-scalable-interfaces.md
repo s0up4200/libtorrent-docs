@@ -4,8 +4,6 @@ date: "2011-11"
 source: "https://blog.libtorrent.org/2011/11/scalable-interfaces/"
 ---
 
-Tuesday, November 15th, 2011 by arvid
-
 The typical bittorrent client user interface shows you a list of all torrents loaded in the client. Some of these torrents may be stopped and inactive, some of them may be seeding, but not having any peers interested in the torrent, and some (obviously) downloading.
 
 The simple (and probably most common) way to update the user interface of such a client would be to:
@@ -58,9 +56,5 @@ Now, going back to the original topic, status updates for a GUI. The new libtorr
 Each torrent has a *subscribe* flag indicating whether or not we’re subscribed to state changes or not. All torrents that has the subscription flag set, will have references to them stored in an update list whenever their state changes. The user can request updates, which is an asynchronous call that triggers an alert with update list in it, resetting the update list.
 
 To receive a delta update of only the torrents that changed some of their state, call **session::post\_torrent\_updates()** and handle the **state\_update\_alert**. The alert contains a vector of the torrent\_status  of all updated torrents. Use the handle field from the torrent\_status to map it to which torrent it refers to.
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [user interface](https://blog.libtorrent.org/category/user_interface/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/11/scalable-interfaces/#respond)
 
 ---

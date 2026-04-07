@@ -1,11 +1,7 @@
 ---
-title: "peer_request"
+title: "Core"
 source: "https://libtorrent.org/reference-Core.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_request&labels=documentation&body=Documentation+under+heading+%22class+peer_request%22+could+be+improved)]
 
 # peer\_request
 
@@ -25,8 +21,6 @@ struct peer_request
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_request%3A%3A%5Boperator%3D%3D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_request%3A%3A%5Boperator%3D%3D%28%29%5D%22+could+be+improved)]
-
 ## operator==()
 
 ```cpp
@@ -36,22 +30,14 @@ bool operator== (peer_request const& r) const;
 returns true if the right hand side [peer\_request](reference-Core.md#peer_request) refers to the same
 range as this does.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_request%3A%3A%5Bpiece%5D&labels=documentation&body=Documentation+under+heading+%22peer_request%3A%3A%5Bpiece%5D%22+could+be+improved)]
-
 piece
 :   The index of the piece in which the range starts.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_request%3A%3A%5Bstart%5D&labels=documentation&body=Documentation+under+heading+%22peer_request%3A%3A%5Bstart%5D%22+could+be+improved)]
 
 start
 :   The byte offset within that piece where the range starts.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_request%3A%3A%5Blength%5D&labels=documentation&body=Documentation+under+heading+%22peer_request%3A%3A%5Blength%5D%22+could+be+improved)]
-
 length
 :   The size of the range, in bytes.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+peer_info&labels=documentation&body=Documentation+under+heading+%22class+peer_info%22+could+be+improved)]
 
 # peer\_info
 
@@ -150,8 +136,6 @@ struct peer_info
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bi2p_destination%28%29%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bi2p_destination%28%29%5D%22+could+be+improved)]
-
 ## i2p\_destination()
 
 ```cpp
@@ -161,8 +145,6 @@ sha256_hash i2p_destination () const;
 If this peer is an i2p peer, this function returns the destination
 address of the peer
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bclient%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bclient%5D%22+could+be+improved)]
-
 client
 :   A human readable string describing the software at the other end of
     the connection. In some cases this information is not available, then
@@ -171,58 +153,38 @@ client
     server type and version will be a part of this string. This is UTF-8
     encoded.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpieces%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpieces%5D%22+could+be+improved)]
-
 pieces
 :   a [bitfield](reference-Utility.md#bitfield), with one bit per piece in the torrent. Each bit tells you
     if the peer has that piece (if it's set to 1) or if the peer miss that
     piece (set to 0).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Btotal_download+total_upload%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Btotal_download+total_upload%5D%22+could+be+improved)]
 
 total\_download total\_upload
 :   the total number of bytes downloaded from and uploaded to this peer.
     These numbers do not include the protocol chatter, but only the
     payload data.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Blast_request+last_active%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Blast_request+last_active%5D%22+could+be+improved)]
-
 last\_request last\_active
 :   the time since we last sent a request to this peer and since any
     transfer occurred with this peer
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bdownload_queue_time%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bdownload_queue_time%5D%22+could+be+improved)]
-
 download\_queue\_time
 :   the time until all blocks in the request queue will be downloaded
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Binteresting%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Binteresting%5D%22+could+be+improved)]
 
 interesting
 :   **we** are interested in pieces from this peer.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bchoked%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bchoked%5D%22+could+be+improved)]
-
 choked
 :   **we** have choked this peer.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bremote_interested%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bremote_interested%5D%22+could+be+improved)]
 
 remote\_interested
 :   the peer is interested in **us**
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bremote_choked%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bremote_choked%5D%22+could+be+improved)]
-
 remote\_choked
 :   the peer has choked **us**.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bsupports_extensions%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bsupports_extensions%5D%22+could+be+improved)]
 
 supports\_extensions
 :   means that this peer supports the
     [extension protocol](extension_protocol.md).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Boutgoing_connection%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Boutgoing_connection%5D%22+could+be+improved)]
 
 outgoing\_connection
 :   The connection was initiated by us, the peer has a
@@ -231,25 +193,17 @@ outgoing\_connection
     peer connection was opened by this peer connecting to
     us.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Blocal_connection%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Blocal_connection%5D%22+could+be+improved)]
-
 local\_connection
 :   deprecated synonym for outgoing\_connection
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bhandshake%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bhandshake%5D%22+could+be+improved)]
 
 handshake
 :   The connection is opened, and waiting for the
     handshake. Until the handshake is done, the peer
     cannot be identified.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bconnecting%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bconnecting%5D%22+could+be+improved)]
-
 connecting
 :   The connection is in a half-open state (i.e. it is
     being connected).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bon_parole%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bon_parole%5D%22+could+be+improved)]
 
 on\_parole
 :   The peer has participated in a piece that failed the
@@ -258,12 +212,8 @@ on\_parole
     it either fails that piece or proves that it doesn't
     send bad data.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bseed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bseed%5D%22+could+be+improved)]
-
 seed
 :   This peer is a seed (it has all the pieces).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Boptimistic_unchoke%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Boptimistic_unchoke%5D%22+could+be+improved)]
 
 optimistic\_unchoke
 :   This peer is subject to an optimistic unchoke. It has
@@ -272,15 +222,11 @@ optimistic\_unchoke
     doesn't within some period of time, it will be choked
     and another peer will be optimistically unchoked.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bsnubbed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bsnubbed%5D%22+could+be+improved)]
-
 snubbed
 :   This peer has recently failed to send a block within
     the request timeout from when the request was sent.
     We're currently picking one block at a time from this
     peer.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bupload_only%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bupload_only%5D%22+could+be+improved)]
 
 upload\_only
 :   This peer has either explicitly (with an extension)
@@ -288,15 +234,11 @@ upload\_only
     will not downloading anything more, regardless of
     which pieces we have.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bendgame_mode%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bendgame_mode%5D%22+could+be+improved)]
-
 endgame\_mode
 :   This means the last time this peer picket a piece,
     it could not pick as many as it wanted because there
     were not enough free ones. i.e. all pieces this peer
     has were already requested from other peers.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bholepunched%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bholepunched%5D%22+could+be+improved)]
 
 holepunched
 :   This flag is set if the peer was in holepunch mode
@@ -304,103 +246,67 @@ holepunched
     happens if both peers are behind a NAT and the peers
     connect via the NAT holepunch mechanism.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bi2p_socket%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bi2p_socket%5D%22+could+be+improved)]
-
 i2p\_socket
 :   indicates that this socket is running on top of the
     I2P transport.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Butp_socket%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Butp_socket%5D%22+could+be+improved)]
-
 utp\_socket
 :   indicates that this socket is a uTP socket
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bssl_socket%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bssl_socket%5D%22+could+be+improved)]
 
 ssl\_socket
 :   indicates that this socket is running on top of an SSL
     (TLS) channel
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Brc4_encrypted%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Brc4_encrypted%5D%22+could+be+improved)]
-
 rc4\_encrypted
 :   this connection is obfuscated with RC4
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bplaintext_encrypted%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bplaintext_encrypted%5D%22+could+be+improved)]
 
 plaintext\_encrypted
 :   the handshake of this connection was obfuscated
     with a Diffie-Hellman exchange
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bflags%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bflags%5D%22+could+be+improved)]
-
 flags
 :   tells you in which state the peer is in. It is set to
     any combination of the peer\_flags\_t flags above.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Btracker%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Btracker%5D%22+could+be+improved)]
-
 tracker
 :   The peer was received from the tracker.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bdht%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bdht%5D%22+could+be+improved)]
-
 dht
 :   The peer was received from the kademlia DHT.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpex%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpex%5D%22+could+be+improved)]
 
 pex
 :   The peer was received from the peer exchange
     extension.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Blsd%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Blsd%5D%22+could+be+improved)]
-
 lsd
 :   The peer was received from the local service
     discovery (The peer is on the local network).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bresume_data%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bresume_data%5D%22+could+be+improved)]
-
 resume\_data
 :   The peer was added from the fast resume data.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bincoming%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bincoming%5D%22+could+be+improved)]
-
 incoming
 :   we received an incoming connection from this peer
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bsource%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bsource%5D%22+could+be+improved)]
 
 source
 :   a combination of flags describing from which sources this peer
     was received. A combination of the peer\_source\_flags\_t above.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bup_speed+down_speed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bup_speed+down_speed%5D%22+could+be+improved)]
-
 up\_speed down\_speed
 :   the current upload and download speed we have to and from this peer
     (including any protocol messages). updated about once per second
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpayload_up_speed+payload_down_speed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpayload_up_speed+payload_down_speed%5D%22+could+be+improved)]
-
 payload\_up\_speed payload\_down\_speed
 :   The transfer rates of payload data only updated about once per second
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpid%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpid%5D%22+could+be+improved)]
 
 pid
 :   the peer's id as used in the bittorrent protocol. This id can be used
     to extract 'fingerprints' from the peer. Sometimes it can tell you
     which client the peer is using. See identify\_client()\_
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bqueue_bytes%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bqueue_bytes%5D%22+could+be+improved)]
-
 queue\_bytes
 :   the number of bytes we have requested from this peer, but not yet
     received.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Brequest_timeout%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Brequest_timeout%5D%22+could+be+improved)]
 
 request\_timeout
 :   the number of seconds until the current front piece request will time
@@ -408,68 +314,46 @@ request\_timeout
     settings\_pack::request\_timeout.
     -1 means that there is not outstanding request.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bsend_buffer_size+used_send_buffer%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bsend_buffer_size+used_send_buffer%5D%22+could+be+improved)]
-
 send\_buffer\_size used\_send\_buffer
 :   the number of bytes allocated
     and used for the peer's send buffer, respectively.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Breceive_buffer_size+used_receive_buffer+receive_buffer_watermark%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Breceive_buffer_size+used_receive_buffer+receive_buffer_watermark%5D%22+could+be+improved)]
 
 receive\_buffer\_size used\_receive\_buffer receive\_buffer\_watermark
 :   the number of bytes
     allocated and used as receive buffer, respectively.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bnum_hashfails%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bnum_hashfails%5D%22+could+be+improved)]
-
 num\_hashfails
 :   the number of pieces this peer has participated in sending us that
     turned out to fail the hash check.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bdownload_queue_length%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bdownload_queue_length%5D%22+could+be+improved)]
 
 download\_queue\_length
 :   this is the number of requests we have sent to this peer that we
     haven't got a response for yet
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Btimed_out_requests%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Btimed_out_requests%5D%22+could+be+improved)]
-
 timed\_out\_requests
 :   the number of block requests that have timed out, and are still in the
     download queue
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bbusy_requests%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bbusy_requests%5D%22+could+be+improved)]
 
 busy\_requests
 :   the number of busy requests in the download queue. A busy request is a
     request for a block we've also requested from a different peer
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Brequests_in_buffer%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Brequests_in_buffer%5D%22+could+be+improved)]
-
 requests\_in\_buffer
 :   the number of requests messages that are currently in the send buffer
     waiting to be sent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Btarget_dl_queue_length%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Btarget_dl_queue_length%5D%22+could+be+improved)]
 
 target\_dl\_queue\_length
 :   the number of requests that is tried to be maintained (this is
     typically a function of download speed)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bupload_queue_length%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bupload_queue_length%5D%22+could+be+improved)]
-
 upload\_queue\_length
 :   the number of piece-requests we have received from this peer
     that we haven't answered with a piece yet.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bfailcount%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bfailcount%5D%22+could+be+improved)]
 
 failcount
 :   the number of times this peer has "failed". i.e. failed to connect or
     disconnected us. The failcount is decremented when we see this peer in
     a tracker response or peer exchange message.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bdownloading_piece_index+downloading_block_index+downloading_progress+downloading_total%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bdownloading_piece_index+downloading_block_index+downloading_progress+downloading_total%5D%22+could+be+improved)]
 
 downloading\_piece\_index downloading\_block\_index downloading\_progress downloading\_total
 :   You can know which piece, and which part of that piece, that is
@@ -483,84 +367,56 @@ downloading\_piece\_index downloading\_block\_index downloading\_progress downlo
     received from the peer, and downloading\_total is the total number
     of bytes in this block.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bstandard_bittorrent%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bstandard_bittorrent%5D%22+could+be+improved)]
-
 standard\_bittorrent
 :   Regular bittorrent connection
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bweb_seed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bweb_seed%5D%22+could+be+improved)]
 
 web\_seed
 :   HTTP connection using the [BEP 19](https://www.bittorrent.org/beps/bep_0019.html) protocol
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bhttp_seed%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bhttp_seed%5D%22+could+be+improved)]
-
 http\_seed
 :   HTTP connection using the [BEP 17](https://www.bittorrent.org/beps/bep_0017.html) protocol
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bconnection_type%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bconnection_type%5D%22+could+be+improved)]
-
 connection\_type
 :   the kind of connection this peer uses. See connection\_type\_t.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpending_disk_bytes%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpending_disk_bytes%5D%22+could+be+improved)]
 
 pending\_disk\_bytes
 :   the number of bytes this peer has pending in the disk-io thread.
     Downloaded and waiting to be written to disk. This is what is capped
     by settings\_pack::max\_queued\_disk\_bytes.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bpending_disk_read_bytes%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bpending_disk_read_bytes%5D%22+could+be+improved)]
-
 pending\_disk\_read\_bytes
 :   number of outstanding bytes to read
     from disk
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bsend_quota+receive_quota%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bsend_quota+receive_quota%5D%22+could+be+improved)]
 
 send\_quota receive\_quota
 :   the number of bytes this peer has been assigned to be allowed to send
     and receive until it has to request more quota from the bandwidth
     manager.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Brtt%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Brtt%5D%22+could+be+improved)]
-
 rtt
 :   an estimated round trip time to this peer, in milliseconds. It is
     estimated by timing the TCP connect(). It may be 0 for
     incoming connections.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bnum_pieces%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bnum_pieces%5D%22+could+be+improved)]
-
 num\_pieces
 :   the number of pieces this peer has.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bdownload_rate_peak+upload_rate_peak%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bdownload_rate_peak+upload_rate_peak%5D%22+could+be+improved)]
 
 download\_rate\_peak upload\_rate\_peak
 :   the highest download and upload rates seen on this connection. They
     are given in bytes per second. This number is reset to 0 on reconnect.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bprogress%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bprogress%5D%22+could+be+improved)]
-
 progress
 :   the progress of the peer in the range [0, 1]. This is always 0 when
     floating point operations are disabled, instead use progress\_ppm.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bprogress_ppm%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bprogress_ppm%5D%22+could+be+improved)]
 
 progress\_ppm
 :   indicates the download progress of the peer in the range [0, 1000000]
     (parts per million).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bip%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bip%5D%22+could+be+improved)]
-
 ip
 :   the IP-address to this peer. The type is an asio endpoint. For
     more info, see the [asio](http://asio.sourceforge.net/asio-0.3.8/doc/asio/reference.html) documentation. This field is not valid for
     i2p peers. Instead use the [i2p\_destination()](reference-Core.md#i2p_destination()) function.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Blocal_endpoint%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Blocal_endpoint%5D%22+could+be+improved)]
 
 local\_endpoint
 :   the IP and port pair the socket is bound to locally. i.e. the IP
@@ -568,18 +424,12 @@ local\_endpoint
     multi-homed clients with multiple interfaces to the internet.
     This field is not valid for i2p peers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bbw_idle%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bbw_idle%5D%22+could+be+improved)]
-
 bw\_idle
 :   The peer is not waiting for any external events to
     send or receive data.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bbw_limit%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bbw_limit%5D%22+could+be+improved)]
-
 bw\_limit
 :   The peer is waiting for the rate limiter.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bbw_network%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bbw_network%5D%22+could+be+improved)]
 
 bw\_network
 :   The peer has quota and is currently waiting for a
@@ -587,21 +437,15 @@ bw\_network
     the state all peers are in if there are no bandwidth
     limits.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bbw_disk%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bbw_disk%5D%22+could+be+improved)]
-
 bw\_disk
 :   The peer is waiting for the disk I/O thread to catch
     up writing buffers to disk before downloading more.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:peer_info%3A%3A%5Bread_state+write_state%5D&labels=documentation&body=Documentation+under+heading+%22peer_info%3A%3A%5Bread_state+write_state%5D%22+could+be+improved)]
 
 read\_state write\_state
 :   bitmasks indicating what state this peer
     is in with regards to sending and receiving data. The states are
     defined as independent flags of type bandwidth\_state\_flags\_t, in this
     class.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+info_hash_t&labels=documentation&body=Documentation+under+heading+%22class+info_hash_t%22+could+be+improved)]
 
 # info\_hash\_t
 
@@ -638,8 +482,6 @@ struct info_hash_t
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:info_hash_t%3A%3A%5Binfo_hash_t%28%29%5D&labels=documentation&body=Documentation+under+heading+%22info_hash_t%3A%3A%5Binfo_hash_t%28%29%5D%22+could+be+improved)]
-
 ## info\_hash\_t()
 
 ```cpp
@@ -656,8 +498,6 @@ For backwards compatibility, make it possible to construct directly
 from a v1 hash. This constructor allows *implicit* conversion from a
 v1 hash, but the implicitness is deprecated.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:info_hash_t%3A%3A%5Bhas_v1%28%29+has%28%29+has_v2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22info_hash_t%3A%3A%5Bhas_v1%28%29+has%28%29+has_v2%28%29%5D%22+could+be+improved)]
-
 ## has\_v1() has() has\_v2()
 
 ```cpp
@@ -669,8 +509,6 @@ bool has (protocol_version v) const;
 returns true if the corresponding info hash is present in this
 object.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:info_hash_t%3A%3A%5Bget%28%29%5D&labels=documentation&body=Documentation+under+heading+%22info_hash_t%3A%3A%5Bget%28%29%5D%22+could+be+improved)]
-
 ## get()
 
 ```cpp
@@ -678,8 +516,6 @@ sha1_hash get (protocol_version v) const;
 ```
 
 returns the has for the specified protocol version
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:info_hash_t%3A%3A%5Bget_best%28%29%5D&labels=documentation&body=Documentation+under+heading+%22info_hash_t%3A%3A%5Bget_best%28%29%5D%22+could+be+improved)]
 
 ## get\_best()
 
@@ -689,8 +525,6 @@ sha1_hash get_best () const;
 
 returns the v2 (truncated) info-hash, if there is one, otherwise
 returns the v1 info-hash
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:info_hash_t%3A%3A%5Bfor_each%28%29%5D&labels=documentation&body=Documentation+under+heading+%22info_hash_t%3A%3A%5Bfor_each%28%29%5D%22+could+be+improved)]
 
 ## for\_each()
 
@@ -704,8 +538,6 @@ starting with v1. The signature of F is:
 ```cpp
 void(sha1_hash const&, protocol_version);
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+piece_block&labels=documentation&body=Documentation+under+heading+%22class+piece_block%22+could+be+improved)]
 
 # piece\_block
 
@@ -725,8 +557,6 @@ struct piece_block
    int block_index  = 0;
 };
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:load_torrent_file%28%29+load_torrent_buffer%28%29+load_torrent_parsed%28%29&labels=documentation&body=Documentation+under+heading+%22load_torrent_file%28%29+load_torrent_buffer%28%29+load_torrent_parsed%28%29%22+could+be+improved)]
 
 # load\_torrent\_file() load\_torrent\_buffer() load\_torrent\_parsed()
 
@@ -758,8 +588,6 @@ The returned object is suitable to be:
 > * saved as a .torrent\_file via [write\_torrent\_file()](reference-Resume_Data.md#write_torrent_file())
 > * turned into a magnet link via [make\_magnet\_uri()](reference-Core.md#make_magnet_uri())
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_peer_equal%28%29&labels=documentation&body=Documentation+under+heading+%22torrent_peer_equal%28%29%22+could+be+improved)]
-
 # torrent\_peer\_equal()
 
 Declared in "[libtorrent/torrent\_peer.hpp](include/libtorrent/torrent_peer.hpp)"
@@ -767,8 +595,6 @@ Declared in "[libtorrent/torrent\_peer.hpp](include/libtorrent/torrent_peer.hpp)
 ```cpp
 inline bool torrent_peer_equal (torrent_peer const* lhs, torrent_peer const* rhs);
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:make_magnet_uri%28%29&labels=documentation&body=Documentation+under+heading+%22make_magnet_uri%28%29%22+could+be+improved)]
 
 # make\_magnet\_uri()
 
@@ -808,8 +634,6 @@ an empty string is returned.
 
 For more information about magnet links, see [magnet links](manual-ref.md#magnet-links).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:parse_magnet_uri%28%29&labels=documentation&body=Documentation+under+heading+%22parse_magnet_uri%28%29%22+could+be+improved)]
-
 # parse\_magnet\_uri()
 
 Declared in "[libtorrent/magnet\_uri.hpp](include/libtorrent/magnet_uri.hpp)"
@@ -826,8 +650,6 @@ error\_code reference will throw a system\_error on error
 The overload taking an add\_torrent\_params reference will fill in the
 fields specified in the magnet URI.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:version%28%29&labels=documentation&body=Documentation+under+heading+%22version%28%29%22+could+be+improved)]
-
 # version()
 
 Declared in "[libtorrent/version.hpp](include/libtorrent/version.hpp)"
@@ -838,8 +660,6 @@ char const* version ();
 
 returns the libtorrent version as string form in this format:
 "<major>.<minor>.<tiny>.<tag>"
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:truncate_files%28%29&labels=documentation&body=Documentation+under+heading+%22truncate_files%28%29%22+could+be+improved)]
 
 # truncate\_files()
 
@@ -852,8 +672,6 @@ void truncate_files (file_storage const& fs, std::string const& save_path, stora
 Truncates files larger than specified in the [file\_storage](reference-Storage.md#file_storage), saved under
 the specified save\_path.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+event_t&labels=documentation&body=Documentation+under+heading+%22enum+event_t%22+could+be+improved)]
-
 # enum event\_t
 
 Declared in "[libtorrent/tracker\_manager.hpp](include/libtorrent/tracker_manager.hpp)"
@@ -865,8 +683,6 @@ Declared in "[libtorrent/tracker\_manager.hpp](include/libtorrent/tracker_manage
 | started | 2 |  |
 | stopped | 3 |  |
 | paused | 4 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+socket_type_t&labels=documentation&body=Documentation+under+heading+%22enum+socket_type_t%22+could+be+improved)]
 
 # enum socket\_type\_t
 
@@ -884,8 +700,6 @@ Declared in "[libtorrent/socket\_type.hpp](include/libtorrent/socket_type.hpp)"
 | http\_ssl | 7 |  |
 | utp\_ssl | 8 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+connection_type&labels=documentation&body=Documentation+under+heading+%22enum+connection_type%22+could+be+improved)]
-
 # enum connection\_type
 
 Declared in "[libtorrent/peer\_connection.hpp](include/libtorrent/peer_connection.hpp)"
@@ -896,8 +710,6 @@ Declared in "[libtorrent/peer\_connection.hpp](include/libtorrent/peer_connectio
 | url\_seed | 1 |  |
 | http\_seed | 2 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+portmap_transport&labels=documentation&body=Documentation+under+heading+%22enum+portmap_transport%22+could+be+improved)]
-
 # enum portmap\_transport
 
 Declared in "[libtorrent/portmap.hpp](include/libtorrent/portmap.hpp)"
@@ -906,8 +718,6 @@ Declared in "[libtorrent/portmap.hpp](include/libtorrent/portmap.hpp)"
 | --- | --- | --- |
 | natpmp | 0 | natpmp can be NAT-PMP or PCP |
 | upnp | 1 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+portmap_protocol&labels=documentation&body=Documentation+under+heading+%22enum+portmap_protocol%22+could+be+improved)]
 
 # enum portmap\_protocol
 
@@ -919,8 +729,6 @@ Declared in "[libtorrent/portmap.hpp](include/libtorrent/portmap.hpp)"
 | tcp | 1 |  |
 | udp | 2 |  |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+protocol_version&labels=documentation&body=Documentation+under+heading+%22enum+protocol_version%22+could+be+improved)]
-
 # enum protocol\_version
 
 Declared in "[libtorrent/info\_hash.hpp](include/libtorrent/info_hash.hpp)"
@@ -930,8 +738,6 @@ Declared in "[libtorrent/info\_hash.hpp](include/libtorrent/info_hash.hpp)"
 | V1 | 0 | The original BitTorrent version, using SHA-1 hashes |
 | V2 | 1 | Version 2 of the BitTorrent protocol, using SHA-256 hashes |
 | NUM | 2 |  |
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:int&labels=documentation&body=Documentation+under+heading+%22int%22+could+be+improved)]
 
 # int
 
@@ -945,8 +751,6 @@ version\_minor
 
 version\_tiny
 :   the major, minor and tiny versions of libtorrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:download_priority_t&labels=documentation&body=Documentation+under+heading+%22download_priority_t%22+could+be+improved)]
 
 # download\_priority\_t
 
@@ -965,8 +769,6 @@ low\_priority
 top\_priority
 :   The highest priority for files and pieces.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:char+const%2A&labels=documentation&body=Documentation+under+heading+%22char+const%2A%22+could+be+improved)]
-
 # char const\*
 
 Declared in "[libtorrent/version.hpp](include/libtorrent/version.hpp)"
@@ -974,16 +776,12 @@ Declared in "[libtorrent/version.hpp](include/libtorrent/version.hpp)"
 version\_str
 :   the libtorrent version in string form
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:std%3A%3Auint64_t&labels=documentation&body=Documentation+under+heading+%22std%3A%3Auint64_t%22+could+be+improved)]
-
 # std::uint64\_t
 
 Declared in "[libtorrent/version.hpp](include/libtorrent/version.hpp)"
 
 version\_revision
 :   the git commit of this libtorrent version
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:pex_flags_t&labels=documentation&body=Documentation+under+heading+%22pex_flags_t%22+could+be+improved)]
 
 # pex\_flags\_t
 
@@ -1006,8 +804,6 @@ pex\_holepunch
 pex\_lt\_v2
 :   protocol v2
     this is not a standard flag, it is only used internally
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_flags_t&labels=documentation&body=Documentation+under+heading+%22torrent_flags_t%22+could+be+improved)]
 
 # torrent\_flags\_t
 

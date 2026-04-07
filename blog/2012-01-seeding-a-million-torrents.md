@@ -4,8 +4,6 @@ date: "2012-01"
 source: "https://blog.libtorrent.org/2012/01/seeding-a-million-torrents/"
 ---
 
-Monday, January 9th, 2012 by arvid
-
 There are two main architectures of peer-to-peer networks. There’s the peer-centric (limewire style) and content-centric (bittorrent style). In a peer-centric network each participant announces its existence to the network, and other peers looking for content go around asking peers if they have the content. This makes the peer-centric networks scale well with pieces of content. There’s (essentially) no extra cost for a peer to share more pieces of content. However, finding rare content becomes increasingly hard the more participants in the network.
 
 In a content-centric network, each participant announces its existence to each piece of content. i.e. announcing to a tracker for each torrent. This makes the network scale poorly with pieces of content. However, it makes it very reliable finding the one peer that has a rare piece of content. This post explores the possibilities to make bittorrent scale better with pieces of content, to promote content longevity and accessibility.
@@ -42,9 +40,5 @@ Instead of scraping torrents to find their rank, just announce to them instead.
 This would mean all torrents always allows peer connections. All torrents are not necessarily announcing to their trackers every 30 minutes, but do announce every now and then, round-robin with all the other torrents that aren’t announcing regularly.
 
 Never stopping a torrent might significantly improve availability and longevity of content in bittorrent networks.
-
-Posted in [network](https://blog.libtorrent.org/category/network/)
-**|**
- [No Comments](https://blog.libtorrent.org/2012/01/seeding-a-million-torrents/#respond)
 
 ---

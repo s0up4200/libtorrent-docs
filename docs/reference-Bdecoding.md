@@ -1,11 +1,7 @@
 ---
-title: "bdecode_node"
+title: "Bdecoding"
 source: "https://libtorrent.org/reference-Bdecoding.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+bdecode_node&labels=documentation&body=Documentation+under+heading+%22class+bdecode_node%22+could+be+improved)]
 
 # bdecode\_node
 
@@ -70,8 +66,6 @@ struct bdecode_node
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bbdecode_node%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bbdecode_node%28%29%5D%22+could+be+improved)]
-
 ## bdecode\_node()
 
 ```cpp
@@ -79,8 +73,6 @@ bdecode_node () = default;
 ```
 
 creates a default constructed node, it will have the type none\_t.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Boperator%3D%28%29+bdecode_node%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Boperator%3D%28%29+bdecode_node%28%29%5D%22+could+be+improved)]
 
 ## operator=() bdecode\_node()
 
@@ -94,8 +86,6 @@ bdecode_node& operator= (bdecode_node&&) & = default;
 For owning nodes, the copy will create a copy of the tree, but the
 underlying buffer remains the same.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Btype%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Btype%28%29%5D%22+could+be+improved)]
-
 ## type()
 
 ```cpp
@@ -103,8 +93,6 @@ type_t type () const noexcept;
 ```
 
 the type of this node. See [type\_t](reference-Torrent_Info.md#type_t).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bbool%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bbool%28%29%5D%22+could+be+improved)]
 
 ## bool()
 
@@ -114,8 +102,6 @@ explicit operator bool () const noexcept;
 
 returns true if [type()](reference-Plugins.md#type()) != none\_t.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bnon_owning%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bnon_owning%28%29%5D%22+could+be+improved)]
-
 ## non\_owning()
 
 ```cpp
@@ -124,8 +110,6 @@ bdecode_node non_owning () const;
 
 return a non-owning reference to this node. This is useful to refer to
 the root node without copying it in assignments.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bdata_section%28%29+data_offset%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bdata_section%28%29+data_offset%28%29%5D%22+could+be+improved)]
 
 ## data\_section() data\_offset()
 
@@ -140,8 +124,6 @@ starts with d and ends with e, and has all the content of the
 dictionary in between.
 the data\_offset() function returns the byte-offset to this node in,
 starting from the beginning of the buffer that was parsed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Blist_string_value_at%28%29+list_at%28%29+list_size%28%29+list_int_value_at%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Blist_string_value_at%28%29+list_at%28%29+list_size%28%29+list_int_value_at%28%29%5D%22+could+be+improved)]
 
 ## list\_string\_value\_at() list\_at() list\_size() list\_int\_value\_at()
 
@@ -158,8 +140,6 @@ functions with the list\_ prefix operate on lists. These functions are
 only valid if type() == list\_t. list\_at() returns the item
 in the list at index i. i may not be greater than or equal to the
 size of the list. size() returns the size of the list.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bdict_find_int_value%28%29+dict_find_string%28%29+dict_find%28%29+dict_find_dict%28%29+dict_at%28%29+dict_size%28%29+dict_find_list%28%29+dict_find_string_value%28%29+dict_at_node%28%29+dict_find_int%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bdict_find_int_value%28%29+dict_find_string%28%29+dict_find%28%29+dict_find_dict%28%29+dict_at%28%29+dict_size%28%29+dict_find_list%28%29+dict_find_string_value%28%29+dict_at_node%28%29+dict_find_int%28%29%5D%22+could+be+improved)]
 
 ## dict\_find\_int\_value() dict\_find\_string() dict\_find() dict\_find\_dict() dict\_at() dict\_size() dict\_find\_list() dict\_find\_string\_value() dict\_at\_node() dict\_find\_int()
 
@@ -194,8 +174,6 @@ dictionary. Keys are only allowed to be strings. dict\_at\_node() also
 returns the (key, value)-pair, but the key is returned as a
 bdecode\_node (and it will always be a string).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bint_value%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bint_value%28%29%5D%22+could+be+improved)]
-
 ## int\_value()
 
 ```cpp
@@ -204,8 +182,6 @@ std::int64_t int_value () const;
 
 this function is only valid if type() == int\_t. It returns the
 value of the integer.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bstring_value%28%29+string_offset%28%29+string_length%28%29+string_ptr%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bstring_value%28%29+string_offset%28%29+string_length%28%29+string_ptr%28%29%5D%22+could+be+improved)]
 
 ## string\_value() string\_offset() string\_length() string\_ptr()
 
@@ -222,8 +198,6 @@ string\_length() returns the number of bytes in the string.
 string\_offset() returns the byte offset from the start of the parsed
 bencoded buffer this string can be found.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bclear%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bclear%28%29%5D%22+could+be+improved)]
-
 ## clear()
 
 ```cpp
@@ -233,8 +207,6 @@ void clear ();
 resets the bdecoded\_node to a default constructed state. If this is
 an owning node, the tree is freed and all child nodes are invalidated.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bswap%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bswap%28%29%5D%22+could+be+improved)]
-
 ## swap()
 
 ```cpp
@@ -242,8 +214,6 @@ void swap (bdecode_node& n);
 ```
 
 Swap contents.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Breserve%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Breserve%28%29%5D%22+could+be+improved)]
 
 ## reserve()
 
@@ -257,8 +227,6 @@ you are about to parse. Doing so will save realloc operations
 while parsing. You should only call this on the root node, before
 passing it in to [bdecode()](reference-Bdecoding.md#bdecode()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bswitch_underlying_buffer%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bswitch_underlying_buffer%28%29%5D%22+could+be+improved)]
-
 ## switch\_underlying\_buffer()
 
 ```cpp
@@ -269,8 +237,6 @@ this buffer *MUST* be identical to the one originally parsed. This
 operation is only defined on owning root nodes, i.e. the one passed in to
 decode().
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode_node%3A%3A%5Bhas_soft_error%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bdecode_node%3A%3A%5Bhas_soft_error%28%29%5D%22+could+be+improved)]
-
 ## has\_soft\_error()
 
 ```cpp
@@ -279,8 +245,6 @@ bool has_soft_error (span<char> error) const;
 
 returns true if there is a non-fatal error in the bencoding of this node
 or its children
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+type_t&labels=documentation&body=Documentation+under+heading+%22enum+type_t%22+could+be+improved)]
 
 ## enum type\_t
 
@@ -294,8 +258,6 @@ Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
 | string\_t | 3 | a string node, the string\_ functions are valid. |
 | int\_t | 4 | an integer node. The int\_ functions are valid. |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:print_entry%28%29&labels=documentation&body=Documentation+under+heading+%22print_entry%28%29%22+could+be+improved)]
-
 # print\_entry()
 
 Declared in "[libtorrent/bdecode.hpp](include/libtorrent/bdecode.hpp)"
@@ -307,8 +269,6 @@ std::string print_entry (bdecode_node const& e
 
 print the bencoded structure in a human-readable format to a string
 that's returned.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bdecode%28%29&labels=documentation&body=Documentation+under+heading+%22bdecode%28%29%22+could+be+improved)]
 
 # bdecode()
 

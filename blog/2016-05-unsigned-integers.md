@@ -4,8 +4,6 @@ date: "2016-05"
 source: "https://blog.libtorrent.org/2016/05/unsigned-integers/"
 ---
 
-Sunday, May 1st, 2016 by arvid
-
 In this post I will talk about the use of unsigned (integral) types in C++, or perhaps more specifically the rationale for using them. In my experience, it is common to use unsigned types for any variable holding a value that cannot be negative. Say, the number of bytes in a buffer.
 
 On the face of it, you’ll save 1 bit (supporting twice as large values), and if you have an upper bound you only need a single comparison (no need to check < 0).
@@ -142,10 +140,6 @@ References
 
 * [INT02-CPP. Understand integer conversion rules](https://www.securecoding.cert.org/confluence/display/cplusplus/INT02-CPP.+Understand+integer+conversion+rules)
 * [cppreference.com implicit conversions](http://en.cppreference.com/w/cpp/language/implicit_conversion)
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [c++](https://blog.libtorrent.org/category/c/)
-**|**
- [1 Comment](https://blog.libtorrent.org/2016/05/unsigned-integers/#comments)
 
 ---
 

@@ -1,11 +1,7 @@
 ---
-title: "session_proxy"
+title: "Session"
 source: "https://libtorrent.org/reference-Session.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_proxy&labels=documentation&body=Documentation+under+heading+%22class+session_proxy%22+could+be+improved)]
 
 # session\_proxy
 
@@ -30,8 +26,6 @@ struct session_proxy
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_proxy%3A%3A%5B~session_proxy%28%29+operator%3D%28%29+session_proxy%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_proxy%3A%3A%5B~session_proxy%28%29+operator%3D%28%29+session_proxy%28%29%5D%22+could+be+improved)]
-
 ## ~session\_proxy() operator=() session\_proxy()
 
 ```cpp
@@ -45,8 +39,6 @@ session_proxy (session_proxy&&) noexcept;
 
 default constructor, does not refer to any [session](reference-Session.md#session)
 implementation object.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session&labels=documentation&body=Documentation+under+heading+%22class+session%22+could+be+improved)]
 
 # session
 
@@ -82,8 +74,6 @@ struct session : session_handle
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session%3A%3A%5Bsession%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session%3A%3A%5Bsession%28%29%5D%22+could+be+improved)]
-
 ## session()
 
 ```cpp
@@ -103,8 +93,6 @@ The overloads taking flags can be used to start a [session](reference-Session.md
 paused mode (by passing in session::paused). Note that
 add\_default\_plugins do not have an affect on constructors that
 take a [session\_params](reference-Session.md#session_params) object. It already contains the plugins to use.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session%3A%3A%5Bsession%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session%3A%3A%5Bsession%28%29%5D%22+could+be+improved)]
 
 ## session()
 
@@ -130,8 +118,6 @@ call [session::abort()](reference-Session.md#abort()) and save the [session\_pro
 destruct the [session](reference-Session.md#session) object, then sync with the io\_context, then
 destruct the [session\_proxy](reference-Session.md#session_proxy) object.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session%3A%3A%5B~session%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session%3A%3A%5B~session%28%29%5D%22+could+be+improved)]
-
 ## ~session()
 
 ```cpp
@@ -144,8 +130,6 @@ All this before the destructor of [session](reference-Session.md#session) return
 that any kind of interface (such as windows) are closed before
 destructing the [session](reference-Session.md#session) object. Because it can take a few second for
 it to finish. The timeout can be set with [apply\_settings()](reference-Session.md#apply_settings()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session%3A%3A%5Babort%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session%3A%3A%5Babort%28%29%5D%22+could+be+improved)]
 
 ## abort()
 
@@ -168,8 +152,6 @@ The only valid operation is calling the destructor:
 ```cpp
 struct session_proxy {};
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_params&labels=documentation&body=Documentation+under+heading+%22class+session_params%22+could+be+improved)]
 
 # session\_params
 
@@ -199,8 +181,6 @@ struct session_params
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bsession_params%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bsession_params%28%29%5D%22+could+be+improved)]
-
 ## session\_params()
 
 ```cpp
@@ -212,8 +192,6 @@ session_params ();
 This constructor can be used to start with the default plugins
 (ut\_metadata, ut\_pex and smart\_ban). Pass a [settings\_pack](reference-Settings.md#settings_pack) to set the
 initial settings when the [session](reference-Session.md#session) starts.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bsession_params%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bsession_params%28%29%5D%22+could+be+improved)]
 
 ## session\_params()
 
@@ -227,46 +205,30 @@ session_params (settings_pack&& sp
 This constructor helps to configure the set of initial plugins
 to be added to the [session](reference-Session.md#session) before it's started.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bsettings%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bsettings%5D%22+could+be+improved)]
-
 settings
 :   The settings to configure the [session](reference-Session.md#session) with
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bextensions%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bextensions%5D%22+could+be+improved)]
 
 extensions
 :   the plugins to add to the [session](reference-Session.md#session) as it is constructed
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bdht_state%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bdht_state%5D%22+could+be+improved)]
-
 dht\_state
 :   DHT node ID and node addresses to bootstrap the DHT with.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bdht_storage_constructor%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bdht_storage_constructor%5D%22+could+be+improved)]
 
 dht\_storage\_constructor
 :   function object to construct the storage object for DHT items.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bdisk_io_constructor%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bdisk_io_constructor%5D%22+could+be+improved)]
-
 disk\_io\_constructor
 :   function object to create the disk I/O subsystem. Defaults to
     default\_disk\_io\_constructor.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bext_state%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bext_state%5D%22+could+be+improved)]
 
 ext\_state
 :   this container can be used by extensions/plugins to store settings. It's
     primarily here to make it convenient to save and restore state across
     sessions, using [read\_session\_params()](reference-Session.md#read_session_params()) and [write\_session\_params()](reference-Session.md#write_session_params()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_params%3A%3A%5Bip_filter%5D&labels=documentation&body=Documentation+under+heading+%22session_params%3A%3A%5Bip_filter%5D%22+could+be+improved)]
-
 ip\_filter
 :   the IP filter to use for the [session](reference-Session.md#session). This restricts which peers are allowed
     to connect. As if passed to [set\_ip\_filter()](reference-Session.md#set_ip_filter()).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+session_handle&labels=documentation&body=Documentation+under+heading+%22class+session_handle%22+could+be+improved)]
 
 # session\_handle
 
@@ -365,8 +327,6 @@ struct session_handle
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bis_valid%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bis_valid%28%29%5D%22+could+be+improved)]
-
 ## is\_valid()
 
 ```cpp
@@ -376,8 +336,6 @@ bool is_valid () const;
 returns true if this handle refers to a valid [session](reference-Session.md#session) object. If the
 [session](reference-Session.md#session) has been destroyed, all [session\_handle](reference-Session.md#session_handle) objects will expire and
 not be valid.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bsession_state%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bsession_state%28%29%5D%22+could+be+improved)]
 
 ## session\_state()
 
@@ -392,8 +350,6 @@ state that's included is all settings, the DHT routing table, possibly
 plugin-specific state.
 the flags parameter can be used to only save certain parts of the
 [session](reference-Session.md#session) state
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Brefresh_torrent_status%28%29+get_torrent_status%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Brefresh_torrent_status%28%29+get_torrent_status%28%29%5D%22+could+be+improved)]
 
 ## refresh\_torrent\_status() get\_torrent\_status()
 
@@ -444,8 +400,6 @@ time to time, to include torrents you might have become interested in
 since the last time. In order to stop refreshing a certain torrent,
 simply remove it from the list.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bpost_torrent_updates%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bpost_torrent_updates%28%29%5D%22+could+be+improved)]
-
 ## post\_torrent\_updates()
 
 ```cpp
@@ -461,8 +415,6 @@ included. This flag is on by default. See [add\_torrent\_params](reference-Add_T
 the flags argument is the same as for [torrent\_handle::status()](reference-Torrent_Handle.md#status()).
 see status\_flags\_t in [torrent\_handle](reference-Torrent_Handle.md#torrent_handle).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bpost_session_stats%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bpost_session_stats%28%29%5D%22+could+be+improved)]
-
 ## post\_session\_stats()
 
 ```cpp
@@ -476,8 +428,6 @@ To interpret these [counters](reference-Stats.md#counters), query the [session](
 
 For more information, see the [session statistics](manual-ref.md#session-statistics) section.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bpost_dht_stats%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bpost_dht_stats%28%29%5D%22+could+be+improved)]
-
 ## post\_dht\_stats()
 
 ```cpp
@@ -485,8 +435,6 @@ void post_dht_stats ();
 ```
 
 This will cause a [dht\_stats\_alert](reference-Alerts.md#dht_stats_alert) to be posted.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_dht_state%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_dht_state%28%29%5D%22+could+be+improved)]
 
 ## set\_dht\_state()
 
@@ -498,8 +446,6 @@ void set_dht_state (dht::dht_state&& st);
 set the DHT state for the [session](reference-Session.md#session). This will be taken into account the
 next time the DHT is started, as if it had been passed in via the
 [session\_params](reference-Session.md#session_params) on startup.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bget_torrents%28%29+find_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bget_torrents%28%29+find_torrent%28%29%5D%22+could+be+improved)]
 
 ## get\_torrents() find\_torrent()
 
@@ -518,8 +464,6 @@ not.
 
 get\_torrents() returns a vector of torrent\_handles to all the
 torrents currently in the [session](reference-Session.md#session).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Badd_torrent%28%29+async_add_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Badd_torrent%28%29+async_add_torrent%28%29%5D%22+could+be+improved)]
 
 ## add\_torrent() async\_add\_torrent()
 
@@ -569,8 +513,6 @@ Special consideration has to be taken when adding hybrid torrents
 (i.e. torrents that are BitTorrent v2 torrents that are backwards
 compatible with v1). For more details, see [BitTorrent v2 torrents](manual-ref.md#bittorrent-v2-torrents).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bresume%28%29+pause%28%29+is_paused%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bresume%28%29+pause%28%29+is_paused%28%29%5D%22+could+be+improved)]
-
 ## resume() pause() is\_paused()
 
 ```cpp
@@ -586,8 +528,6 @@ state. i.e. the [session](reference-Session.md#session) pause state is separate 
 state. A torrent is inactive if it is paused or if the [session](reference-Session.md#session) is
 paused.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bis_dht_running%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bis_dht_running%28%29%5D%22+could+be+improved)]
-
 ## is\_dht\_running()
 
 ```cpp
@@ -596,8 +536,6 @@ bool is_dht_running () const;
 
 is\_dht\_running() returns true if the DHT support has been started
 and false otherwise.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_dht_storage%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_dht_storage%28%29%5D%22+could+be+improved)]
 
 ## set\_dht\_storage()
 
@@ -618,8 +556,6 @@ custom storage, create a [session](reference-Session.md#session) with the settin
 settings\_pack::enable\_dht to false, set your constructor function
 and call apply\_settings with settings\_pack::enable\_dht to true.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Badd_dht_node%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Badd_dht_node%28%29%5D%22+could+be+improved)]
-
 ## add\_dht\_node()
 
 ```cpp
@@ -630,8 +566,6 @@ add\_dht\_node takes a host name and port pair. That endpoint will be
 pinged, and if a valid DHT reply is received, the node will be added to
 the routing table.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_get_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_get_item%28%29%5D%22+could+be+improved)]
-
 ## dht\_get\_item()
 
 ```cpp
@@ -640,8 +574,6 @@ void dht_get_item (sha1_hash const& target);
 
 query the DHT for an immutable item at the target hash.
 the result is posted as a [dht\_immutable\_item\_alert](reference-Alerts.md#dht_immutable_item_alert).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_get_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_get_item%28%29%5D%22+could+be+improved)]
 
 ## dht\_get\_item()
 
@@ -656,8 +588,6 @@ as an empty string if no salt is to be used.
 if the item is found in the DHT, a [dht\_mutable\_item\_alert](reference-Alerts.md#dht_mutable_item_alert) is
 posted.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_put_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_put_item%28%29%5D%22+could+be+improved)]
-
 ## dht\_put\_item()
 
 ```cpp
@@ -668,8 +598,6 @@ store the given bencoded data as an immutable item in the DHT.
 the returned hash is the key that is to be used to look the item
 up again. It's just the SHA-1 hash of the bencoded form of the
 structure.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_put_item%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_put_item%28%29%5D%22+could+be+improved)]
 
 ## dht\_put\_item()
 
@@ -720,8 +648,6 @@ must first retrieve it, then modify it, then write it back. The way
 the DHT works, it is natural to always do a lookup before storing and
 calling the callback in between is convenient.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_get_peers%28%29+dht_announce%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_get_peers%28%29+dht_announce%28%29%5D%22+could+be+improved)]
-
 ## dht\_get\_peers() dht\_announce()
 
 ```cpp
@@ -745,8 +671,6 @@ by libtorrent.
 
 For possible flags, see [announce\_flags\_t](reference-DHT.md#announce_flags_t).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_live_nodes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_live_nodes%28%29%5D%22+could+be+improved)]
-
 ## dht\_live\_nodes()
 
 ```cpp
@@ -758,8 +682,6 @@ nodes id and endpoint will be returned in the list of nodes in the
 [alert](reference-Alerts.md#alert) dht\_live\_nodes\_alert.
 Since this [alert](reference-Alerts.md#alert) is a response to an explicit call, it will always be
 posted, regardless of the [alert](reference-Alerts.md#alert) mask.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_sample_infohashes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_sample_infohashes%28%29%5D%22+could+be+improved)]
 
 ## dht\_sample\_infohashes()
 
@@ -774,8 +696,6 @@ can perform a key space traversal with a single RPC per node by adjusting
 the target value for each RPC. It has no effect on the returned sample value.
 The result is posted as a dht\_sample\_infohashes\_alert.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdht_direct_request%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdht_direct_request%28%29%5D%22+could+be+improved)]
-
 ## dht\_direct\_request()
 
 ```cpp
@@ -788,8 +708,6 @@ or the request times out, a [dht\_direct\_response\_alert](reference-Alerts.md#d
 with the response (if any) and the userdata pointer passed in here.
 Since this [alert](reference-Alerts.md#alert) is a response to an explicit call, it will always be
 posted, regardless of the [alert](reference-Alerts.md#alert) mask.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Badd_extension%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Badd_extension%28%29%5D%22+could+be+improved)]
 
 ## add\_extension()
 
@@ -834,8 +752,6 @@ smart ban [plugin](reference-Plugins.md#plugin)
 ses.add_extension(&lt::create_smart_ban_plugin);
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bget_ip_filter%28%29+set_ip_filter%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bget_ip_filter%28%29+set_ip_filter%28%29%5D%22+could+be+improved)]
-
 ## get\_ip\_filter() set\_ip\_filter()
 
 ```cpp
@@ -852,8 +768,6 @@ Each time a peer is blocked because of the IP filter, a
 [peer\_blocked\_alert](reference-Alerts.md#peer_blocked_alert) is generated. get\_ip\_filter() Returns the
 [ip\_filter](reference-Filter.md#ip_filter) currently in the [session](reference-Session.md#session). See [ip\_filter](reference-Filter.md#ip_filter).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_port_filter%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_port_filter%28%29%5D%22+could+be+improved)]
-
 ## set\_port\_filter()
 
 ```cpp
@@ -864,8 +778,6 @@ apply [port\_filter](reference-Filter.md#port_filter) f to incoming and outgoing
 will reject making outgoing peer connections to certain remote ports.
 The main intention is to be able to avoid triggering certain
 anti-virus software by connecting to SMTP, FTP ports.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bssl_listen_port%28%29+is_listening%28%29+listen_port%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bssl_listen_port%28%29+is_listening%28%29+listen_port%28%29%5D%22+could+be+improved)]
 
 ## ssl\_listen\_port() is\_listening() listen\_port()
 
@@ -882,8 +794,6 @@ return false, and then you can set a new
 bind to.
 
 listen\_port() returns the port we ended up listening on.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_peer_class_filter%28%29+get_peer_class_filter%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_peer_class_filter%28%29+get_peer_class_filter%28%29%5D%22+could+be+improved)]
 
 ## set\_peer\_class\_filter() get\_peer\_class\_filter()
 
@@ -928,8 +838,6 @@ The get\_peer\_class\_filter() function returns the current filter.
 
 For more information, see [peer classes](manual-ref.md#peer-classes).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_peer_class_type_filter%28%29+get_peer_class_type_filter%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_peer_class_type_filter%28%29+get_peer_class_type_filter%28%29%5D%22+could+be+improved)]
-
 ## set\_peer\_class\_type\_filter() get\_peer\_class\_type\_filter()
 
 ```cpp
@@ -951,8 +859,6 @@ The order of these rules being applied are:
 
 For more information, see [peer classes](manual-ref.md#peer-classes).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bcreate_peer_class%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bcreate_peer_class%28%29%5D%22+could+be+improved)]
-
 ## create\_peer\_class()
 
 ```cpp
@@ -969,8 +875,6 @@ using certain peer classes in a call to [set\_peer\_class\_filter()](reference-S
 make sure to create those early on, to get low identifiers.
 
 For more information on peer classes, see [peer classes](manual-ref.md#peer-classes).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdelete_peer_class%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdelete_peer_class%28%29%5D%22+could+be+improved)]
 
 ## delete\_peer\_class()
 
@@ -996,8 +900,6 @@ destructs.
 
 For more information on peer classes, see [peer classes](manual-ref.md#peer-classes).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_peer_class%28%29+get_peer_class%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_peer_class%28%29+get_peer_class%28%29%5D%22+could+be+improved)]
-
 ## set\_peer\_class() get\_peer\_class()
 
 ```cpp
@@ -1020,8 +922,6 @@ priority among any of its classes is the one that is taken into
 account.
 
 For more information, see [peer classes](manual-ref.md#peer-classes).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bremove_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bremove_torrent%28%29%5D%22+could+be+improved)]
 
 ## remove\_torrent()
 
@@ -1063,8 +963,6 @@ large state\_update to be posted. When removing all torrents, it is
 advised to remove them from the back of the queue, to minimize the
 shifting.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bget_settings%28%29+apply_settings%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bget_settings%28%29+apply_settings%28%29%5D%22+could+be+improved)]
-
 ## get\_settings() apply\_settings()
 
 ```cpp
@@ -1076,8 +974,6 @@ void apply_settings (settings_pack&&);
 Applies the settings specified by the [settings\_pack](reference-Settings.md#settings_pack) s. This is an
 asynchronous operation that will return immediately and actually apply
 the settings to the main thread of libtorrent some time later.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bset_alert_notify%28%29+wait_for_alert%28%29+pop_alerts%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bset_alert_notify%28%29+wait_for_alert%28%29+pop_alerts%28%29%5D%22+could+be+improved)]
 
 ## set\_alert\_notify() wait\_for\_alert() pop\_alerts()
 
@@ -1150,8 +1046,6 @@ The type of an [alert](reference-Alerts.md#alert) is returned by the polymorphic
 alert::type() but can also be queries from a concrete type via
 T::alert\_type, as a static constant.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdelete_port_mapping%28%29+add_port_mapping%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdelete_port_mapping%28%29+add_port_mapping%28%29%5D%22+could+be+improved)]
-
 ## delete\_port\_mapping() add\_port\_mapping()
 
 ```cpp
@@ -1165,8 +1059,6 @@ in the [session](reference-Session.md#session). The return values are all handle
 port mappings that were just created. Pass them to [delete\_port\_mapping()](reference-Session.md#delete_port_mapping())
 to remove them.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Breopen_network_sockets%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Breopen_network_sockets%28%29%5D%22+could+be+improved)]
-
 ## reopen\_network\_sockets()
 
 ```cpp
@@ -1179,8 +1071,6 @@ It's useful in the case your platform doesn't support the built in
 IP notifier mechanism, or if you have a better more reliable way to
 detect changes in the IP routing table.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bnative_handle%28%29%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bnative_handle%28%29%5D%22+could+be+improved)]
-
 ## native\_handle()
 
 ```cpp
@@ -1190,63 +1080,41 @@ std::shared_ptr<aux::session_impl> native_handle () const;
 This function is intended only for use by plugins. This type does
 not have a stable API and should be relied on as little as possible.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bsave_settings%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bsave_settings%5D%22+could+be+improved)]
-
 save\_settings
 :   saves settings (i.e. the [settings\_pack](reference-Settings.md#settings_pack))
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bsave_dht_state%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bsave_dht_state%5D%22+could+be+improved)]
 
 save\_dht\_state
 :   saves dht state such as nodes and node-id, possibly accelerating
     joining the DHT if provided at next [session](reference-Session.md#session) startup.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bsave_extension_state%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bsave_extension_state%5D%22+could+be+improved)]
-
 save\_extension\_state
 :   load or save state from plugins
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bsave_ip_filter%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bsave_ip_filter%5D%22+could+be+improved)]
 
 save\_ip\_filter
 :   load or save the IP filter set on the [session](reference-Session.md#session)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bglobal_peer_class_id+tcp_peer_class_id+local_peer_class_id%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bglobal_peer_class_id+tcp_peer_class_id+local_peer_class_id%5D%22+could+be+improved)]
-
 global\_peer\_class\_id tcp\_peer\_class\_id local\_peer\_class\_id
 :   built-in peer classes
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdelete_files%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdelete_files%5D%22+could+be+improved)]
 
 delete\_files
 :   delete the files belonging to the torrent from disk.
     including the part-file, if there is one
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bdelete_partfile%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bdelete_partfile%5D%22+could+be+improved)]
-
 delete\_partfile
 :   delete just the part-file associated with this torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Bpaused%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Bpaused%5D%22+could+be+improved)]
 
 paused
 :   when set, the [session](reference-Session.md#session) will start paused. Call
     [session\_handle::resume()](reference-Session.md#resume()) to start
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Budp+tcp%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Budp+tcp%5D%22+could+be+improved)]
-
 udp tcp
 :   protocols used by [add\_port\_mapping()](reference-Session.md#add_port_mapping())
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:session_handle%3A%3A%5Breopen_map_ports%5D&labels=documentation&body=Documentation+under+heading+%22session_handle%3A%3A%5Breopen_map_ports%5D%22+could+be+improved)]
 
 reopen\_map\_ports
 :   This option indicates if the ports are mapped using natpmp
     and upnp. If mapping was already made, they are deleted and added
     again. This only works if natpmp and/or upnp are configured to be
     enable.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:write_session_params%28%29+read_session_params%28%29+write_session_params_buf%28%29&labels=documentation&body=Documentation+under+heading+%22write_session_params%28%29+read_session_params%28%29+write_session_params_buf%28%29%22+could+be+improved)]
 
 # write\_session\_params() read\_session\_params() write\_session\_params\_buf()
 

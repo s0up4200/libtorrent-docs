@@ -4,8 +4,6 @@ date: "2015-03"
 source: "https://blog.libtorrent.org/2015/03/bdecode-parsers/"
 ---
 
-Monday, March 9th, 2015 by arvid
-
 I have recently revisited the bdecoder in libtorrent, and ended up implementing a new bdecoder that is two orders of magnitude faster than the original (naive) parser. This is the 3rd decoder in libtorrent’s history, and I would like to cover its evolution of parsing bencoded data.
 
 First off, the main reason for me to write a new bdecoder was CPU and memory usage. The previous decoders in libtorrent were simply not very efficient on either of those metrics.
@@ -122,10 +120,6 @@ Each node has an offset into the original buffer as well as a relative pointer t
 Storing the nodes in a single flat vector improves memory locality. Using very small token structures eases memory cache pressure. The memory operations are negligible (they don’t even show up in the profile). That is, all the time was spent actually decoding, as opposed to memory allocation/deallocation. One significant performance benefit this approach has is that when parsing multiple files or messages, the vector of tokens can be re-used. Saving the deallocation and allocation in between.
 
 I’ve put up the bdecode functions as a separate project on github, you can find it [here](https://github.com/arvidn/bdecode).
-
-Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [2 Comments](https://blog.libtorrent.org/2015/03/bdecode-parsers/#comments)
 
 ---
 

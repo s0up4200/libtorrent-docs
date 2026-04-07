@@ -4,8 +4,6 @@ date: "2015-04"
 source: "https://blog.libtorrent.org/2015/04/libtorrent-alert-queue/"
 ---
 
-Sunday, April 5th, 2015 by arvid
-
 The main mechanism libtorrent uses to report events and errors to the client is via *alerts*. Alerts are messages as c++ objects with additional information depending on the type of message. Periodically clients [poll](http://libtorrent.org/reference-Session.html#pop_alerts()) for new alerts from a session object.
 
 In the next major release of libtorrent detailed peer logging will be available as alerts. Previously this debug facility was only available as a build configuration which would write log files to pre-determined locations. This will hopefully make it easier for clients and users to troubleshoot networking and performance issues. When enabled, peers and torrents log a lot of messages, over 100 kiB/s while downloading. With that much data passing through the alert queue, it makes sense to think about how it works and ways to make it more efficient.
@@ -43,9 +41,5 @@ That leaves option (3), which is what libtorrent implements, as illustrated by t
 ![new-alert-queue](../images/new-alert-queue-6e963fcf.png)
 
 Also illustrated here is the last issue with the original alert queue, namely churn of the queue itself. Every time it was handed over to the client, ownership of it was also handed over (via swap()) and the client would free it. The new alert manager does not give up ownership of the queue, it simply keeps two alert queues and two stack allocators. Whenever the client asks for more alerts, the alerts the client received previously are invalidated and destructed and the queue they lived in is reused (without requiring any re-allocation) and pointers to the current queue are returned. The alert manager always add alerts and allocation to the queue that isn’t currently in use by the client.
-
-Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [No Comments](https://blog.libtorrent.org/2015/04/libtorrent-alert-queue/#respond)
 
 ---

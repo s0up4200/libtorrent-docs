@@ -4,8 +4,6 @@ date: "2013-12"
 source: "https://blog.libtorrent.org/2013/12/memory-cache-optimizations/"
 ---
 
-Monday, December 9th, 2013 by arvid
-
 When optimizing memory access, and memory cache misses in particular, there are surprisingly few tools to help you. valgrind’s cachegrind tool is the closest one I’ve found. It gives you a lot of information on cache misses, but not necessarily in the form you need it.
 
 About a week ago I started looking into lowering the memory cache pressure by just making my data structures smaller and have less waste. Waste primarily comes in the form of struct padding. To get a good understanding and intuitive visualization of the padding in the structures in libtorrent, I wrote a tool that visualizes them. It does essentially what the **dt** command does in windbg (but with some more features). As far as I can tell, this functionality is oddly missing from gdb (I’m talking about offsets of fields too, not just **ptype**).
@@ -56,10 +54,6 @@ The implementation of [access\_profiler](https://github.com/arvidn/access_profil
 The single step mode tells the CPU to execute one instruction and then fire a SIGTRAP interrupt. This is delivered to the process via another signal handler installed for that. It protects the page again, leaves single step mode and resumes execution.
 
 As you can imagine, this is quite expensive, but I was surprised how it did not bog (a release build of) libtorrent down to a crawl. It used significantly more CPU, but otherwise it ran at full speed. For programs and workloads where the memory cache matters more this would presumably not be the case.
-
-Posted in [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [2 Comments](https://blog.libtorrent.org/2013/12/memory-cache-optimizations/#comments)
 
 ---
 

@@ -4,8 +4,6 @@ date: "2014-12"
 source: "https://blog.libtorrent.org/2014/12/a-bittorrent-filesystem/"
 ---
 
-Wednesday, December 24th, 2014 by arvid
-
 One of the main bottlenecks when downloading and seeding content over bittorrent is accessing the disk. This post explores the option to bypass traditional filesystems and use a block device as storage for torrents, in order to improve download performance.
 
 BitTorrent downloads conceptually divide up content into pieces, which are downloaded in rarest-first order.
@@ -252,9 +250,5 @@ Write pattern when on the block device level in the btfs benchmark.
 The conclusion is that BitTorrent downloads whose download rate is limited by spinning disks, could potentially be made 3 times faster with a custom file system where writes are made more sequential, block aligned and have less metadata overhead.
 
 The source is available under GPLv3 on [github](https://github.com/arvidn/btfs).
-
-Posted in [disk](https://blog.libtorrent.org/category/disk/), [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [No Comments](https://blog.libtorrent.org/2014/12/a-bittorrent-filesystem/#respond)
 
 ---

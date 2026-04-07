@@ -4,8 +4,6 @@ date: "2012-12"
 source: "https://blog.libtorrent.org/2012/12/swarm-connectivity/"
 ---
 
-Monday, December 31st, 2012 by arvid
-
 In bittorrent it is important to keep the swarm as evenly connected as possible. Clustering of peers may create bottlenecks for piece distribution and create a skewed market for trading pieces. Keep in mind that local piece availability is used as an approximation for global piece availability in the rarest-first piece picking algorithm. This post is relevant for most peer-to-peer systems, where having well connected peers is important.
 
 Since the swarm bittorrent peers form is considered as a graph, peers will be referred to as both peers and nodes in this post.
@@ -93,10 +91,6 @@ With a global ordering function, an attacker could not distrupt a swarm any more
 As a bonus to improve the robustness against this kind of attacks, the priority function could disregard some low order bits of the IP, meaning that attackers that launch attacks out of contiguous IP blocks would have an even smaller number of effective IPs.
 
 There are reasons to believe that these kinds of attacks are launched in the wild, or at least attacks like it. See [cert.pl](http://www.cert.pl/news/5365/langswitch_lang/en "cert.pl").
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [8 Comments](https://blog.libtorrent.org/2012/12/swarm-connectivity/#comments)
 
 ---
 

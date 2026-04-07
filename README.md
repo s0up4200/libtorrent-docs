@@ -24,6 +24,16 @@ The canonical version of this skill lives in [soup/skills](https://github.com/s0
 
 Requires [uv](https://github.com/astral-sh/uv). Re-scrapes everything, re-downloads images, and rebuilds indexes.
 
+The scraper now fails hard on incomplete discovery or fetches and only swaps generated output into place after a fully successful run.
+
+## Testing
+
+```bash
+uv run python -m unittest discover -s tests -v
+```
+
+`pyproject.toml` is the canonical dependency source for both scraping and tests.
+
 ## License
 
 Original code and repo-authored metadata in this repository are licensed under MIT. See `LICENSE`.

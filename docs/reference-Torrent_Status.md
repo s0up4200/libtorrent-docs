@@ -1,11 +1,7 @@
 ---
-title: "torrent_status"
+title: "Torrent Status"
 source: "https://libtorrent.org/reference-Torrent_Status.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+torrent_status&labels=documentation&body=Documentation+under+heading+%22class+torrent_status%22+could+be+improved)]
 
 # torrent\_status
 
@@ -107,8 +103,6 @@ struct torrent_status
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Boperator%3D%3D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Boperator%3D%3D%28%29%5D%22+could+be+improved)]
-
 ## operator==()
 
 ```cpp
@@ -117,8 +111,6 @@ bool operator== (torrent_status const& st) const;
 
 compares if the torrent status objects come from the same torrent. i.e.
 only the [torrent\_handle](reference-Torrent_Handle.md#torrent_handle) field is compared.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:enum+state_t&labels=documentation&body=Documentation+under+heading+%22enum+state_t%22+could+be+improved)]
 
 ## enum state\_t
 
@@ -134,12 +126,8 @@ Declared in "[libtorrent/torrent\_status.hpp](include/libtorrent/torrent_status.
 | unused\_enum\_for\_backwards\_compatibility\_allocating | 6 | If the torrent was started in full allocation mode, this indicates that the (disk) storage for the torrent is allocated. |
 | checking\_resume\_data | 7 | The torrent is currently checking the fast resume data and comparing it to the files on disk. This is typically completed in a fraction of a second, but if you add a large number of torrents at once, they will queue up. |
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bhandle%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bhandle%5D%22+could+be+improved)]
-
 handle
 :   a handle to the torrent whose status the object represents.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berrc%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berrc%5D%22+could+be+improved)]
 
 errc
 :   may be set to an error code describing why the torrent was paused, in
@@ -147,8 +135,6 @@ errc
     paused but not because of an error, this error\_code is not set.
     if the error is attributed specifically to a file, error\_file is set to
     the index of that file in the .torrent file.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file%5D%22+could+be+improved)]
 
 error\_file
 :   if the torrent is stopped because of an disk I/O error, this field
@@ -158,35 +144,23 @@ error\_file
     error\_file\_ssl\_ctx, error\_file\_exception, error\_file\_partfile or
     error\_file\_metadata;
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file_none%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file_none%5D%22+could+be+improved)]
-
 error\_file\_none
 :   special values for error\_file to describe which file or component
     encountered the error (errc).
     the error did not occur on a file
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file_ssl_ctx%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file_ssl_ctx%5D%22+could+be+improved)]
-
 error\_file\_ssl\_ctx
 :   the error occurred setting up the SSL context
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file_metadata%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file_metadata%5D%22+could+be+improved)]
-
 error\_file\_metadata
 :   the error occurred while loading the metadata for the torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file_exception%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file_exception%5D%22+could+be+improved)]
 
 error\_file\_exception
 :   there was a serious error reported in this torrent. The error code
     or a torrent log [alert](reference-Alerts.md#alert) may provide more information.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Berror_file_partfile%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Berror_file_partfile%5D%22+could+be+improved)]
-
 error\_file\_partfile
 :   the error occurred with the partfile
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bsave_path%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bsave_path%5D%22+could+be+improved)]
 
 save\_path
 :   the path to the directory where this torrent's files are stored.
@@ -194,8 +168,6 @@ save\_path
     [add\_torrent()](reference-Session.md#add_torrent()) when this torrent was started. This field is only
     included if the torrent status is queried with
     torrent\_handle::query\_save\_path.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bname%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bname%5D%22+could+be+improved)]
 
 name
 :   the name of the torrent. Typically this is derived from the
@@ -205,25 +177,17 @@ name
     This field is only included if the torrent status is queried
     with torrent\_handle::query\_name.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btorrent_file%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btorrent_file%5D%22+could+be+improved)]
-
 torrent\_file
 :   set to point to the torrent\_info object for this torrent. It's
     only included if the torrent status is queried with
     torrent\_handle::query\_torrent\_file.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnext_announce%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnext_announce%5D%22+could+be+improved)]
-
 next\_announce
 :   the time until the torrent will announce itself to the tracker.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bcurrent_tracker%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bcurrent_tracker%5D%22+could+be+improved)]
 
 current\_tracker
 :   the URL of the last working tracker. If no tracker request has
     been successful yet, it's set to an empty string.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_download+total_upload%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_download+total_upload%5D%22+could+be+improved)]
 
 total\_download total\_upload
 :   the number of bytes downloaded and uploaded to all peers, accumulated,
@@ -232,8 +196,6 @@ total\_download total\_upload
     [counters](reference-Stats.md#counters) are reset to 0. If you want complete, persistent, stats, see
     all\_time\_upload and all\_time\_download.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_payload_download+total_payload_upload%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_payload_download+total_payload_upload%5D%22+could+be+improved)]
-
 total\_payload\_download total\_payload\_upload
 :   counts the amount of bytes send and received this [session](reference-Session.md#session), but only
     the actual payload data (i.e the interesting data), these [counters](reference-Stats.md#counters)
@@ -241,15 +203,11 @@ total\_payload\_download total\_payload\_upload
     when a torrent is paused and restarted again. When a torrent is
     paused, these [counters](reference-Stats.md#counters) are reset to 0.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_failed_bytes%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_failed_bytes%5D%22+could+be+improved)]
-
 total\_failed\_bytes
 :   the number of bytes that has been downloaded and that has failed the
     piece hash test. In other words, this is just how much crap that has
     been downloaded since the torrent was last started. If a torrent is
     paused and then restarted again, this counter will be reset.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_redundant_bytes%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_redundant_bytes%5D%22+could+be+improved)]
 
 total\_redundant\_bytes
 :   the number of bytes that has been downloaded even though that data
@@ -264,36 +222,26 @@ total\_redundant\_bytes
     started. If a torrent is paused and then restarted again, this counter
     will be reset.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bpieces%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bpieces%5D%22+could+be+improved)]
-
 pieces
 :   a bitmask that represents which pieces we have (set to true) and the
     pieces we don't have. It's a pointer and may be set to 0 if the
     torrent isn't downloading or seeding.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bverified_pieces%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bverified_pieces%5D%22+could+be+improved)]
 
 verified\_pieces
 :   a bitmask representing which pieces has had their hash checked. This
     only applies to torrents in *seed mode*. If the torrent is not in seed
     mode, this bitmask may be empty.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_done%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_done%5D%22+could+be+improved)]
-
 total\_done
 :   the total number of bytes of the file(s) that we have. All this does
     not necessarily has to be downloaded during this [session](reference-Session.md#session) (that's
     total\_payload\_download).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal%5D%22+could+be+improved)]
 
 total
 :   the total number of bytes to download for this torrent. This
     may be less than the size of the torrent in case there are
     pad files. This number only counts bytes that will actually
     be requested from peers.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_wanted_done%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_wanted_done%5D%22+could+be+improved)]
 
 total\_wanted\_done
 :   the number of bytes we have downloaded, only counting the pieces that
@@ -302,8 +250,6 @@ total\_wanted\_done
     Once a torrent becomes seed, any piece- and file priorities are
     forgotten and all bytes are considered "wanted".
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Btotal_wanted%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Btotal_wanted%5D%22+could+be+improved)]
-
 total\_wanted
 :   The total number of bytes we want to download. This may be smaller
     than the total torrent size in case any pieces are prioritized to 0,
@@ -311,43 +257,29 @@ total\_wanted
     Once a torrent becomes seed, any piece- and file priorities are
     forgotten and all bytes are considered "wanted".
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Ball_time_upload+all_time_download%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Ball_time_upload+all_time_download%5D%22+could+be+improved)]
-
 all\_time\_upload all\_time\_download
 :   are accumulated upload and download payload byte [counters](reference-Stats.md#counters). They are
     saved in and restored from resume data to keep totals across sessions.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Badded_time%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Badded_time%5D%22+could+be+improved)]
 
 added\_time
 :   the posix-time when this torrent was added. i.e. what time(nullptr)
     returned at the time.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bcompleted_time%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bcompleted_time%5D%22+could+be+improved)]
-
 completed\_time
 :   the posix-time when this torrent was finished. If the torrent is not
     yet finished, this is 0.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Blast_seen_complete%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Blast_seen_complete%5D%22+could+be+improved)]
 
 last\_seen\_complete
 :   the time when we, or one of our peers, last saw a complete copy of
     this torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bstorage_mode%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bstorage_mode%5D%22+could+be+improved)]
-
 storage\_mode
 :   The allocation mode for the torrent. See [storage\_mode\_t](reference-Storage.md#storage_mode_t) for the
     options. For more information, see [storage allocation](manual-ref.md#storage-allocation).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bprogress%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bprogress%5D%22+could+be+improved)]
-
 progress
 :   a value in the range [0, 1], that represents the progress of the
     torrent's current task. It may be checking files or downloading.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bprogress_ppm%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bprogress_ppm%5D%22+could+be+improved)]
 
 progress\_ppm
 :   progress parts per million (progress \* 1000000) when disabling
@@ -358,20 +290,14 @@ progress\_ppm
     disabled, this is the only alternative to the floating point value in
     progress.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bqueue_position%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bqueue_position%5D%22+could+be+improved)]
-
 queue\_position
 :   the position this torrent has in the download
     queue. If the torrent is a seed or finished, this is -1.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bdownload_rate+upload_rate%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bdownload_rate+upload_rate%5D%22+could+be+improved)]
 
 download\_rate upload\_rate
 :   the total rates for all peers for this torrent. These will usually
     have better precision than summing the rates from all peers. The rates
     are given as the number of bytes per second.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bdownload_payload_rate+upload_payload_rate%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bdownload_payload_rate+upload_payload_rate%5D%22+could+be+improved)]
 
 download\_payload\_rate upload\_payload\_rate
 :   the total transfer rate of payload only, not counting protocol
@@ -379,13 +305,9 @@ download\_payload\_rate upload\_payload\_rate
     projected over a long time (e.g. when calculating ETA:s) the
     difference may be noticeable.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_seeds%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_seeds%5D%22+could+be+improved)]
-
 num\_seeds
 :   the number of peers that are seeding that this client is
     currently connected to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_peers%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_peers%5D%22+could+be+improved)]
 
 num\_peers
 :   the number of peers this torrent currently is connected to. Peer
@@ -393,15 +315,11 @@ num\_peers
     or are queued for later connection attempt do not count. Although they
     are visible in the peer list when you call [get\_peer\_info()](reference-Torrent_Handle.md#get_peer_info()).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_complete+num_incomplete%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_complete+num_incomplete%5D%22+could+be+improved)]
-
 num\_complete num\_incomplete
 :   if the tracker sends scrape info in its announce reply, these fields
     will be set to the total number of peers that have the whole file and
     the total number of peers that are still downloading. set to -1 if the
     tracker did not send any scrape data in its announce reply.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Blist_seeds+list_peers%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Blist_seeds+list_peers%5D%22+could+be+improved)]
 
 list\_seeds list\_peers
 :   the number of seeds in our peer list and the total number of peers
@@ -409,15 +327,11 @@ list\_seeds list\_peers
     in our peer list. This is the number of peers we know of in total,
     including banned peers and peers that we have failed to connect to.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bconnect_candidates%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bconnect_candidates%5D%22+could+be+improved)]
-
 connect\_candidates
 :   the number of peers in this torrent's peer list that is a candidate to
     be connected to. i.e. It has fewer connect attempts than the max fail
     count, it is not a seed if we are a seed, it is not banned etc. If
     this is 0, it means we don't know of any more peers that we can try.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_pieces%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_pieces%5D%22+could+be+improved)]
 
 num\_pieces
 :   the number of pieces that has been downloaded. It is equivalent to:
@@ -427,15 +341,11 @@ num\_pieces
     Note that these pieces have not necessarily been written to disk yet,
     and there is a risk the write to disk will fail.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bdistributed_full_copies%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bdistributed_full_copies%5D%22+could+be+improved)]
-
 distributed\_full\_copies
 :   the number of distributed copies of the torrent. Note that one copy
     may be spread out among many peers. It tells how many copies there are
     currently of the rarest piece(s) among the peers this client is
     connected to.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bdistributed_fraction%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bdistributed_fraction%5D%22+could+be+improved)]
 
 distributed\_fraction
 :   tells the share of pieces that have more copies than the rarest
@@ -450,8 +360,6 @@ distributed\_fraction
     and piece availability is no longer tracked. In this case the
     distributed copies members are set to -1.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bdistributed_copies%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bdistributed_copies%5D%22+could+be+improved)]
-
 distributed\_copies
 :   the number of distributed copies of the file. note that one copy may
     be spread out among many peers. This is a floating point
@@ -463,8 +371,6 @@ distributed\_copies
     the fractional part tells the fraction of pieces that
     :   have more copies than the rarest piece(s).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bblock_size%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bblock_size%5D%22+could+be+improved)]
-
 block\_size
 :   the size of a block, in bytes. A block is a sub piece, it is the
     number of bytes that each piece request asks for and the number of
@@ -472,29 +378,19 @@ block\_size
     see [get\_download\_queue()](reference-Torrent_Handle.md#get_download_queue()). This is typically 16 kB, but it may be
     smaller, if the pieces are smaller.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_uploads%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_uploads%5D%22+could+be+improved)]
-
 num\_uploads
 :   the number of unchoked peers in this torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bnum_connections%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bnum_connections%5D%22+could+be+improved)]
 
 num\_connections
 :   the number of peer connections this torrent has, including half-open
     connections that hasn't completed the bittorrent handshake yet. This
     is always >= num\_peers.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Buploads_limit%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Buploads_limit%5D%22+could+be+improved)]
-
 uploads\_limit
 :   the set limit of upload slots (unchoked peers) for this torrent.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bconnections_limit%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bconnections_limit%5D%22+could+be+improved)]
-
 connections\_limit
 :   the set limit of number of connections for this torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bup_bandwidth_queue+down_bandwidth_queue%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bup_bandwidth_queue+down_bandwidth_queue%5D%22+could+be+improved)]
 
 up\_bandwidth\_queue down\_bandwidth\_queue
 :   the number of peers in this torrent that are waiting for more
@@ -504,39 +400,27 @@ up\_bandwidth\_queue down\_bandwidth\_queue
     be waiting for bandwidth quota from the global limiter, but then they
     are counted in the session\_status object.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bseed_rank%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bseed_rank%5D%22+could+be+improved)]
-
 seed\_rank
 :   A rank of how important it is to seed the torrent, it is used to
     determine which torrents to seed and which to queue. It is based on
     the peer to seed ratio from the tracker scrape. For more information,
     see [queuing](manual-ref.md#queuing). Higher value means more important to seed
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bstate%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bstate%5D%22+could+be+improved)]
-
 state
 :   the main state the torrent is in. See [torrent\_status::state\_t](reference-Torrent_Status.md#state_t).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bneed_save_resume%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bneed_save_resume%5D%22+could+be+improved)]
 
 need\_save\_resume
 :   true if this torrent has unsaved changes
     to its download state and statistics since the last resume data
     was saved.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bis_seeding%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bis_seeding%5D%22+could+be+improved)]
-
 is\_seeding
 :   true if all pieces have been downloaded.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bis_finished%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bis_finished%5D%22+could+be+improved)]
 
 is\_finished
 :   true if all pieces that have a priority > 0 are downloaded. There is
     only a distinction between finished and seeding if some pieces or
     files have been set to priority 0, i.e. are not downloaded.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bhas_metadata%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bhas_metadata%5D%22+could+be+improved)]
 
 has\_metadata
 :   true if this torrent has metadata (either it was started from a
@@ -545,20 +429,14 @@ has\_metadata
     (i.e. with just an info-hash and tracker ip, a magnet link for
     instance).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bhas_incoming%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bhas_incoming%5D%22+could+be+improved)]
-
 has\_incoming
 :   true if there has ever been an incoming connection attempt to this
     torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bmoving_storage%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bmoving_storage%5D%22+could+be+improved)]
 
 moving\_storage
 :   this is true if this torrent's storage is currently being moved from
     one location to another. This may potentially be a long operation
     if a large file ends up being copied from one drive to another.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bannouncing_to_trackers+announcing_to_lsd+announcing_to_dht%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bannouncing_to_trackers+announcing_to_lsd+announcing_to_dht%5D%22+could+be+improved)]
 
 announcing\_to\_trackers announcing\_to\_lsd announcing\_to\_dht
 :   these are set to true if this torrent is allowed to announce to the
@@ -566,18 +444,12 @@ announcing\_to\_trackers announcing\_to\_lsd announcing\_to\_dht
     the queue logic/auto manager. Torrents that are not auto managed will
     always be allowed to announce to all peer sources.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Binfo_hashes%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Binfo_hashes%5D%22+could+be+improved)]
-
 info\_hashes
 :   the info-hash for this torrent
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Blast_upload+last_download%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Blast_upload+last_download%5D%22+could+be+improved)]
 
 last\_upload last\_download
 :   the timestamps of the last time this torrent uploaded or downloaded
     payload to any peer.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bactive_duration+finished_duration+seeding_duration%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bactive_duration+finished_duration+seeding_duration%5D%22+could+be+improved)]
 
 active\_duration finished\_duration seeding\_duration
 :   these are cumulative [counters](reference-Stats.md#counters) of for how long the torrent has been in
@@ -588,8 +460,6 @@ active\_duration finished\_duration seeding\_duration
     seeding means all files/pieces were downloaded and available to
     peers. Being available to peers does not imply there are other peers
     asking for the payload.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:torrent_status%3A%3A%5Bflags%5D&labels=documentation&body=Documentation+under+heading+%22torrent_status%3A%3A%5Bflags%5D%22+could+be+improved)]
 
 flags
 :   reflects several of the torrent's flags. For more

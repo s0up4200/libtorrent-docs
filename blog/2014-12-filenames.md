@@ -4,8 +4,6 @@ date: "2014-12"
 source: "https://blog.libtorrent.org/2014/12/filenames/"
 ---
 
-Monday, December 1st, 2014 by arvid
-
 A .torrent file is very flexible in what it allows a path or filename to contain. Each directory name in a path is a length-prefixed utf-8 string. It can be an empty string, and it can have any character imaginable in it. The way a .torrent file represents filenames and paths is also agnostic to the way your OS/filesystem may represent paths (it does assume a directory hierarchy though).
 
 A file is represented by a list of directory entries, where the last one is the name of the file. Like this:
@@ -95,9 +93,5 @@ The next major version will instead make the following transform:
 ```
 
 The good news though, is that only edge cases and borderline exploit attempts are affected by these changes. The majority of torrents presumably honor the typical naming restrictions of modern operating systems.
-
-Posted in [operating system](https://blog.libtorrent.org/category/operating-system/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2014/12/filenames/#respond)
 
 ---

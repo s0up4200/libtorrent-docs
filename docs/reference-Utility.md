@@ -1,11 +1,7 @@
 ---
-title: "hasher"
+title: "Utility"
 source: "https://libtorrent.org/reference-Utility.html"
 ---
-
-[home](reference.md)
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+hasher&labels=documentation&body=Documentation+under+heading+%22class+hasher%22+could+be+improved)]
 
 # hasher
 
@@ -44,8 +40,6 @@ class hasher
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher%3A%3A%5Boperator%3D%28%29+hasher%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher%3A%3A%5Boperator%3D%28%29+hasher%28%29%5D%22+could+be+improved)]
-
 ## operator=() hasher()
 
 ```cpp
@@ -58,8 +52,6 @@ hasher& operator= (hasher const&) &;
 this is the same as default constructing followed by a call to
 update(data, len).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher%3A%3A%5Bupdate%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher%3A%3A%5Bupdate%28%29%5D%22+could+be+improved)]
-
 ## update()
 
 ```cpp
@@ -68,8 +60,6 @@ hasher& update (span<char const> data);
 ```
 
 append the following bytes to what is being hashed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher%3A%3A%5Bfinal%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher%3A%3A%5Bfinal%28%29%5D%22+could+be+improved)]
 
 ## final()
 
@@ -80,8 +70,6 @@ sha1_hash final ();
 returns the SHA-1 digest of the buffers previously passed to
 [update()](reference-Utility.md#update()) and the [hasher](reference-Utility.md#hasher) constructor.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher%3A%3A%5Breset%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher%3A%3A%5Breset%28%29%5D%22+could+be+improved)]
-
 ## reset()
 
 ```cpp
@@ -90,8 +78,6 @@ void reset ();
 
 restore the [hasher](reference-Utility.md#hasher) state to be as if the [hasher](reference-Utility.md#hasher) has just been
 default constructed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+hasher256&labels=documentation&body=Documentation+under+heading+%22class+hasher256%22+could+be+improved)]
 
 # hasher256
 
@@ -113,8 +99,6 @@ class hasher256
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher256%3A%3A%5Bhasher256%28%29+operator%3D%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher256%3A%3A%5Bhasher256%28%29+operator%3D%28%29%5D%22+could+be+improved)]
-
 ## hasher256() operator=()
 
 ```cpp
@@ -127,8 +111,6 @@ hasher256& operator= (hasher256 const&) &;
 this is the same as default constructing followed by a call to
 update(data, len).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher256%3A%3A%5Bupdate%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher256%3A%3A%5Bupdate%28%29%5D%22+could+be+improved)]
-
 ## update()
 
 ```cpp
@@ -137,8 +119,6 @@ hasher256& update (span<char const> data);
 ```
 
 append the following bytes to what is being hashed
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher256%3A%3A%5Bfinal%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher256%3A%3A%5Bfinal%28%29%5D%22+could+be+improved)]
 
 ## final()
 
@@ -149,8 +129,6 @@ sha256_hash final ();
 returns the SHA-1 digest of the buffers previously passed to
 [update()](reference-Utility.md#update()) and the [hasher](reference-Utility.md#hasher) constructor.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:hasher256%3A%3A%5Breset%28%29%5D&labels=documentation&body=Documentation+under+heading+%22hasher256%3A%3A%5Breset%28%29%5D%22+could+be+improved)]
-
 ## reset()
 
 ```cpp
@@ -159,8 +137,6 @@ void reset ();
 
 restore the [hasher](reference-Utility.md#hasher) state to be as if the [hasher](reference-Utility.md#hasher) has just been
 default constructed.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+bitfield&labels=documentation&body=Documentation+under+heading+%22class+bitfield%22+could+be+improved)]
 
 # bitfield
 
@@ -199,8 +175,6 @@ struct bitfield
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bbitfield%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bbitfield%28%29%5D%22+could+be+improved)]
-
 ## bitfield()
 
 ```cpp
@@ -221,8 +195,6 @@ The constructor taking a pointer b and bits copies a [bitfield](reference-Utilit
 from the specified buffer, and bits number of bits (rounded up to
 the nearest byte boundary).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bassign%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bassign%28%29%5D%22+could+be+improved)]
-
 ## assign()
 
 ```cpp
@@ -231,8 +203,6 @@ void assign (char const* b, int const bits);
 
 copy [bitfield](reference-Utility.md#bitfield) from buffer b of bits number of bits, rounded up to
 the nearest byte boundary.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Boperator%5B%5D%28%29+get_bit%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Boperator%5B%5D%28%29+get_bit%28%29%5D%22+could+be+improved)]
 
 ## operator[]() get\_bit()
 
@@ -243,8 +213,6 @@ bool get_bit (int index) const noexcept;
 
 query bit at index. Returns true if bit is 1, otherwise false.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bset_bit%28%29+clear_bit%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bset_bit%28%29+clear_bit%28%29%5D%22+could+be+improved)]
-
 ## set\_bit() clear\_bit()
 
 ```cpp
@@ -254,8 +222,6 @@ void clear_bit (int index) noexcept;
 
 set bit at index to 0 (clear\_bit) or 1 (set\_bit).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Ball_set%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Ball_set%28%29%5D%22+could+be+improved)]
-
 ## all\_set()
 
 ```cpp
@@ -263,8 +229,6 @@ bool all_set () const noexcept;
 ```
 
 returns true if all bits in the [bitfield](reference-Utility.md#bitfield) are set
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bnone_set%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bnone_set%28%29%5D%22+could+be+improved)]
 
 ## none\_set()
 
@@ -274,8 +238,6 @@ bool none_set () const noexcept;
 
 returns true if no bit in the [bitfield](reference-Utility.md#bitfield) is set
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bsize%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bsize%28%29%5D%22+could+be+improved)]
-
 ## size()
 
 ```cpp
@@ -283,8 +245,6 @@ int size () const noexcept;
 ```
 
 returns the size of the [bitfield](reference-Utility.md#bitfield) in bits.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bnum_words%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bnum_words%28%29%5D%22+could+be+improved)]
 
 ## num\_words()
 
@@ -295,8 +255,6 @@ int num_words () const noexcept;
 returns the number of 32 bit words are needed to represent all bits in
 this [bitfield](reference-Utility.md#bitfield).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bnum_bytes%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bnum_bytes%28%29%5D%22+could+be+improved)]
-
 ## num\_bytes()
 
 ```cpp
@@ -306,8 +264,6 @@ int num_bytes () const noexcept;
 returns the number of bytes needed to represent all bits in this
 [bitfield](reference-Utility.md#bitfield)
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bempty%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bempty%28%29%5D%22+could+be+improved)]
-
 ## empty()
 
 ```cpp
@@ -315,8 +271,6 @@ bool empty () const noexcept;
 ```
 
 returns true if the [bitfield](reference-Utility.md#bitfield) has zero size.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bdata%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bdata%28%29%5D%22+could+be+improved)]
 
 ## data()
 
@@ -328,8 +282,6 @@ char* data () noexcept;
 returns a pointer to the internal buffer of the [bitfield](reference-Utility.md#bitfield), or
 nullptr if it's empty.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bswap%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bswap%28%29%5D%22+could+be+improved)]
-
 ## swap()
 
 ```cpp
@@ -337,8 +289,6 @@ void swap (bitfield& rhs) noexcept;
 ```
 
 swaps the bit-fields two variables refer to
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bcount%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bcount%28%29%5D%22+could+be+improved)]
 
 ## count()
 
@@ -348,8 +298,6 @@ int count () const noexcept;
 
 count the number of bits in the [bitfield](reference-Utility.md#bitfield) that are set to 1.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bfind_first_set%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bfind_first_set%28%29%5D%22+could+be+improved)]
-
 ## find\_first\_set()
 
 ```cpp
@@ -357,8 +305,6 @@ int find_first_set () const noexcept;
 ```
 
 returns the index of the first set bit in the [bitfield](reference-Utility.md#bitfield), i.e. 1 bit.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:bitfield%3A%3A%5Bfind_last_clear%28%29%5D&labels=documentation&body=Documentation+under+heading+%22bitfield%3A%3A%5Bfind_last_clear%28%29%5D%22+could+be+improved)]
 
 ## find\_last\_clear()
 

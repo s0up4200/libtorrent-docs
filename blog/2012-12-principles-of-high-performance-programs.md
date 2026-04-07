@@ -4,8 +4,6 @@ date: "2012-12"
 source: "https://blog.libtorrent.org/2012/12/principles-of-high-performance-programs/"
 ---
 
-Monday, December 10th, 2012 by arvid
-
 This article is an attempt to sum up a small number of generic rules that appear to be useful rules of thumb when creating high performing programs. It is structured by first establishing some fundamental causes of performance hits followed by their extensions.
 
 A significant source of performance degradation on modern computers is the latency of SDRAM. While the CPU is waiting for a read from memory to come back, it is typically idling (this is mitigated by hyper-threading, to allow switching to another hardware thread, that may have work to do that doesn’t have an immediate dependency on RAM).
@@ -139,11 +137,5 @@ The ideas presented in this article can be summarized as:
 * A pattern to support committing-work-when-queue-is-drained to a high-level message queue
 
 [1] <https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Soares.pdf>
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/)
-**|**
- [No Comments](https://blog.libtorrent.org/2012/12/principles-of-high-performance-programs/#respond)
-
-Tags: [performance](https://blog.libtorrent.org/tag/performance/)
 
 ---

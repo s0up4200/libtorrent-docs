@@ -4,8 +4,6 @@ date: "2011-11"
 source: "https://blog.libtorrent.org/2011/11/requesting-pieces/"
 ---
 
-Thursday, November 24th, 2011 by arvid
-
 Deciding how many outstanding requests to keep to peers typically is based on the bandwidth delay product, or a simplified model thereof.
 
 The bandwidth delay product is the bandwidth capacity of a link multiplied by the latency of the link. It represents the number of bytes that fit in the wire and buffers along the path. In order to fully utilize a link, one needs to keep at least the bandwidth delay product worth of bytes outstanding requests at any given time. If fewer bytes than that are kept in outstanding requests, the other end will satisfy all the requests and then have to wait (wasting bandwidth) until it receives more requests.
@@ -37,9 +35,5 @@ Compare this to the other extreme, where you request the entire piece from 4 dif
 blocks of one piece being requested from 4 different peers, causing all 4 peers to (likely) cache this whole piece
 
 The logic in libtorrent switches into the request-whole-pieces mode when a peer sends blocks fast enough to send an entire piece in 30 seconds.
-
-Posted in [algorithms](https://blog.libtorrent.org/category/algorithms/), [network](https://blog.libtorrent.org/category/network/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/11/requesting-pieces/#respond)
 
 ---

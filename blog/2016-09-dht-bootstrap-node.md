@@ -4,8 +4,6 @@ date: "2016-09"
 source: "https://blog.libtorrent.org/2016/09/dht-bootstrap-node/"
 ---
 
-Sunday, September 4th, 2016 by arvid
-
 With the release of [libtorrent-1.1.1](https://github.com/arvidn/libtorrent/releases/tag/libtorrent-1_1_1), libtorrent finally got its very own default DHT bootstrap node, **dht.libtorrent.org:25401**. This post gives some background on the work that went into setting it up.
 
 The [BitTorrent DHT](http://bittorrent.org/beps/bep_0005.html) (or *Distributed Hash Table*) is a single global network connecting all bittorrent clients. They form a network organized around their IDs. The DHT was initially used to maintain peer lists for torrents, where peers could add themselves and retrieve a list of other peers. Today, with the [put/get extension](http://bittorrent.org/beps/bep_0044.html), it can be used for much more interesting features, such as a [decentralized RSS-like-feed](http://bittorrent.org/beps/bep_0046.html).
@@ -88,9 +86,5 @@ The traffic to this dht bootstrap node has not yet ramped up, as [libtorrent-1.1
 * adding proper tests (using [libsimulator](https://github.com/arvidn/libsimulator))
 
 If you’re interested in contributing, please check out the [bootstrap-dht](https://github.com/bittorrent/bootstrap-dht) project!
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [No Comments](https://blog.libtorrent.org/2016/09/dht-bootstrap-node/#respond)
 
 ---

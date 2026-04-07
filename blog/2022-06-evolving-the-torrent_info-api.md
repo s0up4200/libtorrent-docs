@@ -4,8 +4,6 @@ date: "2022-06"
 source: "https://blog.libtorrent.org/2022/06/evolving-the-torrent_info-api/"
 ---
 
-Sunday, June 12th, 2022 by arvid
-
 Currently, torrent files are loaded by the [`torrent_info`](https://libtorrent.org/reference-Torrent_Info.html#torrent_info()) constructor. The `torrent_info` object essentially holds all state from the .torrent file.  
 This post is arguing in favor of moving towards torrent\_info only representing the *immutable* portion of torrent files. i.e. what’s in the info-section.
 
@@ -75,9 +73,5 @@ Along with the new API, the following functions would be deprecated at some poin
 `torrent_info::creation_date()`
 
 `make_magnet_uri(torrent_handle const&)`
-
-Posted in [API](https://blog.libtorrent.org/category/api/)
-**|**
- [No Comments](https://blog.libtorrent.org/2022/06/evolving-the-torrent_info-api/#respond)
 
 ---

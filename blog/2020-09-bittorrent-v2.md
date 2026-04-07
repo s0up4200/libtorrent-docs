@@ -4,8 +4,6 @@ date: "2020-09"
 source: "https://blog.libtorrent.org/2020/09/bittorrent-v2/"
 ---
 
-Monday, September 7th, 2020 by arvid
-
 ![libtorrent logo](../images/logo-color-text-d57eaa33.png)
 
 libtorrent-2.0 has just been released with a few major new features. One of them is support for [BitTorrent v2](http://bittorrent.org/beps/bep_0052.html).
@@ -141,9 +139,5 @@ magnet:?xt=urn:btih:631a31dd0a46257d5078c0dee4e66e26f73e42ac&xt=urn:btmh:1220d8d
 ```
 
 A [reference implementation](http://bittorrent.org/beps/bep_0052_torrent_creator.py) of a torrent creator in python.
-
-Posted in [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2020/09/bittorrent-v2/#respond)
 
 ---

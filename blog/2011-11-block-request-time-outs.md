@@ -4,8 +4,6 @@ date: "2011-11"
 source: "https://blog.libtorrent.org/2011/11/block-request-time-outs/"
 ---
 
-Tuesday, November 22nd, 2011 by arvid
-
 timing out requests, and requesting blocks from other peers, may seem like a straight forward and trivial problem. However, there’s a balance to be struck between timing out a block too early, causing certain situation to systematically request every block multiple times, or never timing blocks out causing partially downloaded pieces to linger for a very long time, preventing uploading those.
 
 In the early days of bittorrent, there was a client called BitComet, which received a lot of bad reputation. Some of it was FUD, and some of it was warranted. One thing BitComet did to prevent DoS attacks was to limit the number of outstanding requests it would allow any single peer to send to it to 50. If a peer would send more than 50 requests, they would just be silently dropped (keep in mind this was before the FAST extension’s reject message was introduced).
@@ -65,9 +63,5 @@ On the other hand, if there still are free blocks to pick, like in the next exam
 a block timed out in a piece with unrequested blocks
 
 In this case, it does not make sense to cancel the block. This peer may be the only one that has this piece, in which case we better give it all the time it needs to complete. In this case, it makes sense to postpone the timeout another block worth of time.
-
-Posted in [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/11/block-request-time-outs/#respond)
 
 ---

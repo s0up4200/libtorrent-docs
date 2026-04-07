@@ -1,9 +1,7 @@
 ---
-title: "create_torrent"
+title: "Create Torrents"
 source: "https://libtorrent.org/reference-Create_Torrents.html"
 ---
-
-[home](reference.md)
 
 This section describes the functions and classes that are used
 to create torrent files. It is a layered API with low level classes
@@ -49,8 +47,6 @@ out.write(buf.data(), buf.size());
 // iterator
 bencode(std::ostream_iterator<char>(out), t.generate());
 ```
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:class+create_torrent&labels=documentation&body=Documentation+under+heading+%22class+create_torrent%22+could+be+improved)]
 
 # create\_torrent
 
@@ -106,8 +102,6 @@ struct create_torrent
 };
 ```
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bcreate_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bcreate_torrent%28%29%5D%22+could+be+improved)]
-
 ## create\_torrent()
 
 ```cpp
@@ -142,8 +136,6 @@ Warning
 The [file\_storage](reference-Storage.md#file_storage) and [torrent\_info](reference-Torrent_Info.md#torrent_info) objects must stay alive for the
 entire duration of the [create\_torrent](reference-Create_Torrents.md#create_torrent) object.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bgenerate_buf%28%29+generate%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bgenerate_buf%28%29+generate%28%29%5D%22+could+be+improved)]
-
 ## generate\_buf() generate()
 
 ```cpp
@@ -176,8 +168,6 @@ appropriate error message. These are the reasons this call may throw:
   a file. If that's encountered in the file storage, [generate()](reference-Create_Torrents.md#generate())
   fails.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bfiles%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bfiles%28%29%5D%22+could+be+improved)]
-
 ## files()
 
 ```cpp
@@ -186,8 +176,6 @@ file_storage const& files () const;
 
 returns an immutable reference to the [file\_storage](reference-Storage.md#file_storage) used to create
 the torrent from.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_comment%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_comment%28%29%5D%22+could+be+improved)]
 
 ## set\_comment()
 
@@ -198,8 +186,6 @@ void set_comment (char const* str);
 Sets the comment for the torrent. The string str should be utf-8 encoded.
 The comment in a torrent file is optional.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_creator%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_creator%28%29%5D%22+could+be+improved)]
-
 ## set\_creator()
 
 ```cpp
@@ -208,8 +194,6 @@ void set_creator (char const* str);
 
 Sets the creator of the torrent. The string str should be utf-8 encoded.
 This is optional.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_creation_date%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_creation_date%28%29%5D%22+could+be+improved)]
 
 ## set\_creation\_date()
 
@@ -221,8 +205,6 @@ sets the "creation time" field. Defaults to the system clock at the
 time of construction of the [create\_torrent](reference-Create_Torrents.md#create_torrent) object. The timestamp is
 specified in seconds, posix time. If the creation date is set to 0,
 the "creation date" field will be omitted from the generated torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_hash%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_hash%28%29%5D%22+could+be+improved)]
 
 ## set\_hash()
 
@@ -239,8 +221,6 @@ has not been set. Setting such hash will not be considered set when
 calling [generate()](reference-Create_Torrents.md#generate()).
 This function will throw std::system\_error if it is called on an
 object constructed with the v2\_only flag.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_hash2%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_hash2%28%29%5D%22+could+be+improved)]
 
 ## set\_hash2()
 
@@ -261,8 +241,6 @@ when calling [generate()](reference-Create_Torrents.md#generate()).
 This function will throw std::system\_error if it is called on an
 object constructed with the v1\_only flag.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Badd_http_seed%28%29+add_url_seed%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Badd_http_seed%28%29+add_url_seed%28%29%5D%22+could+be+improved)]
-
 ## add\_http\_seed() add\_url\_seed()
 
 ```cpp
@@ -278,8 +256,6 @@ files of the torrent in it.
 
 The second function, add\_http\_seed() adds an HTTP seed instead.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Badd_node%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Badd_node%28%29%5D%22+could+be+improved)]
-
 ## add\_node()
 
 ```cpp
@@ -290,8 +266,6 @@ This adds a DHT node to the torrent. This especially useful if you're creating a
 tracker less torrent. It can be used by clients to bootstrap their DHT node from.
 The node is a hostname and a port number where there is a DHT node running.
 You can have any number of DHT nodes in a torrent.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Badd_tracker%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Badd_tracker%28%29%5D%22+could+be+improved)]
 
 ## add\_tracker()
 
@@ -305,8 +279,6 @@ url to a machine running a bittorrent tracker that accepts announces for this to
 info-hash. The tier is the fallback priority of the tracker. All trackers with tier 0 are
 tried first (in any order). If all fail, trackers with tier 1 are tried. If all of those
 fail, trackers with tier 2 are tried, and so on.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bset_root_cert%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bset_root_cert%28%29%5D%22+could+be+improved)]
 
 ## set\_root\_cert()
 
@@ -322,8 +294,6 @@ connections. For more information, see the section on [ssl torrents](manual-ref.
 The string is not the path to the cert, it's the actual content of the
 certificate.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bpriv%28%29+set_priv%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bpriv%28%29+set_priv%28%29%5D%22+could+be+improved)]
-
 ## priv() set\_priv()
 
 ```cpp
@@ -336,8 +306,6 @@ Torrents with the private flag set ask the client to not use any other
 sources than the tracker for peers, and to not use DHT to advertise itself publicly,
 only the tracker.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bnum_pieces%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bnum_pieces%28%29%5D%22+could+be+improved)]
-
 ## num\_pieces()
 
 ```cpp
@@ -345,8 +313,6 @@ int num_pieces () const;
 ```
 
 returns the number of pieces in the associated [file\_storage](reference-Storage.md#file_storage) object.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bpiece_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bpiece_range%28%29%5D%22+could+be+improved)]
 
 ## piece\_range()
 
@@ -356,8 +322,6 @@ index_range<piece_index_t> piece_range () const noexcept;
 
 all piece indices in the torrent to be created
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bfile_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bfile_range%28%29%5D%22+could+be+improved)]
-
 ## file\_range()
 
 ```cpp
@@ -365,8 +329,6 @@ index_range<file_index_t> file_range () const noexcept;
 ```
 
 all file indices in the torrent to be created
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bfile_piece_range%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bfile_piece_range%28%29%5D%22+could+be+improved)]
 
 ## file\_piece\_range()
 
@@ -378,8 +340,6 @@ for v2 and hybrid torrents only, the pieces in the
 specified file, specified as delta from the first piece in the file.
 i.e. the first index is 0.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Btotal_size%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Btotal_size%28%29%5D%22+could+be+improved)]
-
 ## total\_size()
 
 ```cpp
@@ -387,8 +347,6 @@ std::int64_t total_size () const;
 ```
 
 the total number of bytes of all files and pad files
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bpiece_length%28%29+piece_size%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bpiece_length%28%29+piece_size%28%29%5D%22+could+be+improved)]
 
 ## piece\_length() piece\_size()
 
@@ -400,8 +358,6 @@ int piece_size (piece_index_t i) const;
 piece\_length() returns the piece size of all pieces but the
 last one. piece\_size() returns the size of the specified piece.
 these functions are just forwarding to the associated [file\_storage](reference-Storage.md#file_storage).
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Badd_collection%28%29+add_similar_torrent%28%29%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Badd_collection%28%29+add_similar_torrent%28%29%5D%22+could+be+improved)]
 
 ## add\_collection() add\_similar\_torrent()
 
@@ -417,8 +373,6 @@ to share files with this torrent. A torrent may have more than one
 collection and more than one similar torrents. For more information,
 see [BEP 38](https://www.bittorrent.org/beps/bep_0038.html).
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bmodification_time%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bmodification_time%5D%22+could+be+improved)]
-
 modification\_time
 :   This will include the file modification time as part of the torrent.
     This is not enabled by default, as it might cause problems when you
@@ -427,23 +381,17 @@ modification\_time
     with this option enabled, you would get different info-hashes for the
     files.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bsymlinks%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bsymlinks%5D%22+could+be+improved)]
-
 symlinks
 :   If this flag is set, files that are symlinks get a symlink attribute
     set on them and their data will not be included in the torrent. This
     is useful if you need to reconstruct a file hierarchy which contains
     symlinks.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bv2_only%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bv2_only%5D%22+could+be+improved)]
-
 v2\_only
 :   Do not generate v1 metadata. The resulting torrent will only be usable by
     clients which support v2. This requires setting all v2 hashes, with
     [set\_hash2()](reference-Create_Torrents.md#set_hash2()) before calling [generate()](reference-Create_Torrents.md#generate()). Setting v1 hashes (with
     [set\_hash()](reference-Create_Torrents.md#set_hash())) is an error with this flag set.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bv1_only%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bv1_only%5D%22+could+be+improved)]
 
 v1\_only
 :   do not generate v2 metadata or enforce v2 alignment and padding rules
@@ -452,16 +400,12 @@ v1\_only
     [generate()](reference-Create_Torrents.md#generate()). Setting v2 hashes (with [set\_hash2()](reference-Create_Torrents.md#set_hash2())) is an error with
     this flag set.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bcanonical_files%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bcanonical_files%5D%22+could+be+improved)]
-
 canonical\_files
 :   This flag only affects v1-only torrents, and is only relevant
     together with the v1\_only\_flag. This flag will force the
     same file order and padding as a v2 (or hybrid) torrent would have.
     It has the effect of ordering files and inserting pad files to align
     them with piece boundaries.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bno_attributes%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bno_attributes%5D%22+could+be+improved)]
 
 no\_attributes
 :   passing this flag to [add\_files()](reference-Create_Torrents.md#add_files()) will ignore file attributes (such as
@@ -471,8 +415,6 @@ no\_attributes
     created. If it's important for torrents to be created consistently
     across systems, this flag should be set.
 
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:create_torrent%3A%3A%5Bcanonical_files_no_tail_padding%5D&labels=documentation&body=Documentation+under+heading+%22create_torrent%3A%3A%5Bcanonical_files_no_tail_padding%5D%22+could+be+improved)]
-
 canonical\_files\_no\_tail\_padding
 :   this flag enforces the file layout to be canonical according to the
     bittorrent v2 specification (just like the canonical\_files flag)
@@ -481,8 +423,6 @@ canonical\_files\_no\_tail\_padding
     This behavior deviates from the specification but was the way
     libtorrent created torrents in version up to and including 2.0.7.
     This flag is here for backwards compatibility.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:add_files%28%29&labels=documentation&body=Documentation+under+heading+%22add_files%28%29%22+could+be+improved)]
 
 # add\_files()
 
@@ -514,8 +454,6 @@ The ".." directory is never traversed.
 
 The flags argument should be the same as the flags passed to the [create\_torrent](#create-torrent)
 constructor.
-
-[[report issue](http://github.com/arvidn/libtorrent/issues/new?title=docs:set_piece_hashes%28%29&labels=documentation&body=Documentation+under+heading+%22set_piece_hashes%28%29%22+could+be+improved)]
 
 # set\_piece\_hashes()
 

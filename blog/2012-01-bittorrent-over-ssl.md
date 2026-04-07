@@ -4,8 +4,6 @@ date: "2012-01"
 source: "https://blog.libtorrent.org/2012/01/bittorrent-over-ssl/"
 ---
 
-Monday, January 30th, 2012 by arvid
-
 Running bittorrent over SSL could make sense for several applications. Anything you want distributed to a closed group, but large enough to warrant bittorrent would do well being distributed over bittorrent/SSL. Currently closed group distributions either don’t use any peer-to-peer distribution at all, or they use poor-man’s privacy/security. I’m referring to the “private” flag of torrent files, which suggests to clients that they should not announce to any source other than the tracker (i.e. no DHT, no peer exchange, no local peer discovery).
 
 The fundamental problem with the private flag is that there’s no enforcement of it. And even if there was, it’s not done on the peers themselves. This means that anyone can join a private swarm, simply by knowing a few peers on it (that’s knowing the IP and listen port of a few people that are in the swarm). When connecting to those peers, they have no way of knowing whether or not you’re allowed to join or not, so they have to assume that you are, since you know their IP and listen port.
@@ -33,9 +31,5 @@ More information is available [here](http://libtorrent.org/manual-ref.html#ssl-t
 One future possibility with SSL torrents is to use the unique and identifying keys each peer has to sign piece requests, or some sort of digital coin, to prove that something was uploaded to someone. With such a scheme, tracker would no longer have to rely on the client stats reporting being honest (and would no longer create an incentive to lie in those reports).
 
 This is a scheme that was actually implemented in the bittorrent downloader at [headweb](http://www.headweb.se), where each peer would “buy” blocks from each other, and then cache them in for store credit. Creating a true incentive to keep seeding.
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2012/01/bittorrent-over-ssl/#respond)
 
 ---

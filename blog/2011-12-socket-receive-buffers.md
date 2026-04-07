@@ -4,8 +4,6 @@ date: "2011-12"
 source: "https://blog.libtorrent.org/2011/12/socket-receive-buffers/"
 ---
 
-Wednesday, December 14th, 2011 by arvid
-
 In an attempt to save memory copying, libtorrent attempts to receive payload bytes directly into page aligned, pool allocated disk buffers. These buffers can then be used to DMA directly to disk (either with blocking O\_DIRECT files or via AIO operations, if run on a clever kernel).
 
 To do this for the bittorrent protocol, the network loop needs to read 5 bytes (4 bytes length-prefix and 1 byte message code), if the message code is a piece packet, receive another 8 bytes (piece index and start offset) and 16 kiB into the disk buffer. This can be a single receive operation using vector read (or scatter/gather in windows terminology).
@@ -42,9 +40,5 @@ It would be interesting to know if receiving straight into memory mapped files t
 When seeding, you definitely don’t want to make two syscalls per message you receive. Since you’re essentially guaranteed to not receive any payload messages, you’ll end up making 2 syscalls for almost all bittorrent messages received, with severe performance degradation. Most of the received messages will be requests, which are just 13 bytes each.
 
 In libtorrent this setting can be controlled by session\_settings::contiguous\_recv\_buffers. It defaults to true, and even when set to false it will only have an affect for peers we’re downloading from.
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [optimization](https://blog.libtorrent.org/category/optimization/)
-**|**
- [No Comments](https://blog.libtorrent.org/2011/12/socket-receive-buffers/#respond)
 
 ---

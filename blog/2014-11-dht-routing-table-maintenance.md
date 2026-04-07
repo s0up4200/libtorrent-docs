@@ -4,8 +4,6 @@ date: "2014-11"
 source: "https://blog.libtorrent.org/2014/11/dht-routing-table-maintenance/"
 ---
 
-Friday, November 7th, 2014 by arvid
-
 I’ve been working on performance improvements of the DHT recently that I would like to cover in this post.
 
 One of the proposed improvements from the [sub-seconds lookups paper](http://people.kth.se/~rauljc/p2p11/jimenez2011subsecond.pdf) is referred to as NICE. It proposes replacing the method of maintaining the routing table buckets (see [kademlia paper](http://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf)) with directly pinging the nodes, the most stale node every 6 seconds. The traditional method is to issue a find-node lookup in buckets that are stale, i.e. have not seen any use in a long time.
@@ -84,9 +82,5 @@ For instance, use the penultimate word of the random ID, combine it with a secre
 Node IDs in the BitTorrent DHT are 160 bits, 20 bytes or 5 words. The DHT is not big enough to even need the full 32 bits of the first word for routing, so word 1-4 can be used for anything without affecting routing (as a side note, for topics of the first word, see [this](http://blog.libtorrent.org/2012/12/dht-security/) post).
 
 With this scheme, if the bittorrent engine ever receives an incoming connection handshaking with an info-hash that has this signature / property, it’s a safe assumption that peer learned about it by snooping the DHT, and we can ban that IP.
-
-Posted in [network](https://blog.libtorrent.org/category/network/), [protocol](https://blog.libtorrent.org/category/protocol/)
-**|**
- [No Comments](https://blog.libtorrent.org/2014/11/dht-routing-table-maintenance/#respond)
 
 ---

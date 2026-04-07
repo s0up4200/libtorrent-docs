@@ -4,8 +4,6 @@ date: "2017-12"
 source: "https://blog.libtorrent.org/2017/12/forward-declarations-and-abi/"
 ---
 
-Sunday, December 31st, 2017 by arvid
-
 This post argues the C++ rule:
 
 > ***One should never forward declare a name from a 3rd party library***
@@ -76,9 +74,5 @@ In order to get the benefits of forward declarations (limiting the amount of tex
 > ***libraries should provide forward declaration header(s)***
 
 Starting in libtorrent 1.1.4, there is a [“libtorrent/fwd.hpp”](https://github.com/arvidn/libtorrent/blob/master/include/libtorrent/fwd.hpp) header, that provide forward declarations for all public symbols in libtorrent. Since this header is cheap to include, it is recommended over any forward declaration of libtorrent headers.
-
-Posted in [c++](https://blog.libtorrent.org/category/c/)
-**|**
- [No Comments](https://blog.libtorrent.org/2017/12/forward-declarations-and-abi/#respond)
 
 ---
